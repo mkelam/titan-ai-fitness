@@ -10,7 +10,10 @@
       "Bash(npx eslint:*)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(del /f nul)"
+      "Bash(del /f nul)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Titan AI Fitness RPG PWA\n\nA gamified, AI-driven fitness app combining elite coaching with RPG progression mechanics.\n\nFeatures:\n- Glassmorphic UI design with fitness-themed background\n- Complete onboarding flow \\(Goals, Experience, Commitment, Finalize\\)\n- Dashboard with character sheet, coach nudge, quick actions\n- Training Log with exercise tracking and XP rewards\n- Nutrition Log with macro tracking\n- Progress Check-in with weight & photo tracking\n- AI Coach Chat with personality-based responses\n- Streak Calendar with milestones\n- Comparison Engine with week-over-week analytics\n- Quest Log with daily/weekly challenges\n- Badge Gallery with rarity system\n- Leaderboard with podium display\n- Exercise Library with search & filters\n- Monthly Review with grade system\n- Weight Projection with goal setting\n- XP Shop, Skill Tree, Team Hub\n- Profile & Settings screens\n- PWA support with offline caching\n- localStorage persistence\n\nTech Stack: React, TypeScript, Vite, Tailwind CSS\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(gh auth status:*)",
+      "Bash(gh repo create:*)"
     ],
     "deny": [],
     "ask": []
