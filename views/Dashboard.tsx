@@ -171,6 +171,30 @@ export const DashboardView: React.FC<{ setView: (v: View) => void }> = ({ setVie
         </div>
       </div>
 
+      {/* Secondary Actions */}
+      <div className="px-6 mb-4">
+        <div className="grid grid-cols-2 gap-3">
+          <GlassCard className="cursor-pointer" onClick={() => setView(View.RECOVERY_PLAN)}>
+            <div className="flex items-center gap-3">
+              <span className="material-symbols-rounded text-purple-400 text-2xl">self_improvement</span>
+              <div>
+                <p className="font-bold text-sm">Recovery</p>
+                <p className="text-xs text-gray-400">Rest & recharge</p>
+              </div>
+            </div>
+          </GlassCard>
+          <GlassCard className="cursor-pointer" onClick={() => setView(View.GYM_CHECKIN)}>
+            <div className="flex items-center gap-3">
+              <span className="material-symbols-rounded text-orange-400 text-2xl">location_on</span>
+              <div>
+                <p className="font-bold text-sm">Check In</p>
+                <p className="text-xs text-gray-400">+10 XP</p>
+              </div>
+            </div>
+          </GlassCard>
+        </div>
+      </div>
+
       {/* Modals */}
       {showWeightModal && <WeightEntryModal onClose={() => setShowWeightModal(false)} />}
       {showPhotoModal && <PhotoUploadModal onClose={() => setShowPhotoModal(false)} />}

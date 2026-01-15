@@ -38,7 +38,11 @@ export enum View {
   TEAM_HUB = 'TEAM_HUB',
   LEADERBOARD = 'LEADERBOARD',
   PROFILE = 'PROFILE',
-  SETTINGS = 'SETTINGS'
+  SETTINGS = 'SETTINGS',
+
+  // Phase 6
+  RECOVERY_PLAN = 'RECOVERY_PLAN',
+  GYM_CHECKIN = 'GYM_CHECKIN'
 }
 
 export interface UserState {

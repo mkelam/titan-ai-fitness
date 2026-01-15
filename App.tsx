@@ -18,6 +18,8 @@ import { LeaderboardView } from './views/Leaderboard';
 import { ExerciseLibraryView } from './views/ExerciseLibrary';
 import { MonthlyReviewView } from './views/MonthlyReview';
 import { WeightProjectionView } from './views/WeightProjection';
+import { RecoveryPlanView } from './views/RecoveryPlan';
+import { GymCheckinView } from './views/GymCheckin';
 import { BottomNav } from './components/UI';
 
 const App: React.FC = () => {
@@ -57,6 +59,8 @@ const App: React.FC = () => {
       case View.EXERCISE_LIBRARY: return <ExerciseLibraryView setView={setView} />;
       case View.MONTHLY_REVIEW: return <MonthlyReviewView setView={setView} />;
       case View.WEIGHT_PROJECTION: return <WeightProjectionView setView={setView} />;
+      case View.RECOVERY_PLAN: return <RecoveryPlanView setView={setView} />;
+      case View.GYM_CHECKIN: return <GymCheckinView setView={setView} />;
 
       // Mocks for other views to prevent crashes in MVP
       default: return (
