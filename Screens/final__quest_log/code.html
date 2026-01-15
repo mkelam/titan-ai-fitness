@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quest Log</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#13ec5b",
+                    "background-light": "#f6f8f6",
+                    "background-dark": "#102216",
+                    "glass": "rgba(255, 255, 255, 0.05)",
+                    "glass-border": "rgba(255, 255, 255, 0.1)",
+                },
+                fontFamily: {
+                    "display": ["Space Grotesk", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "2xl": "3rem", "full": "9999px"},
+                backgroundImage: {
+                    'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                }
+            },
+        },
+    }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(16, 34, 22, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel-gold {
+            background: rgba(66, 32, 6, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.1);
+        }
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 10px rgba(19, 236, 91, 0.5);
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display overflow-hidden selection:bg-primary selection:text-black">
+<!-- Background Image with Overlay -->
+<div class="fixed inset-0 z-0 w-full h-full">
+<img alt="Male fitness model lifting weights in dark gym environment" class="w-full h-full object-cover opacity-60" data-alt="Male fitness model lifting weights in dark gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBub4Yws74CaRXoqJuoAq_6oVd2dxtuVYXfr5UhAvzm0ikmCvglvT7b_UUANQbZ3fVbOMt4dbq5vT0zCN4uu3MCgOxHbJHXB-LX3GbslIfiw-XwjBZvYeQ5NruFu1D2MzAt7FGSa2XDhXfhNLJGNmMSS1dqIf8cTrzPC76SXGUqqVCtKVFp03TqVWwlP4laRZSG7xKVPAK1tKAEQpxVG_Cxar0WEpn2pUCr7JVEf8LG8SmsET2KKVbq1cj-wQCVX2TPAwi0P2h5bFWh"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#102216]/90 via-[#102216]/70 to-[#102216] opacity-90"></div>
+<!-- Decorative Cyberpunk Elements -->
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
+</div>
+<!-- Main Content Wrapper -->
+<div class="relative z-10 flex flex-col h-screen overflow-hidden">
+<!-- Header -->
+<div class="flex items-center justify-between p-6 pt-8 pb-2">
+<button class="flex size-10 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-white">arrow_back</span>
+</button>
+<h2 class="text-xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">QUEST LOG</h2>
+<button class="flex size-10 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-white">settings</span>
+</button>
+</div>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto pb-32 px-6 scroll-smooth">
+<!-- Hero Progress Section -->
+<div class="mt-4 glass-panel rounded-2xl p-5 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-[shimmer_2s_infinite]"></div>
+<div class="flex justify-between items-end mb-3">
+<div>
+<p class="text-xs font-semibold tracking-wider text-primary mb-1 uppercase">Current Status</p>
+<h3 class="text-2xl font-bold leading-none">Lvl 12 Titan</h3>
+</div>
+<div class="text-right">
+<span class="text-sm text-gray-400">Daily XP</span>
+<p class="text-lg font-bold text-white">850<span class="text-gray-500 text-sm font-normal">/1000</span></p>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="h-4 w-full bg-black/40 rounded-full overflow-hidden border border-white/5 backdrop-blur-sm relative">
+<div class="absolute inset-0 w-[85%] bg-primary neon-glow h-full rounded-full flex items-center justify-end pr-1">
+<div class="h-2 w-2 bg-white rounded-full opacity-50"></div>
+</div>
+<!-- Tick marks overlay -->
+<div class="absolute inset-0 flex justify-between px-[10%] opacity-20">
+<div class="w-px h-full bg-white"></div>
+<div class="w-px h-full bg-white"></div>
+<div class="w-px h-full bg-white"></div>
+<div class="w-px h-full bg-white"></div>
+</div>
+</div>
+<p class="text-right text-xs text-primary mt-2 font-medium">150 XP to Level Up</p>
+</div>
+<!-- Active Protocols Section -->
+<div class="mt-8">
+<h3 class="text-sm font-bold text-gray-400 tracking-wider mb-4 px-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">gpp_maybe</span>
+                    ACTIVE PROTOCOLS
+                </h3>
+<div class="flex flex-col gap-3">
+<!-- Quest Item 1 -->
+<label class="glass-panel rounded-xl p-4 flex items-center justify-between group cursor-pointer transition-all duration-300 hover:bg-white/10 hover:border-primary/30 hover:scale-[1.01]">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-gradient-to-br from-green-900/50 to-emerald-900/50 flex items-center justify-center border border-white/5 shadow-inner">
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<p class="text-white font-bold text-base group-hover:text-primary transition-colors">Morning Momentum</p>
+<p class="text-gray-400 text-xs">Complete 20 min HIIT</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">+150 XP</span>
+<div class="relative flex items-center justify-center size-6">
+<input class="peer appearance-none size-6 border-2 border-white/20 rounded bg-transparent checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-all cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-black text-sm pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity font-bold">check</span>
+</div>
+</div>
+</label>
+<!-- Quest Item 2 -->
+<label class="glass-panel rounded-xl p-4 flex items-center justify-between group cursor-pointer transition-all duration-300 hover:bg-white/10 hover:border-primary/30 hover:scale-[1.01]">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-gradient-to-br from-green-900/50 to-emerald-900/50 flex items-center justify-center border border-white/5 shadow-inner">
+<span class="material-symbols-outlined text-primary">monitor_weight</span>
+</div>
+<div class="flex flex-col">
+<p class="text-white font-bold text-base group-hover:text-primary transition-colors">Heavy Hitter</p>
+<p class="text-gray-400 text-xs">Deadlift 100kg x 5</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">+300 XP</span>
+<div class="relative flex items-center justify-center size-6">
+<input class="peer appearance-none size-6 border-2 border-white/20 rounded bg-transparent checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-all cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-black text-sm pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity font-bold">check</span>
+</div>
+</div>
+</label>
+<!-- Quest Item 3 -->
+<label class="glass-panel rounded-xl p-4 flex items-center justify-between group cursor-pointer transition-all duration-300 hover:bg-white/10 hover:border-primary/30 hover:scale-[1.01]">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-gradient-to-br from-green-900/50 to-emerald-900/50 flex items-center justify-center border border-white/5 shadow-inner">
+<span class="material-symbols-outlined text-primary">water_drop</span>
+</div>
+<div class="flex flex-col">
+<p class="text-white font-bold text-base group-hover:text-primary transition-colors">Hydration Station</p>
+<p class="text-gray-400 text-xs">Drink 3L Water</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">+50 XP</span>
+<div class="relative flex items-center justify-center size-6">
+<input class="peer appearance-none size-6 border-2 border-white/20 rounded bg-transparent checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 transition-all cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-black text-sm pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity font-bold">check</span>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- Weekly Bounty Section -->
+<div class="mt-8 mb-6">
+<h3 class="text-sm font-bold text-amber-400/80 tracking-wider mb-4 px-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-400 text-[18px]">hotel_class</span>
+                    WEEKLY BOUNTY
+                </h3>
+<div class="glass-panel-gold rounded-xl p-5 relative overflow-hidden group">
+<!-- Gold sheen effect -->
+<div class="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-gradient-to-r from-transparent via-amber-400/10 to-transparent rotate-45 group-hover:animate-ping opacity-0 group-hover:opacity-100 duration-1000"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex gap-4">
+<div class="size-14 rounded-full bg-gradient-to-br from-amber-600 to-yellow-900 flex items-center justify-center border border-amber-300/30 shadow-[0_0_15px_rgba(251,191,36,0.2)]">
+<span class="material-symbols-outlined text-white text-2xl">swords</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-amber-100 leading-tight">The Centurion</h4>
+<p class="text-amber-200/60 text-xs mt-1">Complete 100 pushups total</p>
+<div class="flex items-center gap-2 mt-3">
+<div class="h-1.5 w-24 bg-black/40 rounded-full overflow-hidden">
+<div class="h-full bg-amber-400 w-3/4 shadow-[0_0_5px_rgba(251,191,36,0.8)]"></div>
+</div>
+<span class="text-[10px] font-mono text-amber-300">75/100</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-xs font-bold text-amber-300 bg-amber-900/40 border border-amber-500/20 px-2 py-1 rounded mb-2">5 DAYS LEFT</span>
+<span class="text-sm font-bold text-amber-400">+1000 XP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Coach Overlay -->
+<div class="absolute bottom-24 right-4 left-4 z-20 flex items-end justify-end pointer-events-none">
+<div class="flex items-end gap-3 w-full max-w-sm ml-auto">
+<!-- Speech Bubble -->
+<div class="glass-panel p-3 rounded-2xl rounded-tr-sm mb-4 animate-[bounce_3s_infinite] shadow-xl border-primary/20 bg-black/60 backdrop-blur-xl">
+<p class="text-sm font-medium text-white leading-snug">
+<span class="text-primary font-bold">Hey Titan!</span> You're only 150 XP away from a streak bonus. Crush that HIIT session now! 🚀
+                    </p>
+</div>
+<!-- Avatar -->
+<div class="relative shrink-0">
+<div class="size-14 rounded-full border-2 border-primary overflow-hidden shadow-[0_0_15px_rgba(19,236,91,0.4)] bg-black">
+<img alt="AI Coach Avatar" class="w-full h-full object-cover" data-alt="Futuristic AI female face with cybernetic details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFpIcgQ_M_NBsRm07u5JAloYGYwHT5cu5EVzV4bSULIV53zISDBGDifJXEBO5cqdQMojk5TVdCVlNmtMaqGSxd5zdh_0m_Fr0x3u9IgEkW5-Q6Px5Xiq1034TuztQIrngxnls-uSihyqTmDqsdkk2JjneOCcQpjIXHdRg9eMhXKe3KMwNf8FmL8KmtfEvz4ky5p8-8Xjs75AA7M8JQ68sxarPIjIdkZ5S8jBd_WC7dPIirzMkzpcL0v6iOC3ZZAaXbdq29Y3CwAo7b"/>
+</div>
+<div class="absolute -bottom-1 -right-1 size-4 bg-primary rounded-full border-2 border-black animate-pulse"></div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Capsule -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 w-[90%] max-w-[400px]">
+<nav class="glass-nav rounded-full px-2 py-2 flex items-center justify-between shadow-2xl">
+<button class="flex flex-col items-center justify-center size-12 rounded-full text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="flex flex-col items-center justify-center size-12 rounded-full bg-primary text-black shadow-[0_0_15px_rgba(19,236,91,0.4)] hover:scale-105 transition-all">
+<span class="material-symbols-outlined font-bold">assignment</span>
+</button>
+<button class="flex flex-col items-center justify-center size-12 rounded-full text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined">bar_chart</span>
+</button>
+<button class="flex flex-col items-center justify-center size-12 rounded-full text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+</div>
+</div>
+</body></html>

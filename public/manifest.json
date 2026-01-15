@@ -1,0 +1,34 @@
+{
+  "name": "Titan AI - Elite Fitness Tracker",
+  "short_name": "Titan",
+  "description": "A gamified, AI-driven fitness odyssey combining elite coaching with RPG progression",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ff9d",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["health", "fitness", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Log Workout",
+      "short_name": "Workout",
+      "description": "Quick access to training log",
+      "url": "/?view=training"
+    },
+    {
+      "name": "AI Coach",
+      "short_name": "Coach",
+      "description": "Chat with your AI coach",
+      "url": "/?view=coach"
+    }
+  ]
+}

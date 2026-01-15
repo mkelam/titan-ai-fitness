@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personal Best View</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f45925",
+              "background-light": "#f8f6f5",
+              "background-dark": "#221410",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "body": ["Noto Sans", "sans-serif"],
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            boxShadow: {
+                "neon": "0 0 20px rgba(244, 89, 37, 0.5), inset 0 0 20px rgba(244, 89, 37, 0.2)",
+                "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom utilities for metallic text and glassmorphism not fully covered by default Tailwind config */
+        .text-metallic {
+            background: linear-gradient(to bottom, #ffffff 0%, #e2e2e2 50%, #a1a1a1 51%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .glass-panel {
+            background: rgba(34, 20, 16, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+        
+        .neon-border-pulse {
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { box-shadow: inset 0 0 10px rgba(244, 89, 37, 0.5); border-color: rgba(244, 89, 37, 0.6); }
+            50% { box-shadow: inset 0 0 25px rgba(244, 89, 37, 0.8); border-color: rgba(244, 89, 37, 1); }
+            100% { box-shadow: inset 0 0 10px rgba(244, 89, 37, 0.5); border-color: rgba(244, 89, 37, 0.6); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display h-screen w-full overflow-hidden select-none">
+<div class="relative w-full h-full flex flex-col group/design-root">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-background-dark/40 z-10"></div>
+<div class="w-full h-full bg-cover bg-center bg-no-repeat" data-alt="Male fitness model lifting heavy barbell with intense expression" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_jaiD4dZGbM11jtnHzxZORpgXFMSNQHyoKntteTsK-qpL8T5p5kr5jI4wnA1HwoxPrZRQXopRH21SLVdqLCYxv0uTJ_pDMgC57fmBBgmRZa19uwzUCj6wZ3MGk7JaCLzvWxiXPo4a57a5hV-lHtaG9gXvgx-fwXNUf4QhnOPENQvzJw6WXDQe1mhTpVOdXSMlIqC3IE95n43T15SHoEB24NmK87xHSiSgGMgMNuerA-8WhfDwHEJbTHjHWp_F7QLGCgiEtIOQKb_9');">
+</div>
+</div>
+<!-- Neon Border Overlay -->
+<div class="absolute inset-0 z-20 pointer-events-none border-[3px] border-primary/50 neon-border-pulse rounded-none"></div>
+<!-- Main Content Area -->
+<div class="relative z-30 flex flex-col h-full w-full p-6 pb-8 justify-between">
+<!-- Header / Top Bar -->
+<div class="flex justify-between items-start pt-2">
+<div class="w-10"></div> <!-- Spacer -->
+<!-- Badge -->
+<div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/90 shadow-[0_0_15px_rgba(244,89,37,0.6)] animate-pulse">
+<span class="material-symbols-outlined text-white text-[18px]">bolt</span>
+<span class="text-white text-xs font-bold tracking-wider">2x XP ACTIVE</span>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 transition">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Central Glass Card (Hero Stats) -->
+<div class="flex flex-col items-center justify-center gap-6 mt-4">
+<!-- Headline -->
+<div class="text-center space-y-2">
+<h1 class="text-5xl font-bold tracking-tighter leading-none text-metallic uppercase drop-shadow-xl">
+                        New<br/>Personal<br/>Best
+                    </h1>
+</div>
+<!-- Main Stat Card -->
+<div class="w-full glass-panel rounded-xl p-6 relative overflow-hidden group">
+<!-- Decorative glow behind numbers -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-primary/20 blur-[60px] rounded-full"></div>
+<div class="relative z-10 flex flex-col items-center gap-1 text-center">
+<span class="text-white/70 text-sm font-medium uppercase tracking-widest">Exercise</span>
+<h2 class="text-white text-3xl font-bold tracking-wide mb-4">Deadlift</h2>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-2"></div>
+<span class="text-white/70 text-sm font-medium uppercase tracking-widest mt-2">New Record</span>
+<div class="text-[64px] leading-none font-bold text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                            140 <span class="text-3xl text-white/60 font-normal">KG</span>
+</div>
+</div>
+</div>
+<!-- XP Reward Row -->
+<div class="flex items-center gap-4 w-full">
+<div class="glass-panel flex-1 rounded-xl p-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-white/60 text-xs font-bold uppercase">XP Earned</span>
+<span class="text-primary text-2xl font-bold drop-shadow-[0_0_8px_rgba(244,89,37,0.8)]">+1200</span>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">keyboard_double_arrow_up</span>
+</div>
+<div class="glass-panel flex-1 rounded-xl p-4 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-white/60 text-xs font-bold uppercase">Streak</span>
+<span class="text-white text-2xl font-bold">12 Days</span>
+</div>
+<span class="material-symbols-outlined text-white/80 text-3xl">local_fire_department</span>
+</div>
+</div>
+</div>
+<!-- Footer: AI Coach & Action -->
+<div class="flex flex-col gap-5">
+<!-- AI Coach Bubble -->
+<div class="flex items-end gap-3 animate-fade-in-up">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary shadow-[0_0_10px_rgba(244,89,37,0.5)] bg-black">
+<img alt="AI Robot Coach Avatar face close up" class="w-full h-full object-cover" data-alt="AI Robot Coach Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYSMf_ZakZL3TBqNPyLJ0rgz3LeZJVZBIulolQCSTQZ_ltvzPQvQVOtG5Suk63ULTR3QGFOac5H4mrpxYJNgA7DXdvZwNaC8FCsaXS2BjuyH63rqvDUD_8VjuYdEQfBXum0MYV6qJA7QjK9dp2usrGwvFVK4roEansH3cWUe5bSh9A2pRbVK67vrbPRe6ksvHmC3ZMVTYXR4FpDkvYbS1iokuiw0n5-R9uS6pNYpy5vfVEygIl9oyYPY9pSwcw745wS5ahUZvY-QDl"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-black">AI</div>
+</div>
+<div class="glass-panel p-3 rounded-2xl rounded-bl-none max-w-[80%] border-l-4 border-l-primary">
+<p class="text-white text-sm leading-snug">
+<span class="font-bold text-primary">Unstoppable!</span> You just crushed your 3-month plateau. That form was flawless.
+                        </p>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="group relative w-full overflow-hidden rounded-xl bg-primary p-4 transition-transform active:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"></div>
+<div class="relative flex items-center justify-center gap-2">
+<span class="text-white text-lg font-bold tracking-wide">CLAIM REWARDS</span>
+<span class="material-symbols-outlined text-white animate-bounce">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Training Streak Calendar</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#57f906",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    boxShadow: {
+                        "neon": "0 0 15px rgba(87, 249, 6, 0.6), 0 0 30px rgba(87, 249, 6, 0.3)",
+                        "neon-sm": "0 0 8px rgba(87, 249, 6, 0.5)",
+                        "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel-heavy {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .glass-button {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black text-white font-display min-h-screen selection:bg-primary selection:text-black antialiased">
+<div class="fixed inset-0 z-0">
+<img alt="Male Fitness Model Background" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe1MO_tADPk4Q1wKy_PdK3iKFpwAoEH0v9ABCnMGYaiMdPDMQP5-5Rppt06U2Qa_OVUAJldPilKuPprv0UGAajSFwk5m1iCA2387v8yIIlgHscGZluIs0JIMf9vClKbi5zfXqgg_V0LpaYTCP3xPuneq6-RpfADmr-AOP6aEWkbG83JKDzDQv3dMZExvpoIsmq_lBomikvatpeR8Vp69Q6iwLFUDbzop9YdzjI0DqtZvt12WdKC4UJBy9js9Fmyj8heHHQXYQEAT2m" style="object-position: center 20%;"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30"></div>
+<div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative flex h-full w-full flex-col max-w-md mx-auto overflow-hidden min-h-screen pb-24 z-10">
+<div class="flex items-center p-4 pt-6 justify-between">
+<button class="glass-button flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white">arrow_back</span>
+</button>
+<h2 class="text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center drop-shadow-md">Streak Calendar</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="glass-button flex size-12 cursor-pointer items-center justify-center rounded-full hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center py-6 px-4">
+<div class="relative flex items-center justify-center mb-2 scale-110">
+<div class="absolute inset-0 bg-primary blur-[50px] opacity-30 rounded-full animate-pulse"></div>
+<div class="absolute inset-0 bg-orange-500 blur-[30px] opacity-20 rounded-full"></div>
+<span class="material-symbols-outlined text-primary text-8xl drop-shadow-[0_0_25px_rgba(87,249,6,1)] z-10" style="font-variation-settings: 'FILL' 1;">
+                    local_fire_department
+                </span>
+</div>
+<h1 class="text-6xl font-bold text-white tracking-tighter mb-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">14 Days</h1>
+<p class="text-primary font-bold uppercase tracking-[0.2em] text-xs drop-shadow-sm">Current Streak</p>
+</div>
+<div class="flex px-4 py-2 mb-4">
+<div class="flex h-12 flex-1 items-center justify-center rounded-xl glass-panel p-1">
+<label class="relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white/10 has-[:checked]:shadow-inner text-white/50 has-[:checked]:text-primary transition-all duration-300">
+<span class="text-sm font-bold z-10">Completion</span>
+<input checked="" class="peer invisible absolute w-0" name="view-toggle" type="radio" value="Completion"/>
+<div class="absolute inset-0 hidden peer-checked:block bg-white/5 rounded-lg border border-white/5"></div>
+</label>
+<label class="relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white/10 has-[:checked]:shadow-inner text-white/50 has-[:checked]:text-primary transition-all duration-300">
+<span class="text-sm font-bold z-10">Heatmap</span>
+<input class="peer invisible absolute w-0" name="view-toggle" type="radio" value="Heatmap"/>
+<div class="absolute inset-0 hidden peer-checked:block bg-white/5 rounded-lg border border-white/5"></div>
+</label>
+</div>
+</div>
+<div class="px-4 mb-6">
+<div class="glass-panel-heavy rounded-3xl p-5 shadow-glass relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-b from-white/5 to-transparent -rotate-45 pointer-events-none"></div>
+<div class="flex items-center justify-between mb-5 relative z-10">
+<button class="p-2 hover:bg-white/10 rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<p class="text-white text-lg font-bold tracking-wide">October 2023</p>
+<button class="p-2 hover:bg-white/10 rounded-full text-white transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 mb-3">
+<div class="text-white/60 text-[10px] font-bold uppercase text-center h-8 flex items-center justify-center">Sun</div>
+<div class="text-white/60 text-[10px] font-bold uppercase text-center h-8 flex items-center justify-center">Mon</div>
+<div class="text-white/60 text-[10px] font-bold uppercase text-center h-8 flex items-center justify-center">Tue</div>
+<div class="text-white/60 text-[10px] font-bold uppercase text-center h-8 flex items-center justify-center">Wed</div>
+<div class="text-white/60 text-[10px] font-bold uppercase text-center h-8 flex items-center justify-center">Thu</div>
+<div class="text-white/60 text-[10px] font-bold uppercase text-center h-8 flex items-center justify-center">Fri</div>
+<div class="text-white/60 text-[10px] font-bold uppercase text-center h-8 flex items-center justify-center">Sat</div>
+</div>
+<div class="grid grid-cols-7 gap-y-3 gap-x-1">
+<div></div><div></div><div></div><div></div>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">1</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">2</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">3</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">4</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">5</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">6</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">7</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold text-white/40 bg-white/5 border border-white/10 group-hover:border-white/30 transition-colors">8</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">9</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">10</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">11</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">12</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center group">
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold bg-primary text-black shadow-neon ring-2 ring-primary/50 transition-transform group-hover:scale-110">13</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center relative">
+<div class="absolute -top-1 right-1 size-2.5 bg-red-500 rounded-full animate-pulse shadow-[0_0_8px_red] z-20 ring-2 ring-black/50"></div>
+<div class="size-9 rounded-full flex items-center justify-center text-sm font-bold border-2 border-primary text-white shadow-[0_0_15px_rgba(87,249,6,0.4)] bg-primary/20 backdrop-blur-sm">14</div>
+</button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">15</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">16</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">17</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">18</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">19</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">20</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">21</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">22</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">23</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">24</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">25</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">26</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">27</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">28</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">29</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">30</div></button>
+<button class="h-10 w-full flex items-center justify-center"><div class="size-9 flex items-center justify-center text-sm text-white/20 font-medium">31</div></button>
+</div>
+</div>
+</div>
+<div class="px-4 mb-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-white text-lg font-bold drop-shadow-sm">Streak Milestones</h3>
+<a class="text-primary text-sm font-medium hover:text-white transition-colors" href="#">View All</a>
+</div>
+<div class="glass-panel rounded-2xl p-4 flex gap-4 items-center relative overflow-hidden group">
+<div class="absolute right-0 top-0 w-48 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none group-hover:from-primary/20 transition-all duration-500"></div>
+<div class="size-14 rounded-2xl bg-black/40 border border-primary/30 flex items-center justify-center shrink-0 shadow-neon-sm backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-3xl drop-shadow-[0_0_8px_rgba(87,249,6,0.8)]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div class="flex-1 min-w-0 z-10">
+<div class="flex justify-between items-end mb-2">
+<p class="text-white font-bold text-base truncate">30-Day Fire Badge</p>
+<p class="text-primary font-bold text-sm drop-shadow-sm">14/30</p>
+</div>
+<div class="h-2 w-full bg-black/40 rounded-full overflow-hidden border border-white/5">
+<div class="h-full bg-primary w-[46%] shadow-[0_0_15px_#57f906]"></div>
+</div>
+<p class="text-white/60 text-xs mt-2">16 more days to unlock exclusive rewards.</p>
+</div>
+</div>
+</div>
+<div class="px-4 mt-auto mb-6">
+<div class="relative glass-panel-heavy rounded-3xl p-5 overflow-hidden shadow-2xl ring-1 ring-white/10">
+<div class="absolute -top-10 -left-10 size-40 bg-primary/20 blur-[60px] rounded-full animate-pulse"></div>
+<div class="relative flex gap-4">
+<div class="shrink-0">
+<div class="size-12 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center border border-white/10 shadow-inner backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-2xl drop-shadow-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+</div>
+<div class="flex-1">
+<h4 class="text-white font-bold text-base mb-1 flex items-center gap-2">
+                            Streak at Risk!
+                            <span class="px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 text-[10px] font-bold uppercase tracking-wider border border-red-500/30 backdrop-blur-sm shadow-[0_0_10px_rgba(239,68,68,0.2)]">Action Needed</span>
+</h4>
+<p class="text-white/80 text-sm leading-relaxed mb-4 font-medium">
+                            You have <span class="text-primary font-bold">1 Freeze</span> left! Use it now or do a 5-min mobility flow to keep the fire burning.
+                        </p>
+<div class="flex gap-3">
+<button class="flex-1 h-11 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-base">science</span>
+                                Freeze (1)
+                            </button>
+<button class="flex-[1.5] h-11 rounded-xl bg-primary hover:bg-[#4de005] text-black text-xs font-bold flex items-center justify-center gap-1.5 shadow-neon transition-all hover:shadow-[0_0_20px_rgba(87,249,6,0.8)] border border-primary/50">
+<span class="material-symbols-outlined text-base">play_arrow</span>
+                                Start 5-min Flow
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

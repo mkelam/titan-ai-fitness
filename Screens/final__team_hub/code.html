@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Team Hub - Fitness App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f0df2",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    boxShadow: {
+                        'neon': '0 0 15px rgba(127, 13, 242, 0.5)',
+                        'neon-gold': '0 0 10px rgba(234, 179, 8, 0.5)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(20, 17, 24, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-panel-lighter {
+            background: rgba(127, 13, 242, 0.15);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(127, 13, 242, 0.2);
+        }
+
+        .glass-nav {
+            background: rgba(25, 16, 34, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Hide scrollbar for clean look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Neon Text Utilities */
+        .text-glow {
+            text-shadow: 0 0 10px rgba(127, 13, 242, 0.6);
+        }
+        .text-glow-gold {
+            text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="relative flex h-full min-h-screen w-full flex-col bg-background-dark font-display text-white selection:bg-primary/30 overflow-x-hidden">
+<!-- Fixed Background Layer -->
+<div class="fixed inset-0 z-0">
+<img alt="Male fitness model background with dark moody lighting" class="h-full w-full object-cover opacity-60" data-alt="Male fitness model in gym lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq3cMHakYlf7ttblE-3mDw6vr2z-M7i4Pl6Q6cNlL59FC4Rk4ALet6O9jbrAKBZaxtpTfdmXXBVaiC9WTKjQJQLCRPNet96PApLHuCnO2qO5Sta8Ftd1We3bIwimmatTsIJcCAZfItgLo6n8ioVAse5OM7_4nqqHDLi6Lh_qk1B1xn9jQKSzyLH29Hph6-hOxBrpYb1Jb52E6Sz8080xP1yJUbjcfZjhnpkh6i0MmaqwdhTGPIRHOdRvWDojLGkrM6SqtmUc_7vGY0"/>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-[#141118]/80 via-[#141118]/50 to-[#141118]/95"></div>
+</div>
+<!-- Main Content Container -->
+<div class="relative z-10 flex flex-col w-full min-h-screen pb-28">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-30 flex items-center justify-between p-4 pt-6 backdrop-blur-md bg-[#141118]/30">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full glass-panel hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white">menu</span>
+</button>
+<h2 class="text-white text-lg font-bold tracking-widest uppercase flex-1 text-center">Team Alpha</h2>
+<button class="flex size-10 items-center justify-center rounded-full glass-panel hover:bg-white/10 transition-colors relative">
+<span class="material-symbols-outlined text-white">notifications</span>
+<span class="absolute top-2 right-2 h-2.5 w-2.5 rounded-full bg-primary shadow-neon border border-[#141118]"></span>
+</button>
+</div>
+<!-- Segmented Buttons (Tabs) -->
+<div class="px-4 py-2">
+<div class="flex h-12 w-full items-center justify-center rounded-full glass-panel p-1">
+<label class="relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-primary has-[:checked]:shadow-neon transition-all duration-300">
+<span class="truncate z-10 text-white text-sm font-bold tracking-wide">Team Quests</span>
+<input checked="" class="peer invisible absolute w-0" name="view-toggle" type="radio" value="Team Quests"/>
+</label>
+<label class="relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-primary has-[:checked]:shadow-neon text-white/50 hover:text-white transition-all duration-300">
+<span class="truncate z-10 text-sm font-bold tracking-wide">Leaderboard</span>
+<input class="peer invisible absolute w-0" name="view-toggle" type="radio" value="Leaderboard"/>
+</label>
+</div>
+</div>
+<!-- Main Quest Progress Card -->
+<div class="p-4 mt-2">
+<div class="glass-panel rounded-[2rem] p-6 relative overflow-hidden group">
+<!-- Decorative Glows -->
+<div class="absolute -top-12 -right-12 w-40 h-40 bg-primary/20 rounded-full blur-[50px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-primary/20 border border-primary/30 text-[10px] font-bold uppercase tracking-wider text-primary">Active Quest</span>
+</div>
+<h2 class="text-white text-2xl font-bold leading-tight">Everest Climb Challenge</h2>
+<p class="text-white/60 text-sm mt-1 font-body">Global Mountain Series • 5 Days Left</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 to-yellow-500 text-glow-gold">74%</span>
+</div>
+</div>
+<!-- Enhanced Progress Bar -->
+<div class="flex flex-col gap-2 mt-2">
+<div class="h-4 w-full rounded-full bg-black/40 backdrop-blur-sm border border-white/5 overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-primary via-[#9d4edd] to-yellow-400 shadow-neon relative" style="width: 74%;">
+<div class="absolute right-0 top-0 h-full w-4 bg-white/50 blur-[2px]"></div>
+</div>
+</div>
+<div class="flex justify-between items-center text-xs font-medium text-white/50">
+<span>74km Run</span>
+<span class="text-white">Goal: 100km</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex items-center justify-between px-6 pt-2 pb-2">
+<h3 class="text-white text-lg font-bold leading-tight tracking-tight">Team Roster</h3>
+<button class="text-xs font-bold text-primary uppercase tracking-wider hover:text-white transition-colors">View All</button>
+</div>
+<!-- Team Roster List -->
+<div class="flex flex-col gap-3 px-4">
+<!-- User 1 (Me) - Leader -->
+<div class="glass-panel-lighter rounded-2xl p-3 pr-4 flex items-center gap-4">
+<div class="relative shrink-0">
+<div class="absolute -inset-0.5 rounded-full bg-gradient-to-b from-yellow-300 to-yellow-600 blur-[2px] opacity-70"></div>
+<img alt="User Avatar" class="relative size-12 rounded-full object-cover border-2 border-yellow-400" data-alt="Portrait of fit woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtE9YEpJluD--Kbw9tyKheNbdh1vN8Q11oGlsq5_DArPkjclRtELflVhVfRM3eIA_6CubS8uO-PKzx2WYAQm49aqPXji7MlDWXB6fsbT4fxwUB8et7a5cK1p3So5Uxy4lEOIPcDrMrjHohfyB_7FIBZYNTw_RysbaOlVAD3xyxYW0DPHsla1WrY--Uw_yudc9MPpfFfCUlc9553lErwWRTXOuTWe3CWKV2qIcz-qhIvNwkOemy_iajTXAmSN_Alsr-eWNR7J5y9Ey3"/>
+<div class="absolute -bottom-1 -right-1 bg-yellow-400 text-black text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border border-black shadow-lg">1</div>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="text-white font-bold text-base truncate">You</span>
+<span class="text-[10px] bg-white/10 px-1.5 rounded text-white/70">Me</span>
+</div>
+<p class="text-yellow-400/90 text-xs font-medium truncate">Leading the pack! 🔥</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-white font-bold text-lg">12.4</span>
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-wider">km done</span>
+</div>
+</div>
+<!-- User 2 -->
+<div class="glass-panel rounded-2xl p-3 pr-4 flex items-center gap-4">
+<div class="relative shrink-0">
+<img alt="User Avatar" class="size-12 rounded-full object-cover border border-white/10" data-alt="Portrait of man looking determined" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt8v0psO-6ojlT_yxOKI1dewlfDeOkvWNjAn5L9TPCDAKoh2cXx8itp2VFVCwF45uwohlMbIklzxqX1fTrqLpaNGt3XkhVGyKPZS4ea021bP1RLwZr5EsL_7sWVlG-Osh7wwdaLvWWFc1pytWj7m5Q6tlxPE6gGuazutaXUi84L874l4m1X5NcI3w1INmP33c6AZQCFS8v0LBWYQ1ashPa1YkZiiru6vVHJUAsEPgAS-EAtZ0OQ_xhetUNQx4xyYon-QJdahj-XfWf"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="text-white font-bold text-base truncate">Marcus J.</span>
+<p class="text-white/50 text-xs truncate">Last active 2h ago</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-white font-bold text-lg">8.1</span>
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-wider">km done</span>
+</div>
+</div>
+<!-- User 3 (Inactive - Needs Nudge) -->
+<div class="glass-panel rounded-2xl p-3 pr-4 flex items-center gap-4 bg-red-500/5 border-red-500/10">
+<div class="relative shrink-0 grayscale opacity-80">
+<img alt="User Avatar" class="size-12 rounded-full object-cover border border-white/10" data-alt="Portrait of woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfOtDhv5bNxd-_tqZW-MK2ydY0WC1BOTfHka0Pm1qjLyvEqwk8Cz_qAufZI9Pwjhu2PKUP5zPFKd4FpZK9vN4LDXn3zTJCdAcO_pZQOGyvSeIbYpa1Qg-JZdyCvVFQDu5zfhrvdK7ySZeE79nVQ2NF79q3pUM8Qu-N1flpAtngkGEicYYLN-iURRWez2cAOmmf2eWUX-gxP5LltM2nIDp3lFunFS_IVzPkPXpat59w400RL855-N2Ry1zZt2FBDhevtvRc_AEa6AUN"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="text-white/80 font-bold text-base truncate">Sarah L.</span>
+<p class="text-white/40 text-xs truncate">0km contribution</p>
+</div>
+<button class="flex h-9 items-center justify-center gap-1.5 rounded-full bg-primary px-4 shadow-neon hover:bg-primary/90 active:scale-95 transition-all">
+<span class="text-white text-xs font-bold uppercase tracking-wide">Nudge</span>
+<span class="material-symbols-outlined text-white text-sm" style="font-size: 16px;">waving_hand</span>
+</button>
+</div>
+<!-- User 4 -->
+<div class="glass-panel rounded-2xl p-3 pr-4 flex items-center gap-4">
+<div class="relative shrink-0">
+<img alt="User Avatar" class="size-12 rounded-full object-cover border border-white/10" data-alt="Portrait of man smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAHia9DI73DxQjGJmcDJeC9jZMO9enAsFJnxyB4N_avPGKvJiyv9ANWHVhNzsz2vypq55uwlPPrkku-I2Y0GMEraGI1xHeDWZaNPFGjLLhjOehf4OTO1dAabJVCo-V5W5tqZsgrJvcdgX66VPPpuHS5xlg_TRtcUuHUuLjVYsPhip1VpFoHOF7dfLI8S2FvfT6r1pAXhM_4dagj2ISydB-EFmBcl8bb7CxzC4Vp_nAJK0vU_I7KnAlHcYie_01zT-s4BUOjdx3Z0vn"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="text-white font-bold text-base truncate">David K.</span>
+<p class="text-white/50 text-xs truncate">Last active 5m ago</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-white font-bold text-lg">5.2</span>
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-wider">km done</span>
+</div>
+</div>
+</div>
+<!-- Social Feed Preview -->
+<div class="px-4 mt-4">
+<div class="glass-panel rounded-xl p-3 flex items-center gap-3 animate-fade-in-up">
+<div class="flex items-center justify-center size-8 rounded-full bg-gradient-to-tr from-primary to-purple-400 shrink-0">
+<span class="material-symbols-outlined text-white text-sm">forum</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm text-white/90 truncate"><span class="font-bold text-primary">Mark</span> just hit a new PR on Bench Press! 💪</p>
+</div>
+<span class="text-[10px] text-white/40 whitespace-nowrap">2m ago</span>
+</div>
+</div>
+</div>
+<!-- Floating Bottom Navigation Dock -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[400px] z-50">
+<div class="glass-nav rounded-[2rem] h-16 px-6 flex items-center justify-between shadow-2xl">
+<button class="flex flex-col items-center justify-center gap-1 text-white/40 hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">home</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-white/40 hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">fitness_center</span>
+</button>
+<!-- Floating FAB in Center -->
+<div class="relative -top-6">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-neon border-4 border-[#141118] hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center justify-center gap-1 text-primary transition-colors group relative">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform fill-current">groups</span>
+<span class="absolute -bottom-2 w-1 h-1 rounded-full bg-primary shadow-[0_0_8px_rgba(127,13,242,1)]"></span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 text-white/40 hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">person</span>
+</button>
+</div>
+</div>
+</body></html>

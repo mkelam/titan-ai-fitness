@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Detailed Weight Projection Analysis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#57f906",
+                        "background-dark": "#0f0f0f",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    boxShadow: {
+                        "neon": "0 0 15px rgba(87, 249, 6, 0.4)",
+                        "neon-sm": "0 0 8px rgba(87, 249, 6, 0.5)",
+                        "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+                    },
+                    backgroundImage: {
+                        'fitness-model': "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2670&auto=format&fit=crop')",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+            min-height: 100vh;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+        .glass-panel-light {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }.no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white min-h-screen flex flex-col font-display selection:bg-primary selection:text-black bg-fitness-model bg-cover bg-center bg-fixed bg-no-repeat relative">
+<div class="absolute inset-0 bg-black/70 pointer-events-none z-0"></div>
+<header class="flex items-center justify-between p-4 sticky top-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/5">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors glass-panel-light shadow-lg">
+<span class="material-symbols-outlined text-2xl text-white">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight uppercase text-white drop-shadow-md">Projection</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors glass-panel-light shadow-lg">
+<span class="material-symbols-outlined text-2xl text-white">settings</span>
+</button>
+</header>
+<main class="relative z-10 flex-1 overflow-x-hidden flex flex-col gap-6 p-4 max-w-md mx-auto w-full pb-8">
+<section class="flex flex-col gap-4 glass-panel rounded-3xl p-6 relative overflow-hidden group shadow-neon/20 transition-all hover:shadow-neon/30">
+<div class="absolute -top-20 -right-20 w-48 h-48 bg-primary/20 rounded-full blur-[80px] pointer-events-none"></div>
+<div class="flex justify-between items-end mb-2 relative z-10">
+<div>
+<h2 class="text-xs text-gray-300 uppercase tracking-wider font-bold mb-1 drop-shadow-sm">Current Weight</h2>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-bold text-white tracking-tighter drop-shadow-lg">182.4</span>
+<span class="text-sm font-medium text-gray-400">lbs</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-sm bg-primary/10 px-3 py-1 rounded-lg border border-primary/30 shadow-neon-sm backdrop-blur-sm">-1.2 lbs</span>
+<span class="text-[10px] text-gray-400 mt-1 font-medium">this week</span>
+</div>
+</div>
+<div class="h-56 w-full relative mt-2">
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-30">
+<div class="w-full h-px bg-white/20 border-t border-dashed border-white/30"></div>
+<div class="w-full h-px bg-white/20 border-t border-dashed border-white/30"></div>
+<div class="w-full h-px bg-white/20 border-t border-dashed border-white/30"></div>
+<div class="w-full h-px bg-white/20 border-t border-dashed border-white/30"></div>
+</div>
+<svg class="w-full h-full overflow-visible" viewBox="0 0 350 150">
+<defs>
+<linearGradient id="projectedGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#57f906" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#57f906" stop-opacity="0"></stop>
+</linearGradient>
+<filter height="140%" id="neonGlow" width="140%" x="-20%" y="-20%">
+<feGaussianBlur result="coloredBlur" stdDeviation="4"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="coloredBlur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<path d="M0,40 C50,50 100,70 150,90 C200,110 250,120 350,140" fill="none" stroke="rgba(255,255,255,0.4)" stroke-dasharray="4,4" stroke-width="2"></path>
+<path d="M180,95 C220,105 280,115 350,135 L350,150 L180,150 Z" fill="url(#projectedGradient)"></path>
+<path d="M180,95 C220,105 280,115 350,135" fill="none" stroke="#57f906" stroke-opacity="0.6" stroke-width="2"></path>
+<path d="M0,30 C40,30 60,60 90,55 C120,50 150,90 180,95" fill="none" filter="url(#neonGlow)" stroke="#57f906" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="180" cy="95" fill="#161616" filter="url(#neonGlow)" r="6" stroke="#57f906" stroke-width="3"></circle>
+<g transform="translate(265, 115)">
+<line opacity="0.6" stroke="#57f906" stroke-dasharray="2,2" stroke-width="1" x1="0" x2="0" y1="0" y2="35"></line>
+<circle fill="#161616" r="4" stroke="#57f906" stroke-width="2"></circle>
+<g transform="translate(0, -26)">
+<rect fill="#57f906" fill-opacity="0.9" filter="url(#neonGlow)" height="18" rx="6" width="56" x="-28" y="-9"></rect>
+<text dy="3.5" fill="#000" font-size="10" font-weight="bold" text-anchor="middle" x="0" y="0">-10 lbs</text>
+<path d="M-4,5 L4,5 L0,9 Z" fill="#57f906" fill-opacity="0.9"></path>
+</g>
+</g>
+</svg>
+<div class="absolute bottom-[-24px] w-full flex justify-between text-[11px] text-gray-400 font-mono font-medium">
+<span>Oct 1</span>
+<span>Oct 15</span>
+<span class="text-white font-bold drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">Today</span>
+<span class="text-primary font-bold drop-shadow-[0_0_5px_rgba(87,249,6,0.5)]">Dec 12</span>
+</div>
+</div>
+<div class="flex gap-5 justify-center mt-7">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary shadow-neon"></div>
+<span class="text-xs text-white font-medium">Actual</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-1 bg-gray-400 border-t border-dashed border-gray-200"></div>
+<span class="text-xs text-gray-300">Target</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded bg-primary/20 border border-primary/50"></div>
+<span class="text-xs text-gray-300">AI Projected</span>
+</div>
+</div>
+<div class="mt-4 p-3 glass-panel-light rounded-xl border-l-2 border-primary/60 flex gap-3 items-start backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5 animate-pulse drop-shadow-neon-sm">query_stats</span>
+<div>
+<h4 class="text-xs font-bold text-white mb-1 uppercase tracking-wide">Coach's Advisory</h4>
+<p class="text-[11px] leading-relaxed text-gray-300">
+                        The <span class="text-primary font-bold">shaded area</span> represents metabolic variance. Consistent logging narrows this margin.
+                    </p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel rounded-3xl p-4 flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="absolute top-2 right-2 flex items-center gap-1 bg-yellow-500/20 px-1.5 py-0.5 rounded border border-yellow-500/40 shadow-[0_0_10px_rgba(234,179,8,0.2)] backdrop-blur-sm">
+<span class="material-symbols-outlined text-yellow-400 text-[10px]">bolt</span>
+<span class="text-[9px] font-bold text-yellow-300 uppercase tracking-wider">+50 XP</span>
+</div>
+<div class="relative w-20 h-20 mb-2 flex items-center justify-center mt-3">
+<svg class="w-full h-full transform -rotate-90">
+<circle cx="40" cy="40" fill="transparent" r="32" stroke="rgba(255,255,255,0.1)" stroke-width="6"></circle>
+<circle class="drop-shadow-[0_0_8px_rgba(87,249,6,0.6)]" cx="40" cy="40" fill="transparent" r="32" stroke="#57f906" stroke-dasharray="201.06" stroke-dashoffset="30.16" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="text-xl font-bold text-white drop-shadow-md">85%</span>
+</div>
+</div>
+<p class="text-xs text-gray-300 font-medium text-center uppercase tracking-wide">Consistency</p>
+</div>
+<div class="glass-panel rounded-3xl p-4 flex flex-col justify-between group">
+<div>
+<p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Goal Weight</p>
+<p class="text-2xl font-bold text-white drop-shadow-md">165.0 <span class="text-sm font-normal text-gray-400">lbs</span></p>
+</div>
+<div class="mt-2 pt-2 border-t border-white/5">
+<p class="text-xs text-gray-400 uppercase tracking-wide mb-1">Remaining</p>
+<p class="text-lg font-bold text-primary drop-shadow-[0_0_5px_rgba(87,249,6,0.5)]">17.4 lbs</p>
+</div>
+</div>
+</div>
+<section class="glass-panel rounded-3xl overflow-hidden">
+<div class="bg-white/5 p-4 border-b border-white/5 flex items-center gap-2 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary animate-pulse drop-shadow-neon-sm">auto_awesome</span>
+<h3 class="text-sm font-bold uppercase tracking-wider text-white">AI Coach Insights</h3>
+</div>
+<div class="p-5 flex flex-col gap-6">
+<div class="glass-panel-light rounded-2xl p-4 border-l-2 border-primary">
+<p class="text-sm leading-relaxed text-gray-200">
+                        Based on your current <strong class="text-white">5-day/week</strong> adherence, you are on track to hit your goal by <strong class="text-primary font-bold drop-shadow-[0_0_5px_rgba(87,249,6,0.4)]">Dec 12th</strong>.
+                    </p>
+</div>
+<div>
+<div class="flex justify-between items-end mb-4">
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-gray-300 uppercase">Adherence Simulation</span>
+<span class="text-[10px] text-gray-500">Drag to adjust projection</span>
+</div>
+<span class="text-sm font-bold text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/30 backdrop-blur-md shadow-neon-sm">5 Days</span>
+</div>
+<div class="relative h-12 flex items-center px-1">
+<div class="absolute w-full h-3 bg-black/40 rounded-full overflow-hidden border border-white/10 backdrop-blur-sm">
+<div class="h-full bg-gradient-to-r from-primary/20 via-primary/60 to-primary w-[65%] rounded-full shadow-[0_0_15px_rgba(87,249,6,0.3)]"></div>
+</div>
+<div class="absolute left-[65%] top-1/2 -translate-y-1/2 -translate-x-4 w-9 h-9 bg-white/10 backdrop-blur-xl rounded-full shadow-[0_0_20px_rgba(87,249,6,0.5)] flex items-center justify-center cursor-grab active:cursor-grabbing border border-primary z-20 group">
+<div class="w-8 h-8 rounded-full bg-primary/20 absolute animate-ping opacity-20"></div>
+<div class="w-1.5 h-3 border-x border-primary group-hover:scale-110 transition-transform"></div>
+</div>
+<div class="absolute w-full flex justify-between px-2 pointer-events-none opacity-40">
+<div class="w-0.5 h-2 bg-white rounded-full mt-6"></div>
+<div class="w-0.5 h-2 bg-white rounded-full mt-6"></div>
+<div class="w-0.5 h-2 bg-white rounded-full mt-6"></div>
+<div class="w-0.5 h-2 bg-white rounded-full mt-6"></div>
+<div class="w-0.5 h-2 bg-white rounded-full mt-6"></div>
+</div>
+</div>
+<div class="flex justify-between text-[10px] text-gray-400 font-mono mt-0 uppercase tracking-wider font-semibold">
+<span>Relaxed (3d)</span>
+<span class="text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">Current (5d)</span>
+<span>Athlete (7d)</span>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between px-2">
+<h3 class="text-sm font-bold uppercase tracking-wider text-gray-300 drop-shadow-sm">Weekly Weigh-ins</h3>
+<button class="text-primary text-xs font-bold hover:underline drop-shadow-neon-sm">View All</button>
+</div>
+<div class="glass-panel rounded-3xl overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-white/5 border-b border-white/5 text-xs text-gray-400 uppercase">
+<th class="p-4 font-medium w-1/3">Date</th>
+<th class="p-4 font-medium text-right w-1/3">Weight</th>
+<th class="p-4 font-medium text-right w-1/3">Change</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5 text-sm">
+<tr class="group hover:bg-white/10 transition-colors">
+<td class="p-4 text-gray-300 font-mono">Nov 10</td>
+<td class="p-4 text-white font-bold text-right font-mono">182.4</td>
+<td class="p-4 text-right">
+<div class="inline-flex items-center gap-1 text-primary bg-primary/10 px-2 py-0.5 rounded text-xs font-bold border border-primary/20 backdrop-blur-sm shadow-neon-sm">
+<span class="material-symbols-outlined text-[10px]">trending_down</span>
+                                    1.2%
+                                </div>
+</td>
+</tr>
+<tr class="group hover:bg-white/10 transition-colors">
+<td class="p-4 text-gray-300 font-mono">Nov 03</td>
+<td class="p-4 text-white font-bold text-right font-mono">184.6</td>
+<td class="p-4 text-right">
+<div class="inline-flex items-center gap-1 text-primary bg-primary/10 px-2 py-0.5 rounded text-xs font-bold border border-primary/20 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[10px]">trending_down</span>
+                                    0.5%
+                                </div>
+</td>
+</tr>
+<tr class="group hover:bg-white/10 transition-colors">
+<td class="p-4 text-gray-300 font-mono">Oct 27</td>
+<td class="p-4 text-white font-bold text-right font-mono">185.5</td>
+<td class="p-4 text-right">
+<div class="inline-flex items-center gap-1 text-red-400 bg-red-500/10 px-2 py-0.5 rounded text-xs font-bold border border-red-500/20 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[10px]">trending_up</span>
+                                    0.2%
+                                </div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+
+</body></html>

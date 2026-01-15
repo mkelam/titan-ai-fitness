@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparison Engine</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "glass-border": "rgba(255, 255, 255, 0.15)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
+                        'glass-shine': 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }.glass-panel {
+            background: rgba(5, 8, 10, 0.85);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }.frosted-heavy {
+            background: rgba(15, 23, 35, 0.92);
+            backdrop-filter: blur(48px);
+            -webkit-backdrop-filter: blur(48px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+        }
+        .glass-button {
+            background: rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+        }
+        .glass-toggle-active {
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.08);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black min-h-screen text-white font-display overflow-x-hidden selection:bg-primary selection:text-black">
+<div class="fixed inset-0 z-0 select-none pointer-events-none">
+<img alt="Male fitness model background" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5H_NcBr4NGuk64fKwEASo8Z7E7T9xIFWEgqjWhrWL-iEKZmUfMHURV1IYJ9jO022Hrxp3OyjnzooRmT2nkGtADHNuZMW1l1mJA5sf7CZdj81ZA90c-CRLIW6i5emimAz22d67-yVj0JC9AURDlcM-FSswvPEsuHEFFwhdFs_LTlLTccjUBZBoa2NO4a9GgyV_Q4OE3o8LGpZ63JE24a_okwhJTWfm3xFgMr1xa7qguLW4iN6cvMMyN6Pfr1lyPxMEUQOOwtLvIvgG"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90"></div>
+<div class="absolute inset-0 bg-[#0a110d]/40 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 flex h-full w-full flex-col max-w-md mx-auto pb-6">
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 z-50">
+<button class="glass-button text-white flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12 drop-shadow-md">Comparison Engine</h2>
+</div>
+<div class="flex flex-col gap-6 px-4 pt-2">
+<div class="flex w-full items-center justify-center rounded-full bg-black/60 backdrop-blur-lg border border-white/10 p-1">
+<label class="flex cursor-pointer h-10 grow items-center justify-center overflow-hidden rounded-full px-4 transition-all duration-300 has-[:checked]:glass-toggle-active">
+<span class="truncate text-sm font-medium leading-normal text-slate-400 has-[:checked]:text-white">This Week</span>
+<input checked="" class="hidden" name="timeframe" type="radio" value="This Week"/>
+</label>
+<label class="flex cursor-pointer h-10 grow items-center justify-center overflow-hidden rounded-full px-4 transition-all duration-300 has-[:checked]:glass-toggle-active">
+<span class="truncate text-sm font-medium leading-normal text-slate-400 has-[:checked]:text-white">Last Week</span>
+<input class="hidden" name="timeframe" type="radio" value="Last Week"/>
+</label>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 rounded-2xl p-5 glass-panel">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-xl">monitor_weight</span>
+<p class="text-sm font-medium leading-normal">Body Weight</p>
+</div>
+<div>
+<p class="tracking-tight text-3xl font-bold leading-tight text-white drop-shadow-lg">185 <span class="text-lg font-medium text-slate-400">lbs</span></p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-base text-primary" style="text-shadow: 0 0 10px rgba(19,236,91,0.5);">trending_down</span>
+<p class="text-primary text-sm font-medium leading-normal" style="text-shadow: 0 0 10px rgba(19,236,91,0.3);">-1.2 lbs</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-2xl p-5 glass-panel">
+<div class="flex items-center gap-2 text-slate-300">
+<span class="material-symbols-outlined text-xl">fitness_center</span>
+<p class="text-sm font-medium leading-normal">Volume</p>
+</div>
+<div>
+<p class="tracking-tight text-3xl font-bold leading-tight text-white drop-shadow-lg">12.4k <span class="text-lg font-medium text-slate-400">kg</span></p>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-base text-red-400">trending_down</span>
+<p class="text-red-400 text-sm font-medium leading-normal">-5%</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-3xl glass-panel p-6">
+<div class="flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<p class="text-slate-300 text-sm font-medium uppercase tracking-wider">Weight Trend</p>
+<p class="tracking-tight text-2xl font-bold leading-tight text-white">185 lbs</p>
+</div>
+<div class="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-bold backdrop-blur-sm">
+                    Weekly View
+                </div>
+</div>
+<div class="relative w-full h-40 mt-2">
+<svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 350 150">
+<defs>
+<linearGradient id="gradientPrimary" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#13ec5b" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#13ec5b" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<path d="M0,100 Q50,90 100,60 T200,80 T350,40 V150 H0 Z" fill="url(#gradientPrimary)"></path>
+<path d="M0,100 Q50,90 100,60 T200,80 T350,40" fill="none" stroke="#13ec5b" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" style="filter: drop-shadow(0 0 4px rgba(19,236,91,0.5));"></path>
+<circle class="fill-[#102216] stroke-primary stroke-2" cx="0" cy="100" r="4"></circle>
+<circle class="fill-[#102216] stroke-primary stroke-2" cx="100" cy="60" r="4"></circle>
+<circle class="fill-[#102216] stroke-primary stroke-2" cx="200" cy="80" r="4"></circle>
+<circle class="fill-primary stroke-white stroke-2" cx="350" cy="40" r="6"></circle>
+</svg>
+<div class="flex justify-between mt-4 text-xs font-medium text-slate-400">
+<span>Mon</span>
+<span>Wed</span>
+<span>Fri</span>
+<span class="text-white font-bold">Today</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<h2 class="tracking-tight text-xl font-bold leading-tight text-white drop-shadow-md">Physique Scan</h2>
+<span class="text-xs font-medium text-primary bg-primary/10 border border-primary/20 px-2 py-1 rounded-md backdrop-blur-sm">AI Analyzed</span>
+</div>
+<div class="relative h-64 w-full rounded-3xl overflow-hidden group select-none shadow-2xl ring-1 ring-white/10">
+<div class="absolute inset-0 grid grid-cols-2">
+<div class="relative w-full h-full overflow-hidden border-r border-white/20 bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-60 grayscale mix-blend-luminosity" data-alt="Athletic male torso front view in gym lighting, before progress" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5hRPaWDAkdr0IBSgVp4UkNLV0ZZfqu1_Asg5oXeuH_LoY7veYwB0qlETw3kVnOaF5f2NKT_u_ZSn8k_fU_AfCQBou23CwVuedTaHCt-mVF9LhJP6hiy6KeVFvlhuZWv6Zqjxprlhn_3Ib2aPf3v7HCWHguAhwnAWtlnUWjq9iKrFwp0WI7gJp8se6E7v5mgJD3MvEDyYkyy4mkxTFsHC5zMSczO0mTcEHtslyEOBLzD9TgZOBYQOYkpQ5PIjwq4mQ4yMufJywFMkM"/>
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-white border border-white/10">
+                            Last Week
+                        </div>
+</div>
+<div class="relative w-full h-full overflow-hidden bg-slate-900">
+<img class="absolute inset-0 h-full w-full object-cover opacity-90" data-alt="Athletic male torso front view in gym lighting, after progress with slightly more definition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGITH8YnYXRqMl8y_9AydX7ak3lPT4R2k99sWoFAJCPHZwl-mHxX0y25HUZzTDBrJF7XuBNKo_Cap5i9rDlcF2ROBMSU9yFZcEq1Ia7M-ovog8o-ZxzXGS-UBaocmZqZlZj030yJ5Dpu1GcWlgJyN33mclH_lHbnAaUAPKobeJIoZNxj6r0dHhv7h3XuO605G2PiyNTq_x_Z8GGT2DNnYjnr7LYqGGZoOf9YCrjFSWycbt6udl8fOKACDcL4sLIiPAyuqt9bQBQYED"/>
+<div class="absolute top-3 right-3 bg-primary/90 text-black px-3 py-1 rounded-full text-xs font-bold shadow-[0_0_15px_rgba(19,236,91,0.4)]">
+                            This Week
+                        </div>
+</div>
+</div>
+<div class="absolute inset-y-0 left-1/2 -ml-0.5 w-1 bg-white/40 backdrop-blur-md flex items-center justify-center pointer-events-none shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+<div class="h-12 w-12 bg-white/20 backdrop-blur-lg rounded-full border border-white/40 shadow-[0_4px_20px_rgba(0,0,0,0.5)] flex items-center justify-center text-white relative">
+<div class="absolute inset-0 rounded-full bg-gradient-to-tr from-white/20 to-transparent pointer-events-none"></div>
+<span class="material-symbols-outlined text-xl drop-shadow-md">code</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-3xl p-[1px] shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/40 via-white/10 to-transparent opacity-100 rounded-3xl"></div>
+<div class="relative flex flex-col gap-4 rounded-[23px] frosted-heavy p-6 h-full">
+<div class="absolute inset-0 bg-glass-shine opacity-50 rounded-[23px] pointer-events-none"></div>
+<div class="relative flex items-start gap-4 z-10">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 text-primary shadow-[0_0_15px_rgba(19,236,91,0.1)]">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-base font-bold text-white drop-shadow-sm">Coach Insight</h3>
+<p class="text-sm text-slate-200 leading-relaxed font-medium">
+                            You're crushing your strength goals, but recovery is low. HRV dropped 15%.
+                        </p>
+</div>
+</div>
+<div class="relative h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent z-10"></div>
+<div class="relative flex items-center justify-between gap-4 z-10">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-wider font-bold text-slate-300">Recommendation</span>
+<span class="text-sm font-bold text-white tracking-wide">2-Day Reset Plan</span>
+</div>
+<button class="relative overflow-hidden flex items-center gap-2 rounded-full bg-primary/90 px-5 py-2.5 text-sm font-bold text-black transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(19,236,91,0.6)] border-t border-white/40 shadow-[0_4px_15px_rgba(0,0,0,0.3)]">
+<div class="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent pointer-events-none"></div>
+<span class="relative z-10">Activate</span>
+<span class="material-symbols-outlined text-lg relative z-10">bolt</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mb-4 flex flex-col gap-4 rounded-3xl bg-black/80 backdrop-blur-2xl border border-white/10 p-6 shadow-2xl">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-white">XP Earned</h3>
+<div class="flex items-center gap-1 text-primary drop-shadow-[0_0_8px_rgba(19,236,91,0.5)]">
+<span class="text-2xl font-bold">+450</span>
+<span class="text-xs font-bold uppercase tracking-wider opacity-80">XP</span>
+</div>
+</div>
+<div class="h-2 w-full overflow-hidden rounded-full bg-white/5 border border-white/5">
+<div class="h-full w-3/4 rounded-full bg-gradient-to-r from-primary/40 via-primary to-white shadow-[0_0_10px_rgba(19,236,91,0.6)]"></div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-2">
+<div class="flex flex-col items-center gap-1 rounded-xl bg-white/5 border border-white/5 p-3 text-center hover:bg-white/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-primary text-xl drop-shadow-sm">fitness_center</span>
+<span class="text-xs text-slate-400">Strength</span>
+<span class="text-sm font-bold text-white">+200</span>
+</div>
+<div class="flex flex-col items-center gap-1 rounded-xl bg-white/5 border border-white/5 p-3 text-center hover:bg-white/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-blue-400 text-xl drop-shadow-sm">calendar_month</span>
+<span class="text-xs text-slate-400">Streak</span>
+<span class="text-sm font-bold text-white">+150</span>
+</div>
+<div class="flex flex-col items-center gap-1 rounded-xl bg-white/5 border border-white/5 p-3 text-center hover:bg-white/10 transition-colors cursor-default">
+<span class="material-symbols-outlined text-orange-400 text-xl drop-shadow-sm">restaurant</span>
+<span class="text-xs text-slate-400">Diet</span>
+<span class="text-sm font-bold text-white">+100</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

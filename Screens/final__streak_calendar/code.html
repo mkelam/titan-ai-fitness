@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Streak Calendar</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom neon glow effects for the specific look requested */
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(19, 236, 91, 0.6);
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 10px rgba(19, 236, 91, 0.5);
+        }
+        .glass-panel {
+            background: rgba(16, 34, 22, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-panel-light {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased text-white bg-background-dark h-full min-h-screen selection:bg-primary selection:text-black">
+<div class="relative flex h-full w-full flex-col min-h-screen overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="fixed inset-0 z-0 w-full h-full">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Male fitness model lifting weights in a dark gym environment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqky5ayR4FpT5XRizcfufT5pzVXLEVuJcvUGS-NUEB3fPRhgSuyNplEfJBOhr0yjJGk9kDhll0pl1mEUFLvdpcuwXmvNwFN4hal1RFF1_LBxUUmbIjK4KuDrUtlcvSw-2MrTaZ5T1tWNsBF6cS3EKL5-tLcZAe9w3IvWNB700Upy_Mp3BJEh8xLqweQLSurjhB51oGglBoYEP6MaQEyIOGdR93-3v4wovpB-eQ6CaAKauLNVl-KI3FfJl5CgSGhTGw2Z352kEgjj-j');">
+</div>
+<!-- Heavy dark gradient overlay for text readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-[#102216]/80 to-[#102216]/95"></div>
+</div>
+<!-- Content Wrapper -->
+<div class="relative z-10 flex flex-col flex-1 px-4 pb-24 pt-2 max-w-md mx-auto w-full h-full">
+<!-- Header -->
+<div class="flex items-center justify-between py-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full glass-panel-light active:scale-95 transition-transform text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold tracking-wide text-white/90 uppercase text-sm">Streak Calendar</h2>
+<button class="flex items-center justify-center w-10 h-10 rounded-full glass-panel-light active:scale-95 transition-transform text-white">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Streak Hero Section -->
+<div class="flex flex-col items-center justify-center py-6">
+<div class="relative mb-2">
+<!-- Flame Glow Behind -->
+<div class="absolute inset-0 bg-primary/40 blur-[40px] rounded-full"></div>
+<span class="material-symbols-outlined text-[80px] text-primary relative z-10 animate-pulse neon-text-glow fill-1" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">local_fire_department</span>
+</div>
+<h1 class="text-5xl font-bold text-white tracking-tight mb-1 neon-text-glow">12 Days</h1>
+<p class="text-white/70 text-base font-normal">Keep the fire burning!</p>
+</div>
+<!-- Calendar Glass Panel -->
+<div class="glass-panel rounded-[2rem] p-6 mb-6">
+<!-- Month Navigation -->
+<div class="flex items-center justify-between mb-6">
+<button class="text-white/60 hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="text-xl font-bold tracking-wide">October 2023</span>
+<button class="text-white/60 hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Days of Week -->
+<div class="grid grid-cols-7 gap-y-4 mb-2">
+<div class="text-center text-xs font-bold text-white/40 uppercase tracking-widest">S</div>
+<div class="text-center text-xs font-bold text-white/40 uppercase tracking-widest">M</div>
+<div class="text-center text-xs font-bold text-white/40 uppercase tracking-widest">T</div>
+<div class="text-center text-xs font-bold text-white/40 uppercase tracking-widest">W</div>
+<div class="text-center text-xs font-bold text-white/40 uppercase tracking-widest">T</div>
+<div class="text-center text-xs font-bold text-white/40 uppercase tracking-widest">F</div>
+<div class="text-center text-xs font-bold text-white/40 uppercase tracking-widest">S</div>
+</div>
+<!-- Days Grid -->
+<div class="grid grid-cols-7 gap-y-4 items-center justify-items-center">
+<!-- Empty previous month days -->
+<div class="h-10 w-10"></div>
+<div class="h-10 w-10"></div>
+<!-- Day 1 - 12 (Completed Streak) -->
+<!-- Using a loop logic manually for the 12 days -->
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">1</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">2</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">3</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">4</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">5</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">6</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">7</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">8</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">9</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">10</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow">11</button>
+<!-- Today (Day 12 - Focused) -->
+<div class="relative flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/30 blur-md rounded-full"></div>
+<button class="relative h-10 w-10 flex items-center justify-center rounded-full bg-primary text-background-dark font-bold text-sm neon-glow ring-2 ring-white/50">12</button>
+</div>
+<!-- Future Days (Ghosted) -->
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">13</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">14</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">15</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">16</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">17</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">18</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">19</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">20</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">21</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">22</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">23</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">24</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">25</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">26</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">27</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">28</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">29</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">30</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 text-white/30 font-medium text-sm hover:bg-white/10 transition-colors">31</button>
+</div>
+</div>
+<!-- Milestones Panel -->
+<div class="glass-panel-light rounded-[2rem] p-5 w-full">
+<h3 class="text-sm font-bold text-white mb-4 uppercase tracking-widest px-1">Next Milestones</h3>
+<!-- Milestone 1 -->
+<div class="flex items-center gap-4 mb-5">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary text-2xl">trophy</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-end mb-1.5">
+<span class="text-white font-bold text-base">14 Day Warrior</span>
+<span class="text-primary text-xs font-bold">85%</span>
+</div>
+<div class="w-full bg-white/10 rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full neon-glow" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="flex items-center gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/5 grayscale opacity-50">
+<span class="material-symbols-outlined text-white text-2xl">military_tech</span>
+</div>
+<div class="flex-1 opacity-60">
+<div class="flex justify-between items-end mb-1.5">
+<span class="text-white font-bold text-base">Monthly Master</span>
+<span class="text-white/60 text-xs font-bold">40%</span>
+</div>
+<div class="w-full bg-white/10 rounded-full h-1.5">
+<div class="bg-white/30 h-1.5 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-[360px]">
+<div class="glass-panel backdrop-blur-2xl rounded-full h-16 px-6 flex items-center justify-between shadow-2xl">
+<button class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors gap-1 w-12">
+<span class="material-symbols-outlined text-2xl">home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary transition-colors gap-1 w-12 relative">
+<!-- Active indicator dot -->
+<span class="absolute -top-3 w-1 h-1 bg-primary rounded-full shadow-[0_0_8px_#13ec5b]"></span>
+<span class="material-symbols-outlined text-2xl fill-1" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors gap-1 w-12">
+<span class="material-symbols-outlined text-2xl">fitness_center</span>
+</button>
+<button class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors gap-1 w-12">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

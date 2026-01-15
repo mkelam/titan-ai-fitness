@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Progress Check-in</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        /* Hide scrollbar for clean UI */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased overflow-hidden selection:bg-primary selection:text-black">
+<!-- Main Container -->
+<div class="relative flex h-screen w-full flex-col overflow-y-auto">
+<!-- Background Image with Overlay -->
+<div class="fixed inset-0 z-0">
+<img alt="Athletic male fitness model training in a dark gym environment" class="h-full w-full object-cover object-center" data-alt="Athletic male fitness model training in a dark gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALQ0TJQazgxOAxgBJ32MQlp38uOxOdAjAtGhQV1B2hJg9zNS0RfT8IHDLG3neOZVZXnwgCKR0O8TJ9ardBQKWfSIHGM1YF0hx8hs8uFcrcoa3un1kifpFTaf6EMU3_ObxkQzZ3UPG1RFh8H8MbGYfUWNOas15FK9xnMJuw_DtEqNfUR_E0exme2aIZFfu97VUSSnc-iZXSJfaBh1IrrBNUae2OUYb73X0dU99sbZGiE7qCLPDf6RoK04a1egHVfrwBk9zHvuhRn10p"/>
+<div class="absolute inset-0 bg-background-dark/80 backdrop-blur-[2px]"></div>
+<!-- Decorative Gradient Blob -->
+<div class="absolute top-[-10%] right-[-20%] h-[500px] w-[500px] rounded-full bg-primary/20 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-20%] h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[100px]"></div>
+</div>
+<!-- Foreground Content -->
+<div class="relative z-10 flex min-h-full flex-col p-5 pb-8">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between py-2 mb-6">
+<div class="w-10"></div> <!-- Spacer -->
+<h2 class="text-white text-lg font-bold tracking-tight">Week 4 Check-in</h2>
+<button class="group flex h-10 w-10 items-center justify-center rounded-full glass-panel hover:bg-white/10 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-white transition-transform group-hover:rotate-90">close</span>
+</button>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex-1 flex flex-col gap-6">
+<!-- Weight Input Module -->
+<section class="glass-panel rounded-2xl p-6 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-50"></div>
+<div class="flex flex-col items-center justify-center gap-2">
+<label class="text-sm font-medium uppercase tracking-widest text-white/50">Current Weight</label>
+<div class="flex items-baseline justify-center gap-1 relative w-full">
+<input class="glass-input bg-transparent text-center text-[5rem] font-bold text-white border-none p-0 w-auto max-w-[240px] leading-none tracking-tighter placeholder-white/20 caret-primary" inputmode="decimal" type="text" value="78.4"/>
+<span class="text-2xl font-medium text-white/40 mb-2">kg</span>
+</div>
+<!-- Stats Pill -->
+<div class="mt-2 flex items-center gap-3 rounded-full bg-black/40 border border-white/10 px-4 py-2 backdrop-blur-md">
+<div class="flex items-center text-primary">
+<span class="material-symbols-outlined text-lg">trending_down</span>
+<span class="ml-1 text-sm font-bold">1.2 kg</span>
+</div>
+<div class="h-3 w-px bg-white/20"></div>
+<span class="text-xs font-medium text-white/60">Since last week</span>
+</div>
+</div>
+</section>
+<!-- Photo Comparison Section -->
+<section class="flex flex-col gap-3">
+<div class="flex items-end justify-between px-1">
+<h3 class="text-xl font-bold text-white">Progress Photos</h3>
+<!-- Privacy Toggle -->
+<label class="flex items-center gap-3 cursor-pointer group">
+<span class="text-xs font-medium text-white/60 transition-colors group-hover:text-white">Private Mode</span>
+<div class="relative h-6 w-11 rounded-full glass-panel transition-colors group-hover:bg-white/5">
+<input class="peer sr-only" type="checkbox"/>
+<div class="absolute left-[2px] top-[2px] h-5 w-5 rounded-full bg-white/80 shadow-sm transition-all peer-checked:bg-primary peer-checked:left-[22px]"></div>
+</div>
+</label>
+</div>
+<!-- Comparison Slider -->
+<div class="relative h-80 w-full overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
+<!-- Background Image (Before) -->
+<img class="absolute inset-0 h-full w-full object-cover grayscale-[30%]" data-alt="Before progress photo showing upper body physique" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgO2RLhBX_EXWIhuG0QHI3uezI_NjTS_BkVYw9AUPHdrQIlBSrpCN8GwoWmYulL5ZO4hnLaC2I_k02pHgOlJOWtZiLWroKObHX6gQlrKVdx6-tXT3w1EGccTufutAdzn6hm9fPrmsf94Wr0wiBrI-yFLdZAR0BvjPbD60yLBQfz-qYUdcvQPpY1jOj0PevPIvrbCkjEqC5ZEnPKm4X80jiAFb8hEwFvZHvidOBMf3BXt9wtJ_6Gu08h0lkeE1w35lRCYD5fHXAACtZ"/>
+<div class="absolute top-4 left-4 rounded-md bg-black/60 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md border border-white/10">
+                            Jan 1 (Start)
+                        </div>
+<!-- Foreground Image (Current) - Masked -->
+<div class="absolute inset-y-0 right-0 w-1/2 overflow-hidden border-l border-white/60 bg-black/50 shadow-[-10px_0_30px_rgba(0,0,0,0.5)]">
+<!-- Image is double width and shifted left to align -->
+<div class="relative h-full w-[200%] -left-full">
+<img class="absolute inset-0 h-full w-full object-cover" data-alt="Current progress photo showing improved definition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOTSMD8miH-W-Kk8pN4ErVGrx-BjP2z2QGQ0rbqdkfIBEJxIghRGK4Ovd9yYXx5lYgs_YHNR2wnqEYmnUh02lCVOuybUSR4IZR_UyE38QhzokUALb4bXLre5hwl2QIExQ4BnUirCdHoH-ZH6PFKEJINl-zlnoduRa7ELmI9v1UMyuBfUQ8cV6cm9asSpGvOoinv7EtP62dNLPv4ONX8djLf8mnarTo2yERGs0pUTmso79qrjm_sc7H2lmH9xIKtJPdOfvKU-K_APWU"/>
+</div>
+<div class="absolute top-4 right-4 rounded-md bg-primary px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-background-dark shadow-lg">
+                                Today
+                            </div>
+</div>
+<!-- Slider Handle -->
+<div class="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.4)] z-20">
+<span class="material-symbols-outlined text-background-dark text-lg">code</span>
+</div>
+</div>
+</section>
+<!-- Coach Insight Panel -->
+<section class="glass-panel rounded-2xl p-5 flex gap-4 items-start shadow-lg mt-auto">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 shadow-[0_0_15px_rgba(19,236,91,0.15)]">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-sm font-bold text-white">Coach Insight</h4>
+<p class="font-body text-sm font-light leading-relaxed text-white/80">
+                            Great definition in the deltoids. Your macros adjustment is working perfectly. Keep hydration high for the next phase.
+                        </p>
+</div>
+</section>
+<!-- Action Button -->
+<div class="pt-2 pb-4">
+<button class="relative w-full overflow-hidden rounded-xl bg-primary py-4 text-center font-display text-lg font-bold text-background-dark shadow-[0_0_25px_rgba(19,236,91,0.4)] transition-all hover:scale-[1.01] hover:shadow-[0_0_35px_rgba(19,236,91,0.6)] active:scale-[0.99]">
+<span class="relative z-10 flex items-center justify-center gap-2">
+                            Save Progress
+                            <span class="material-symbols-outlined font-bold">check</span>
+</span>
+<!-- Glossy effect on button -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+<div class="absolute top-0 left-0 h-[2px] w-full bg-white/40"></div>
+</button>
+</div>
+</main>
+</div>
+</div>
+</body></html>

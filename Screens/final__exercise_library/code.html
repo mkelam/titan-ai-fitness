@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exercise Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "glass": "rgba(255, 255, 255, 0.05)",
+                        "glass-high": "rgba(255, 255, 255, 0.1)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-card {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display antialiased overflow-x-hidden">
+<!-- Main Background Image -->
+<div class="fixed inset-0 w-full h-full z-0">
+<div class="absolute inset-0 bg-background-dark/80 z-10"></div>
+<div class="w-full h-full bg-cover bg-center opacity-60 mix-blend-overlay" data-alt="Intense male fitness model working out in dark gym lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9empX3nHRLAPmWcNTfF_xf9pXD04xA5qwjk1Srldpd1TiI78Ps58cYNXJ0LzWGaojSlerYSVvmgksA9zs6MoHja1GPnlULQHXvkOM3ueH2UJnel8sOjdBJ6ZvSQLCJop0ioWjKDkqvKAj07ff4tAq7CemWn9kogyjDA5xNYmOQAGytp8sDdOxHwS703agU3kLWmgK3aFTYM_ulboD4CYrO5ZlifVTh9X9gJKHoBA5fKaNGIaJRz3M8x0OrCouQ_2w3pOZDaqljsTp');">
+</div>
+<!-- Gradient Overlay for readability at bottom -->
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/50 to-transparent z-10"></div>
+</div>
+<!-- App Content -->
+<div class="relative z-20 flex flex-col min-h-screen pb-24">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 pt-12 pb-4">
+<div>
+<h1 class="text-3xl font-bold tracking-tight text-white drop-shadow-lg">Exercise <span class="text-primary">Library</span></h1>
+<p class="text-white/60 text-sm font-body">Find the perfect movement</p>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full glass-card hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white" style="font-size: 24px;">tune</span>
+</button>
+</header>
+<!-- Search Bar -->
+<div class="px-6 mb-6">
+<div class="glass-card rounded-2xl flex items-center h-14 px-4 transition-all focus-within:border-primary/50 focus-within:bg-white/10 group">
+<span class="material-symbols-outlined text-white/50 group-focus-within:text-primary transition-colors" style="font-size: 24px;">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-white placeholder-white/40 w-full ml-3 font-body text-base h-full" placeholder="Search exercises..." type="text"/>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar px-6 mb-8 snap-x">
+<button class="snap-start shrink-0 h-10 px-5 rounded-full bg-primary text-black font-semibold text-sm flex items-center justify-center shadow-[0_0_15px_rgba(19,236,91,0.3)]">
+                All
+            </button>
+<button class="snap-start shrink-0 h-10 px-5 rounded-full glass-card text-white hover:bg-white/10 font-medium text-sm flex items-center justify-center border border-white/5 transition-colors">
+                Chest
+            </button>
+<button class="snap-start shrink-0 h-10 px-5 rounded-full glass-card text-white hover:bg-white/10 font-medium text-sm flex items-center justify-center border border-white/5 transition-colors">
+                Back
+            </button>
+<button class="snap-start shrink-0 h-10 px-5 rounded-full glass-card text-white hover:bg-white/10 font-medium text-sm flex items-center justify-center border border-white/5 transition-colors">
+                Legs
+            </button>
+<button class="snap-start shrink-0 h-10 px-5 rounded-full glass-card text-white hover:bg-white/10 font-medium text-sm flex items-center justify-center border border-white/5 transition-colors">
+                Cardio
+            </button>
+<button class="snap-start shrink-0 h-10 px-5 rounded-full glass-card text-white hover:bg-white/10 font-medium text-sm flex items-center justify-center border border-white/5 transition-colors">
+                HIIT
+            </button>
+</div>
+<!-- Exercise Grid -->
+<div class="px-6 grid grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="group relative rounded-2xl overflow-hidden glass-card aspect-[3/4] cursor-pointer active:scale-95 transition-transform duration-200">
+<!-- Video/Image Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Man performing bench press with barbell on bench" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtAlro-rXEpRrVQYq2gDV9d44xVmB4tXvX7DpiZXh6vnf3fRjfs94yzzP-7Kczo5NdhsEc_r3NtbW1mptpTww2IBfYgEaDdMTRR5sPPBr4n-d6A27T17eb0Stp0ClgUM0334FV-fjr_RdoX_42d8mE4rDvMoD834nLnFcrlgwV__fewcS95dO-8UllnZGK4Cyk0yvNOTskqpZVwVu3j6d-HHKXz470AT4_F1DBU7IwaOdU5SpKDsetU6_YO1OpJE_PXJkBDa7KVJjH');">
+</div>
+<!-- Play Icon Hint -->
+<div class="absolute top-3 right-3 size-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-size: 18px;">play_arrow</span>
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<!-- Content -->
+<div class="absolute bottom-0 left-0 w-full p-4">
+<div class="flex gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-primary border border-primary/20">Chest</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-tight mb-1">Bench Press</h3>
+<p class="text-white/60 text-xs font-body flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">signal_cellular_alt</span>
+                        Intermediate
+                    </p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative rounded-2xl overflow-hidden glass-card aspect-[3/4] cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Athlete preparing to lift heavy barbell for deadlift" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmFN_Pe0K64KL4hSzJJpIctMb0KWw2ZwCR4TNAnG9IpgvZ90xgYC2f3GMDbqnwCPs-XlfhJrhyXg7cSG5bjbPWgX-4iPdHqBppawlb4fgWTrJwZk6qQyGgzTUv_dAgCjZHt_fX2650yCjhpE1J6akLH8EXe09_lVHIUiyyVbaLVGbCg_N0V0U-r7M-_Zi4kUaf0g_-Gqfz58fds90qf6nWGpToOIjuIuuTDV-BaIRqRsytahS9UaXKNsL1w4aGqvUKxqV2XKwnuRpQ');">
+</div>
+<div class="absolute top-3 right-3 size-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-size: 18px;">play_arrow</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-4">
+<div class="flex gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Back</span>
+<span class="px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Legs</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-tight mb-1">Deadlift</h3>
+<p class="text-white/60 text-xs font-body flex items-center gap-1">
+<span class="material-symbols-outlined text-red-500" style="font-size: 14px;">signal_cellular_alt</span>
+                        Advanced
+                    </p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative rounded-2xl overflow-hidden glass-card aspect-[3/4] cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Person doing pushups on floor in gym" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlcQY2fPBpXl2KjaU17zNvu0k0Sd5-Qvl7djnXZuqfMkG2KVT37DuNE7OXnf1IZWeUVcOnUaUfKcYkX7n_frWhPnrBNZqBT9zeq7iPSBOWqJC9cxSLPfhBjdRVSEWBbIkkkuosUwYdDE46SbQxEZN7qH23pcbS-nGKp4-m1FUMlUWfO-um-v4UnsGI3DaBm_AW8gDUcY3IWf_lRz9JIgd7yu9Q98u75GWbwV9d5IECsxFaZFW4-KNkFLY9XuOhEq5J3R0ZLPGxH4nt');">
+</div>
+<div class="absolute top-3 right-3 size-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-size: 18px;">play_arrow</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-4">
+<div class="flex gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-primary border border-primary/20">Chest</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-tight mb-1">Push-up</h3>
+<p class="text-white/60 text-xs font-body flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">signal_cellular_1_bar</span>
+                        Beginner
+                    </p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative rounded-2xl overflow-hidden glass-card aspect-[3/4] cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Female athlete performing a squat with weights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBh-gk0skxkcGpEj4HSpgbFp08hpZmqrPmFNpX76T_2l4J6Zkj1vgsHDwTMd4nANe2L_rrv9jZZsGWJJdd3M_L1Wg5UswPYYJBNc9jMypOJ57c-qdqOkLNgQJ_gDWIRD9rnPF4WANMKC4id5d434nxnwwSzEV4b7OquWYw-TCdDMTCrmgXyVp7TXMz4dLxkwSzaIj28vw-GGQCNFhViHRdd90UzHjI9a8qpGIyCC4mgx8nobtVYJKri94PyUlJlQQbDlEnyamsvMBWx');">
+</div>
+<div class="absolute top-3 right-3 size-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-size: 18px;">play_arrow</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-4">
+<div class="flex gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Legs</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-tight mb-1">Squat</h3>
+<p class="text-white/60 text-xs font-body flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">signal_cellular_alt</span>
+                        Intermediate
+                    </p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group relative rounded-2xl overflow-hidden glass-card aspect-[3/4] cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Man hanging from pull up bar showing back muscles" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIorqhuBKCuYqTBspAhv8oc0JiyOTg1O1z4K9yNtZcoWKzXoHG1Jopva2hP1BRsk3C2zvGxLbzsvWXzXIhCeu42FyXlT4o3H23pYo5c-O00U5DvKSFrJ9KC5Maqpde81cth7MT5wwFYf71-0rN0cxx40PmzI1ULG_2oolp3bWR5n2efaVB9lqAyIBQR5vI1gpox9UTXt3vBcZD68ud4lv5Mr1qCGA8rIR--fWa77ol_U3xn0gSdthAcMo3HivctKCVBXWQ3pEoskhr');">
+</div>
+<div class="absolute top-3 right-3 size-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-size: 18px;">play_arrow</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-4">
+<div class="flex gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Back</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-tight mb-1">Pull-up</h3>
+<p class="text-white/60 text-xs font-body flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">signal_cellular_alt</span>
+                        Intermediate
+                    </p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group relative rounded-2xl overflow-hidden glass-card aspect-[3/4] cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Person holding dumbbell doing row exercise" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmiAqRv9ZNdBZ1VJQtNNGojSAAkLJrhcEfuVbqg-FBkZUA0N9Cy019kXsXqwsXFhrwAKjoJYS9g4gaquFio_nR4Vz9MoB7u5S7jIxsJ6B-ml9yNeZSQDSadj_GJpWBbfSqcXVlgZfLpfJ0ffoaaUFdh8BCt2K28oSKy19116LCY5u3vkeM4pVFvuk3XkAEO1o18hjtdUCx3iPj3g18qBSeyBt4De-rj15K2RPc0k4L2SzbJI8m3S2B71InRknGc00lTMw1tvmszhjT');">
+</div>
+<div class="absolute top-3 right-3 size-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-size: 18px;">play_arrow</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-4">
+<div class="flex gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">Back</span>
+</div>
+<h3 class="text-white text-lg font-bold leading-tight mb-1">Dumbbell Row</h3>
+<p class="text-white/60 text-xs font-body flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-size: 14px;">signal_cellular_1_bar</span>
+                        Beginner
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 w-full z-50 p-4">
+<div class="glass-panel mx-auto max-w-md rounded-2xl h-16 flex items-center justify-around px-2 shadow-[0_-5px_30px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center w-14 h-full gap-1 group" href="#">
+<span class="material-symbols-outlined text-white/40 group-hover:text-white transition-colors">home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-full gap-1 group relative" href="#">
+<div class="absolute -top-6 bg-primary rounded-full p-3 shadow-[0_0_20px_rgba(19,236,91,0.5)] border-4 border-background-dark">
+<span class="material-symbols-outlined text-black font-bold">fitness_center</span>
+</div>
+<span class="text-[10px] text-primary mt-8 font-semibold">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-full gap-1 group" href="#">
+<span class="material-symbols-outlined text-white/40 group-hover:text-white transition-colors">bar_chart</span>
+</a>
+<a class="flex flex-col items-center justify-center w-14 h-full gap-1 group" href="#">
+<span class="material-symbols-outlined text-white/40 group-hover:text-white transition-colors">person</span>
+</a>
+</div>
+</div>
+</body></html>

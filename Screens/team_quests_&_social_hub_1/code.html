@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Team Quests &amp; Social Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f0df2",
+                        "accent-gold": "#FFD700",
+                        "background-light": "#f7f5f8",
+                        "background-dark": "#191022",
+                        "surface-dark": "#211b27",
+                        "surface-darker": "#141118",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.3)",
+                        "glass-inset": "inset 0 1px 0 0 rgba(255, 255, 255, 0.1)",
+                        "glow-primary": "0 0 20px rgba(127, 13, 242, 0.3)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .circular-chart {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            max-height: 250px;
+        }
+        .circle-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 2.5;
+        }
+        .circle {
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            animation: progress 1s ease-out forwards;
+            filter: drop-shadow(0 0 4px rgba(127, 13, 242, 0.5));
+        }
+        @keyframes progress {
+            0% { stroke-dasharray: 0 100; }
+        }.glass-panel {
+            background: rgba(10, 5, 15, 0.85);
+            backdrop-filter: blur(48px);
+            -webkit-backdrop-filter: blur(48px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+        .glass-card {
+            background: rgba(25, 20, 35, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-button {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+            transition: all 0.2s ease;
+        }
+        .glass-button:hover {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-darker font-display antialiased text-white pb-20 relative">
+<div class="fixed inset-0 z-0 pointer-events-none">
+<img alt="Male fitness model background" class="w-full h-full object-cover object-top opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIydpTk-lle4HeZZAGCx_HBDLcnusJJ67h8efbKLmy3oJB_u5eyJvSP6Ffgckti4XWgUmQyKEsvjC_HvgRUgl98HwGgm3CdBXOOeTphSwFipWTsun8P4GWrqSPe7oSTxK76Fu65oMFPN5wL-Hd6_brLQz-wIg9iS-HMiEreRRY7DoUQMvb-L8f9azNvz5o-cVhyVflL2u04kyGCVVLlrL4ynp3i89bZDKhVIGXp9mv0lDCipZjOx8bUIeXLZn2X_Z9M3vq5lTYAhmn"/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface-darker/80 via-surface-darker/40 to-surface-darker/95 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-darker via-surface-darker/50 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<header class="sticky top-0 z-50 bg-surface-darker/30 backdrop-blur-xl border-b border-white/5">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-gold drop-shadow-md" style="font-size: 20px;">military_tech</span>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-white drop-shadow-sm">Alpha Squad</h2>
+</div>
+<span class="text-xs text-primary-300 font-medium tracking-wide uppercase mt-0.5 text-shadow-sm">Level 12 • Elite Tier</span>
+</div>
+<button class="relative p-2 rounded-full glass-button hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white/90">notifications</span>
+<span class="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.6)]"></span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-6 p-4 max-w-md mx-auto w-full">
+<section class="glass-panel relative overflow-hidden rounded-3xl p-6">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/30 rounded-full blur-[60px] mix-blend-screen"></div>
+<div class="absolute -left-10 -bottom-10 w-40 h-40 bg-accent-gold/20 rounded-full blur-[60px] mix-blend-screen"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="mb-2 flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/30 shadow-[0_0_15px_rgba(127,13,242,0.2)]">
+<span class="text-xs font-bold text-primary-200 uppercase tracking-wider">Current Team Quest</span>
+</div>
+<h3 class="text-2xl font-bold text-white mt-2 drop-shadow-md">Summit Challenge</h3>
+<p class="text-gray-300 text-sm mt-1 max-w-[260px] font-medium">Collectively lift 50,000kg this week</p>
+<div class="relative w-48 h-48 my-6">
+<svg class="circular-chart text-primary w-full h-full transform -rotate-90 drop-shadow-[0_0_10px_rgba(127,13,242,0.4)]" viewBox="0 0 36 36">
+<path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+<path class="circle stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="65, 100"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-bold text-white drop-shadow-lg tracking-tight">65%</span>
+<span class="text-xs text-gray-300 font-medium uppercase tracking-widest mt-1">Completed</span>
+</div>
+</div>
+<div class="w-full flex justify-between items-end border-t border-white/10 pt-4">
+<div class="text-left">
+<p class="text-xs text-gray-400 uppercase tracking-wide">Progress</p>
+<p class="text-lg font-bold text-white drop-shadow-sm">32,400 <span class="text-sm font-normal text-gray-400">/ 50k kg</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs text-gray-400 uppercase tracking-wide">Time Left</p>
+<p class="text-lg font-bold text-white flex items-center justify-end gap-1 drop-shadow-sm">
+<span class="material-symbols-outlined text-sm text-accent-gold drop-shadow-[0_0_8px_rgba(255,215,0,0.5)]">timer</span> 2d 14h
+                            </p>
+</div>
+</div>
+</div>
+</section>
+<div class="glass-card rounded-2xl p-4 flex gap-4 items-start shadow-lg bg-gradient-to-r from-primary/20 via-primary/5 to-transparent border border-primary/20">
+<div class="h-10 w-10 shrink-0 rounded-full bg-gradient-to-br from-primary/40 to-primary/10 border border-primary/30 flex items-center justify-center text-white shadow-[0_0_12px_rgba(127,13,242,0.3)]">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div class="flex-1">
+<p class="text-xs font-bold text-primary-300 uppercase mb-1 tracking-wide">Coach Insight</p>
+<p class="text-sm text-gray-100 leading-snug font-light">Teams with high adherence rates earn a <span class="text-accent-gold font-bold drop-shadow-sm">1.2x XP multiplier</span>! Keep the momentum going.</p>
+</div>
+</div>
+<section>
+<div class="flex items-center justify-between mb-4 px-1">
+<h3 class="text-lg font-bold text-white drop-shadow-md">Team Contributions</h3>
+<button class="text-xs text-primary-300 font-bold uppercase tracking-wider hover:text-white transition-colors">View All</button>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 glass-card p-3 rounded-2xl transition-transform active:scale-[0.99]">
+<div class="relative">
+<div class="h-12 w-12 rounded-full bg-cover bg-center ring-2 ring-primary/60 shadow-[0_0_10px_rgba(127,13,242,0.4)]" data-alt="Portrait of Sarah J" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrLMtsUPki4PTFhJZP38nkb5inkRq1yD-OES6myu5jQv0LvBv9DONfC5GQ8hjHizX8ziyc-EI4KVyX3YFP2KZv_zOHEJXPZsWDb9eoLyDclRDE_lk50nTNgaaQcZQnxQ1WqbZRcXTEncIDHLVCqNG2KNHwvedb0jc3TKAOYtFs6b-14gz4rySMZhHMCzoQ-_1KZXreoAL25Fwa0BBtwFfSbd116lK5_xiE5_GZCwhvORScg2ZkvCflUP0GW26qCrLyNsr_q_yDxK76')"></div>
+<div class="absolute -bottom-1 -right-1 bg-black/60 backdrop-blur-sm rounded-full p-0.5">
+<div class="bg-green-500 h-3 w-3 rounded-full border-2 border-transparent shadow-[0_0_8px_rgba(34,197,94,0.8)]"></div>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-0.5">
+<h4 class="text-white font-semibold truncate drop-shadow-sm">Sarah J.</h4>
+<span class="text-accent-gold text-xs font-bold flex items-center gap-0.5 drop-shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-current">local_fire_department</span> 12
+                                </span>
+</div>
+<p class="text-xs text-gray-300 font-mono">+4,500 XP Contributed</p>
+</div>
+<button class="h-9 px-3 glass-button rounded-xl flex items-center justify-center text-primary-300 hover:text-white">
+<span class="material-symbols-outlined text-lg">thumb_up</span>
+</button>
+</div>
+<div class="flex items-center gap-3 glass-card p-3 rounded-2xl transition-transform active:scale-[0.99]">
+<div class="relative">
+<div class="h-12 w-12 rounded-full bg-cover bg-center ring-2 ring-white/10" data-alt="Portrait of Mike T" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAz04s8A_waWrfx-pEYdMwLz_NBTenH8plyo3hV24pajAWN58lDauxFibgOdG8limQGPfsTXpiAguMHD3SwNA3mDLSLT_DLMuLj7Eb3Sx9O0Xom4P1Yp6-smMDO05wZLItWUMayB4BPfX4VNvqfTsAXnoFD9-yaND96ZibJ3LOrXM89dL68XNLb_E6XzfzzYKQNmZN-f6OtAR9Q9wTWrMkGNx-uXJn-kErIFYI6LHCIzPPqC3X02eVSFH7vLcnI3981-ZZLwWg4pt7r')"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-0.5">
+<h4 class="text-white font-semibold truncate drop-shadow-sm">Mike T.</h4>
+<span class="text-accent-gold/80 text-xs font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span> 4
+                                </span>
+</div>
+<p class="text-xs text-gray-400 font-mono">+3,200 XP Contributed</p>
+</div>
+<button class="h-9 px-3 glass-button rounded-xl flex items-center justify-center text-gray-300 hover:text-white">
+<span class="text-xs font-bold tracking-wide">Nudge</span>
+</button>
+</div>
+<div class="flex items-center gap-3 glass-card p-3 rounded-2xl transition-transform active:scale-[0.99]">
+<div class="relative">
+<div class="h-12 w-12 rounded-full bg-cover bg-center ring-2 ring-white/10" data-alt="Portrait of Elena R" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCoXBDIC5pZ8UCUxtz-6kp9jM0vkN2G9RikDRok01CYxoL5--6ffx6oTMlVA5IvTgCzmKNXaGKTW8z6XcQmxOQ35wivvpzwLXpggGL95DCVDLrsidW18m2RTCfPBNU6o3IAkbr82lmk4wn7a8XYtJXHTP0msVrSfmHftOU6FUvFfjO2m7dHXFSsGWQR7JMwqh-tcfZgOvXIZZGIavKUCuXbIVbzt3hs-lsnDQOGdy_lqhincBaRpghd8FWQweceph0WRdYCP_ws8bZr')"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center mb-0.5">
+<h4 class="text-white font-semibold truncate drop-shadow-sm">Elena R.</h4>
+<span class="text-accent-gold/80 text-xs font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span> 2
+                                </span>
+</div>
+<p class="text-xs text-gray-400 font-mono">+1,850 XP Contributed</p>
+</div>
+<button class="h-9 px-3 glass-button rounded-xl flex items-center justify-center text-gray-300 hover:text-white">
+<span class="text-xs font-bold tracking-wide">Nudge</span>
+</button>
+</div>
+</div>
+</section>
+<div class="mt-2">
+<div class="grid grid-cols-2 bg-black/30 backdrop-blur-md p-1 rounded-2xl border border-white/5">
+<button class="py-2.5 rounded-xl text-sm font-bold text-white bg-primary/80 shadow-[0_4px_12px_rgba(127,13,242,0.4)] text-center transition-all border border-white/10">
+                        Global Leaderboard
+                    </button>
+<button class="py-2.5 rounded-xl text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 text-center transition-all">
+                        Quest History
+                    </button>
+</div>
+<div class="mt-4 flex flex-col gap-2 glass-panel rounded-2xl overflow-hidden p-0">
+<div class="flex items-center justify-between py-3 px-4 border-b border-white/5 bg-white/5 backdrop-blur-sm">
+<div class="flex items-center gap-3">
+<span class="text-accent-gold font-bold font-mono w-4 drop-shadow-[0_0_5px_rgba(255,215,0,0.6)]">#1</span>
+<span class="text-gray-200 text-sm font-medium">Iron Titans</span>
+</div>
+<span class="text-white font-mono text-sm font-bold">62k XP</span>
+</div>
+<div class="flex items-center justify-between py-3 px-4 border-b border-white/5 bg-primary/20 backdrop-blur-sm border-l-4 border-l-primary shadow-[inset_0_0_20px_rgba(127,13,242,0.1)]">
+<div class="flex items-center gap-3">
+<span class="text-primary-300 font-bold font-mono w-4">#4</span>
+<span class="text-white font-bold text-sm">Alpha Squad</span>
+</div>
+<span class="text-white font-mono text-sm font-bold">48k XP</span>
+</div>
+<div class="flex items-center justify-between py-3 px-4 bg-transparent hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-3">
+<span class="text-gray-500 font-bold font-mono w-4">#5</span>
+<span class="text-gray-400 text-sm">Heavy Hitters</span>
+</div>
+<span class="text-gray-300 font-mono text-sm">45k XP</span>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-6 right-6 z-40">
+<button class="group flex items-center justify-center h-14 w-14 rounded-full bg-primary/80 backdrop-blur-md text-white shadow-[0_0_20px_rgba(127,13,242,0.5)] border border-white/20 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl group-hover:hidden">chat_bubble</span>
+<span class="material-symbols-outlined text-2xl hidden group-hover:block">send</span>
+<div class="absolute inset-0 rounded-full shadow-[inset_0_2px_4px_rgba(255,255,255,0.3)] pointer-events-none"></div>
+</button>
+</div>
+</div>
+</body></html>

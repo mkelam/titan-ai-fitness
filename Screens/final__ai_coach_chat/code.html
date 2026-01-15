@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Coach Chat - The Sage</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-bubble-coach {
+            background: rgba(30, 30, 35, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-bubble-user {
+            background: rgba(19, 236, 91, 0.15); /* Primary color low opacity */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(19, 236, 91, 0.25);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-pebble {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display overflow-hidden selection:bg-primary selection:text-black">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0">
+<!-- Male fitness model background -->
+<div class="w-full h-full bg-cover bg-center bg-no-repeat" data-alt="Intense male fitness model in dark gym lighting looking focused" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_yDrGZttRYOb1dNpGPOuQ-quKJ0ZSsIZhKM1OKV69CIfaMPJulVrPu63g28oUginp70iaNZM8Bpr8ywf0-JjFEeOODITZMu8I56b8v5xX9MSt6e0BdJKVT_WckISf3CCiIm2H5pDGqbtKZSvSH_Az59h9WAz4VZX9O3QRPoamXL-qyr6GVksuScQqx-pC6SaCISBiAuFeU70JBg5Ktr8lBG62ZBqQCqwfY9KqpuYRUAjeJf7TUVgV_sJsc1YzKbQl_8jwdmfCJTM-');">
+</div>
+<!-- Dark gradient overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+</div>
+<!-- Header: The Sage -->
+<header class="absolute top-0 left-0 right-0 z-30 pt-safe-top">
+<div class="glass-panel border-x-0 border-t-0 rounded-b-3xl px-6 py-4 flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="size-10 rounded-full bg-cover bg-center border border-white/20" data-alt="Abstract AI avatar glowing green geometric shapes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7iCApaLwhGnn5Xrt3Xq815xZO0AjVQWd1XgLHpoLAODyvYkfJeGnftpM1f-g8ZXIyBkI9gfc_NhR19sCMCbrMmzBcdSZi8YoBQtXXqBtR99CPIJV7eQxu6vaJi6gtIN_uq0T69bOFCo0wqNd-ujs-Yk9Agq_6H6_laS9zPAVYc8ZAGMpBE1TvZUA86uWXVSAy2UBBecFbakC8PV18tJ3lqJXM8Bi1H9a3VKPG0vSbrUas9LG76akw3ltlYbqdjEqv7eAGfYgRpc1v');"></div>
+<div class="absolute bottom-0 right-0 size-2.5 bg-primary rounded-full border-2 border-black shadow-[0_0_8px_#13ec5b]"></div>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-none tracking-tight">The Sage</h1>
+<span class="text-xs text-primary/80 font-medium tracking-wider uppercase">Online</span>
+</div>
+</div>
+<button class="text-white/80 hover:text-white transition-colors">
+<span class="material-symbols-outlined !text-3xl">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Chat Stream -->
+<main class="flex-1 overflow-y-auto z-10 pt-28 pb-40 px-4 scrollbar-hide flex flex-col gap-6 w-full max-w-md mx-auto">
+<!-- Coach Message 1 -->
+<div class="flex items-end gap-3 self-start max-w-[90%]">
+<div class="size-8 rounded-full bg-cover bg-center shrink-0 border border-white/10 shadow-sm" data-alt="Abstract AI avatar small" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqdGy3UjVgmleZyke69VQfmQWuotxDsnF4_i-xBdzQ9eC9DvyYAT3L5rOK8msULcRRslYViayOAvhgorBAvEkhycU6rwx4HM2RnZfUhEK2nYH1KvSlks-kk7IBit58xTmlu47UK5fIUWd73bcQutOL2fjj4ELeLh-fVJiW5y3S0n-qxuQfYvrEpgZmbQ83ajrGH1c_pntZOFQ1a90PcrUddQNIqRz1YQRQY9CQ4emFwEehEoUqoxJytsHa--BeDJR0V-E6bfJxX3Gd');"></div>
+<div class="glass-bubble-coach p-4 rounded-2xl rounded-tl-sm text-sm md:text-base leading-relaxed text-gray-100">
+<p>I've analyzed your deadlift video. Your back curvature is slightly off during the concentric phase.</p>
+</div>
+</div>
+<!-- Coach Message 2 (With Card) -->
+<div class="flex items-end gap-3 self-start max-w-[90%]">
+<div class="size-8 rounded-full bg-cover bg-center shrink-0 border border-white/10 shadow-sm" data-alt="Abstract AI avatar small" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2rbwYCPxA-7nRPlfZtGH-G20weHxZjyKHbUaIOYd7y107qJZQe13JhdZ5Gq_M09tW_Y8wt7tK-VIiKwffNbU1M1CM1c9XdPl0tp9JGt5cDbWOu9EdAwDgaivwW-ZDN_dVYfZDj1rk7Y2M-A9LdQZZQg7dklpWzcpw_dOe729NQg1LxAxha1GiFrStEfrJ9hnA6GTKgpG8kqBTgArplfIWQ4B5gD-ckU1ItCRsMe1XFxaLhzv1LxYjxYRAHlIh8LMJUP4gX5AfQrlr');"></div>
+<div class="flex flex-col gap-2 w-full">
+<div class="glass-bubble-coach p-4 rounded-2xl rounded-tl-sm text-sm md:text-base leading-relaxed text-gray-100">
+<p>See 0:04 for the correction.</p>
+</div>
+<!-- Form Check Card -->
+<div class="glass-panel p-2 rounded-2xl overflow-hidden group cursor-pointer transition-all hover:bg-white/5">
+<div class="flex items-center justify-between px-2 pb-2 pt-1">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Form Check</span>
+<span class="material-symbols-outlined text-white/50 text-sm">open_in_new</span>
+</div>
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black/50">
+<div class="absolute inset-0 bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="Weightlifter performing a deadlift with overlay graphics" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5x9JW3srJXRDU1NlSXSM3ofwbk1JLHYw1vANf4z8dJYkv4d5hDoF0sC5t4VuE-cyW-BzJpSGNgsV6PNZJ9vLDTW86xWCJopJWCLs8LY96uaGa4X_O7r-5vxNuCi2vlVYU1zAweA9Yu8D-LuvozU8k6KSgQBWYlQnuN7Z3eCaR4t_bBL6bbvK87ExbnpOMTQ_GyxYm0uawLH22pTst7vXuBz6tGXgT3vSSaiFpy0Xxg72shWxDqT5aQx_V3y7jtMFcfVcdyTJK1ZmU');">
+</div>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20">
+<div class="size-10 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center border border-primary/50 text-primary shadow-[0_0_15px_rgba(19,236,91,0.3)]">
+<span class="material-symbols-outlined filled">play_arrow</span>
+</div>
+</div>
+<!-- Timestamp Overlay -->
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm text-[10px] font-mono text-white">00:04</div>
+</div>
+</div>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-end gap-3 self-end max-w-[85%] justify-end">
+<div class="glass-bubble-user p-4 rounded-2xl rounded-tr-sm text-sm md:text-base leading-relaxed text-white text-right shadow-[0_0_15px_rgba(19,236,91,0.05)]">
+<p>Got it. What should I do to fix it?</p>
+</div>
+<div class="size-8 rounded-full bg-cover bg-center shrink-0 border border-white/10" data-alt="User profile picture male athlete" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhAbPd9WM-i862yh58mHJ7YXNhx54uttGApsVXesMJKvmEMXVj70nQtQl1oybvXb-FFYmGUBiIE8EVOJAYe4S86lI-lplucFASv6lQ0x-VvQb3AfX6e2yo0P3m3IyEAuisMjUK78PUfU24fYflXY5Zo7lpYzsOWnAzxK9F8VJhL0Xwh5ZzyeoSWu2jAw8taENkKHsz-Ub_m27duT17_7JCaBwEe4aOrDgehZka4pxLHun6hx4HypLGj5F1_xSBapImpDYSd_p3bHoT');"></div>
+</div>
+<!-- Coach Message 3 (Recommendation) -->
+<div class="flex items-end gap-3 self-start max-w-[95%]">
+<div class="size-8 rounded-full bg-cover bg-center shrink-0 border border-white/10 shadow-sm" data-alt="Abstract AI avatar small" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYIEGokMqyZXw20d1K24vYzeIBO3-5azE7sw0lNUV6inxF2-PW4jJ9iFdTKoZ-qPKj5RMIbp-pGmei8kNYrZ6qI53Izy4QXR8nTW-A4zIq_3UWgen7e2VghMHi5wp20gicPFkGH8QxPacQnlWn2ffk6CtoPlnQxPVVuYWIyYYhPVBa3uplstDFhrskuSpN7Lre32y6yYtL73bB0tVv7KCUn8bHaPNnc2p4uuq3G0H1mWXwrlq2NAbQtzM68GjsS846C4n_Bg9XA1pj');"></div>
+<div class="flex flex-col gap-2 w-full">
+<div class="glass-bubble-coach p-4 rounded-2xl rounded-tl-sm text-sm md:text-base leading-relaxed text-gray-100">
+<p>Let's work on your posterior chain engagement. Try this superset before your next heavy lift.</p>
+</div>
+<!-- Interactive Drill Card -->
+<div class="glass-panel p-4 rounded-2xl flex flex-col gap-4 border-t border-t-white/20 shadow-xl">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="text-base font-bold text-white">Romanian Deadlifts (RDLs)</h3>
+<p class="text-xs text-gray-400 mt-1">Target: Hamstrings &amp; Glutes</p>
+</div>
+<div class="size-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="px-3 py-1.5 rounded-lg bg-black/30 border border-white/5 text-xs text-white/80 font-mono">
+                                3 Sets
+                            </div>
+<div class="px-3 py-1.5 rounded-lg bg-black/30 border border-white/5 text-xs text-white/80 font-mono">
+                                12 Reps
+                            </div>
+<div class="px-3 py-1.5 rounded-lg bg-black/30 border border-white/5 text-xs text-white/80 font-mono">
+                                Slow Tempo
+                            </div>
+</div>
+<button class="w-full h-11 rounded-xl bg-primary hover:bg-[#0fd651] active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-black font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(19,236,91,0.3)]">
+<span class="material-symbols-outlined text-xl">play_circle</span>
+                            Start Drill
+                        </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer: Input Area -->
+<footer class="absolute bottom-0 left-0 right-0 z-30 flex flex-col gap-3 pb-6 pt-2">
+<!-- Blur background for footer -->
+<div class="absolute inset-0 glass-panel border-x-0 border-b-0 rounded-t-3xl -z-10 shadow-[0_-5px_30px_rgba(0,0,0,0.3)]"></div>
+<!-- Quick Reply Chips -->
+<div class="flex overflow-x-auto gap-3 px-6 scrollbar-hide w-full">
+<button class="glass-pebble px-5 py-2 rounded-full text-xs font-semibold text-white/90 hover:bg-white/20 active:bg-primary/20 transition-all whitespace-nowrap shadow-sm">
+                    Show Technique
+                </button>
+<button class="glass-pebble px-5 py-2 rounded-full text-xs font-semibold text-white/90 hover:bg-white/20 active:bg-primary/20 transition-all whitespace-nowrap shadow-sm">
+                    Modify Workout
+                </button>
+<button class="glass-pebble px-5 py-2 rounded-full text-xs font-semibold text-white/90 hover:bg-white/20 active:bg-primary/20 transition-all whitespace-nowrap shadow-sm">
+                    Too difficult
+                </button>
+<button class="glass-pebble px-5 py-2 rounded-full text-xs font-semibold text-white/90 hover:bg-white/20 active:bg-primary/20 transition-all whitespace-nowrap shadow-sm">
+                    Done
+                </button>
+</div>
+<!-- Input Field -->
+<div class="px-6 w-full max-w-md mx-auto">
+<div class="relative flex items-center w-full">
+<div class="absolute left-1 size-9 rounded-full bg-white/5 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 cursor-pointer transition-colors ml-1">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</div>
+<input class="w-full h-12 bg-black/40 border border-white/10 rounded-full pl-12 pr-12 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 backdrop-blur-sm transition-all shadow-inner" placeholder="Ask the Sage..." type="text"/>
+<button class="absolute right-1 size-10 rounded-full bg-primary flex items-center justify-center text-black hover:bg-[#0fd651] hover:scale-105 transition-all shadow-[0_0_10px_rgba(19,236,91,0.4)] mr-1">
+<span class="material-symbols-outlined text-[20px] filled font-bold -ml-0.5">send</span>
+</button>
+</div>
+</div>
+<!-- Home Indicator spacer for iOS -->
+<div class="h-1 w-full"></div>
+</footer>
+</div>
+</body></html>

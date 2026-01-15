@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2-Day Recovery Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecda",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102220",
+                        "card-dark": "#1c2726",
+                        "text-secondary": "#9db9b7",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display text-white antialiased selection:bg-primary selection:text-black">
+<div class="fixed inset-0 z-[-1]">
+<img alt="Fitness Model Background" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPgNce3k0VcA7WxZKpC9Ori3DfELeKZy2yNdJbYFXyWArFh4RRGz8Q9sui92ZHr9I0qB3vRvmEP_Et0OQ1S8lAf_f1rQkag1Ut9-CEgnPeQosgx0CxyM0pDXd4lMHWR9R4SfffXcUM9XX8InwE_EYfTZ78mVfg4ycs5AJlHLi6mr-QTyjeCS1xzqDKIz41N1Awmy-bp-VTV-cpa1Se8NicbzU8hnyJz9KU4mQpvyudh3cqQ9Op0DJ5Z_XWIvClouF9p1odiPFVOMo9"/>
+<div class="absolute inset-0 bg-slate-900/70 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+</div>
+<div class="relative flex h-full min-h-screen w-full max-w-md mx-auto flex-col overflow-x-hidden">
+<header class="flex items-center p-4 pt-6 pb-2 justify-between sticky top-0 z-20 bg-black/10 backdrop-blur-md border-b border-white/5">
+<button class="text-white flex size-10 shrink-0 items-center justify-center rounded-full bg-white/5 hover:bg-white/20 backdrop-blur-sm border border-white/10 transition-colors shadow-lg">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<div class="flex items-center gap-2 bg-primary/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-primary/30 shadow-[0_0_15px_rgba(19,236,218,0.2)]">
+<span class="material-symbols-outlined text-primary text-[18px]">battery_charging_full</span>
+<h2 class="text-primary text-sm font-bold uppercase tracking-wide drop-shadow-sm">Recovery Mode On</h2>
+</div>
+<div class="size-10"></div>
+</header>
+<main class="flex-1 flex flex-col gap-6 p-4 pb-36">
+<div class="flex flex-col gap-1 mt-4 px-2">
+<h1 class="text-4xl font-bold leading-tight drop-shadow-lg tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">2-Day Reset</h1>
+<p class="text-white/80 text-lg font-medium drop-shadow-md">Recharge your body and mind.</p>
+</div>
+<div class="relative overflow-hidden rounded-2xl bg-black/40 backdrop-blur-2xl border border-white/10 p-5 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)]">
+<div class="flex flex-col gap-3 relative z-10">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-white text-lg font-bold">0/2 <span class="text-white/60 font-medium text-sm ml-1">Days Complete</span></p>
+<span class="text-[10px] text-primary font-bold bg-primary/20 border border-primary/30 px-2 py-1 rounded shadow-[0_0_10px_rgba(19,236,218,0.2)] uppercase tracking-wider">Plan Active</span>
+</div>
+<div class="h-2.5 w-full rounded-full bg-black/40 overflow-hidden border border-white/5">
+<div class="h-full rounded-full bg-primary shadow-[0_0_15px_rgba(19,236,218,0.8)] relative" style="width: 5%;">
+<div class="absolute inset-0 bg-white/30 animate-pulse"></div>
+</div>
+</div>
+</div>
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 blur-3xl rounded-full pointer-events-none"></div>
+</div>
+<div class="relative group cursor-pointer">
+<div class="absolute -inset-[1px] bg-gradient-to-r from-primary to-emerald-400 rounded-2xl opacity-40 blur-sm group-hover:opacity-60 transition duration-300"></div>
+<div class="relative flex flex-col gap-4 rounded-2xl bg-black/60 backdrop-blur-3xl p-5 shadow-[inset_0_0_30px_rgba(255,255,255,0.05)] border border-white/10 group-hover:bg-black/70 transition-all">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="bg-primary text-black text-[10px] font-bold px-2 py-0.5 rounded-full shadow-[0_0_10px_rgba(19,236,218,0.5)]">TODAY</span>
+<p class="text-white text-xl font-bold leading-tight drop-shadow-md">Day 1: Active Recovery</p>
+</div>
+<p class="text-blue-100 text-sm font-normal pl-0.5 opacity-80">Focus on mobility &amp; blood flow</p>
+</div>
+<div class="size-10 rounded-full bg-primary/90 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(19,236,218,0.5)] border border-white/20 backdrop-blur-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-black text-[26px] ml-0.5">play_arrow</span>
+</div>
+</div>
+<div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/10 group">
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 flex flex-col justify-end p-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px] drop-shadow-[0_0_5px_rgba(19,236,218,0.8)]">timer</span>
+<span class="text-white font-medium text-sm tracking-wide">15 min mobility flow</span>
+</div>
+</div>
+<div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPgNce3k0VcA7WxZKpC9Ori3DfELeKZy2yNdJbYFXyWArFh4RRGz8Q9sui92ZHr9I0qB3vRvmEP_Et0OQ1S8lAf_f1rQkag1Ut9-CEgnPeQosgx0CxyM0pDXd4lMHWR9R4SfffXcUM9XX8InwE_EYfTZ78mVfg4ycs5AJlHLi6mr-QTyjeCS1xzqDKIz41N1Awmy-bp-VTV-cpa1Se8NicbzU8hnyJz9KU4mQpvyudh3cqQ9Op0DJ5Z_XWIvClouF9p1odiPFVOMo9"); filter: saturate(1.1);'></div>
+</div>
+</div>
+</div>
+<div class="flex items-stretch justify-between gap-4 rounded-2xl bg-black/60 backdrop-blur-3xl p-5 border border-white/10 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)]">
+<div class="flex flex-col gap-1.5 flex-[2_2_0px]">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-white/40 text-[10px] font-bold border border-white/10 px-2 py-0.5 rounded-full uppercase tracking-wider">Tomorrow</span>
+</div>
+<p class="text-white/60 text-lg font-bold leading-tight">Day 2: Rest &amp; Reflect</p>
+<p class="text-white/40 text-sm font-normal">Log your sleep and mood</p>
+</div>
+<div class="flex flex-col items-end justify-center gap-2">
+<div class="flex -space-x-3">
+<div class="size-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-white/50 text-[18px]">bedtime</span>
+</div>
+<div class="size-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-white/50 text-[18px]">mood</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-white/30 text-[20px] mt-1">lock</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-2xl bg-black/50 backdrop-blur-3xl border border-white/10 shadow-xl">
+<div class="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="p-5 flex flex-col gap-5 relative z-10">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full overflow-hidden border border-primary shadow-[0_0_10px_rgba(19,236,218,0.3)]">
+<div class="w-full h-full rounded-full bg-cover bg-center" data-alt="AI robot coach avatar face" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkY4jXLnTAjoIb9YIfrFKPwZa1gmVO3cpuWmSeAXiju4d9zxJlK6-hidCNF1OOZjKUpaMd7tCk_dhFAaTBp5gIWO03JjRhEqhN2yjR8xE143Jr9vosptTX7-SZGdortNX8bDIABYlgIdmZ61cwA2SV-pGCtjZvp160eX0fe90iROPmNxgWM15B3Yk2n88WwMMugl9pFB4faOA92-bXeBciit24-cywD-ip6YARyLlMAYQKUtpsXtZG-gQOsXextnhuiJRD-LI6EH-R');"></div>
+</div>
+<div>
+<p class="text-primary text-sm font-bold uppercase tracking-wide drop-shadow-[0_0_8px_rgba(19,236,218,0.5)]">Coach's Note</p>
+<p class="text-[10px] text-white/50 font-medium">Just now</p>
+</div>
+</div>
+<p class="text-white text-[15px] font-medium leading-relaxed tracking-wide">
+                        Consistency isn't just about intensity; it's about staying in the game. Completing this grants a <span class="text-primary font-bold bg-primary/10 px-1 rounded">"Resilient"</span> badge and preserves your streak.
+                    </p>
+<div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5 shadow-inner">
+<div class="size-12 rounded-full bg-gradient-to-tr from-yellow-500 to-amber-200 flex items-center justify-center shadow-lg shrink-0 border border-white/20">
+<span class="material-symbols-outlined text-yellow-900 text-[24px]">military_tech</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-bold text-sm">Reward Pending</span>
+<span class="text-white/50 text-[11px]">Complete 2 days to unlock</span>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-primary drop-shadow-[0_0_5px_rgba(19,236,218,0.8)]">local_fire_department</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/90 to-transparent pt-12 z-50 max-w-md mx-auto pointer-events-none">
+<div class="flex flex-col gap-3 pointer-events-auto">
+<button class="w-full h-14 bg-primary hover:bg-primary/90 text-black text-lg font-bold rounded-full flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(19,236,218,0.4)] transition-all active:scale-[0.98] border border-white/20">
+<span class="material-symbols-outlined fill-current">play_circle</span>
+                    Start Day 1
+                </button>
+<button class="w-full h-12 bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 text-white font-semibold rounded-full flex items-center justify-center gap-2 transition-colors">
+                    Adjust Plan
+                </button>
+</div>
+</div>
+</div>
+
+</body></html>

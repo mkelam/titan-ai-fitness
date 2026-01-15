@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Monthly Review</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "glass-border": "rgba(255, 255, 255, 0.15)",
+                        "glass-surface": "rgba(32, 32, 32, 0.4)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+        
+        /* Glassmorphism utilities */
+        .glass-panel {
+            background: rgba(25, 25, 25, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .neon-text-glow {
+            text-shadow: 0 0 10px rgba(19, 236, 91, 0.5);
+        }
+        
+        .neon-box-glow {
+            box-shadow: 0 0 15px rgba(19, 236, 91, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased text-white selection:bg-primary selection:text-black">
+<!-- Main Container with Full Background Image -->
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-background-dark">
+<!-- Background Image Fixed Layer -->
+<div class="fixed inset-0 z-0 h-full w-full bg-cover bg-center bg-no-repeat" data-alt="Moody dark athletic male model lifting weights in a gym setting with dramatic lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC98TQy9eTTg-CBQxXHtlZVJWkcWikmE_13dTxALCQH_i-4i5jVJuX26ucOLnIrJyPr2EvqyBBGLj5JC7mMTJnG4dxbm6rYGHLxW4vWCEsbTu9pmbQRMM0UkkkQtGkfCldKqpTZIEuno9QDWTvilBKcqwJZmqaLjOvboMAU33V45EeSYEuD-YqKjSncyrIUWJLmNsqVXfnjZUbDs84ALPu_aenLMsLYzJvZq30c9A9OBksAYQwsUEsmnDfAkpUJx_Ox9sjvf2ab_yPI");'>
+<!-- Dark Overlay for Readability -->
+<div class="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-black/40"></div>
+</div>
+<!-- Content Wrapper -->
+<div class="relative z-10 flex flex-col min-h-screen pb-24"> <!-- Padding bottom for sticky footer -->
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-5 py-4 glass-panel border-b-0 rounded-b-2xl mx-2 mt-2">
+<button class="flex size-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h2 class="text-base font-bold tracking-wide uppercase text-white/90">August Review</h2>
+<span class="text-[10px] font-medium tracking-widest text-primary uppercase neon-text-glow">You crushed it</span>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">settings</span>
+</button>
+</header>
+<!-- Main Scrollable Content -->
+<main class="flex flex-col gap-6 p-4 pt-6">
+<!-- Stats Grid (Glass Cards) -->
+<div class="grid grid-cols-3 gap-3">
+<!-- Stat 1 -->
+<div class="glass-card flex flex-col items-center justify-center gap-2 rounded-xl p-3 py-4 text-center">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary mb-1">
+<span class="material-symbols-outlined" style="font-size: 18px;">monitor_weight</span>
+</div>
+<div>
+<p class="text-[11px] font-medium uppercase tracking-wider text-white/60">Weight Lost</p>
+<p class="mt-1 text-lg font-bold leading-none text-white">-2.5 <span class="text-xs font-normal text-white/60">kg</span></p>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="glass-card flex flex-col items-center justify-center gap-2 rounded-xl p-3 py-4 text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary mb-1 z-10">
+<span class="material-symbols-outlined" style="font-size: 18px;">bolt</span>
+</div>
+<div class="z-10">
+<p class="text-[11px] font-medium uppercase tracking-wider text-white/60">XP Earned</p>
+<p class="mt-1 text-lg font-bold leading-none text-primary neon-text-glow">12,400</p>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="glass-card flex flex-col items-center justify-center gap-2 rounded-xl p-3 py-4 text-center">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary mb-1">
+<span class="material-symbols-outlined" style="font-size: 18px;">local_fire_department</span>
+</div>
+<div>
+<p class="text-[11px] font-medium uppercase tracking-wider text-white/60">Streak</p>
+<p class="mt-1 text-lg font-bold leading-none text-white">94%</p>
+</div>
+</div>
+</div>
+<!-- Chart Section -->
+<div class="glass-card flex w-full flex-col gap-4 rounded-2xl p-5">
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-sm font-medium text-white/60 uppercase tracking-wide">Performance Trend</p>
+<p class="text-2xl font-bold text-white tracking-tight">High Activity</p>
+</div>
+<div class="flex items-center gap-1 rounded-full bg-primary/10 px-2 py-1 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-[14px]">trending_up</span>
+<span class="text-xs font-bold text-primary">+15%</span>
+</div>
+</div>
+<div class="relative h-40 w-full pt-4">
+<!-- Chart SVG -->
+<svg class="h-full w-full overflow-visible" preserveaspectratio="none" viewbox="0 0 300 100">
+<defs>
+<lineargradient id="gradientArea" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#13ec5b" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#13ec5b" stop-opacity="0"></stop>
+</lineargradient>
+<filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Line with Neon Glow -->
+<path d="M0 80 C40 80 50 30 90 40 C130 50 140 20 180 25 C220 30 230 60 270 10 C285 0 300 5 300 5" fill="none" filter="url(#glow)" stroke="#13ec5b" stroke-linecap="round" stroke-width="3"></path>
+<!-- Fill Area -->
+<path d="M0 80 C40 80 50 30 90 40 C130 50 140 20 180 25 C220 30 230 60 270 10 C285 0 300 5 300 5 V 100 H 0 Z" fill="url(#gradientArea)" stroke="none"></path>
+<!-- Data Points -->
+<circle cx="90" cy="40" fill="#102216" r="4" stroke="#13ec5b" stroke-width="2"></circle>
+<circle cx="180" cy="25" fill="#102216" r="4" stroke="#13ec5b" stroke-width="2"></circle>
+<circle cx="270" cy="10" fill="#white" r="4" stroke="#13ec5b" stroke-width="2"></circle>
+</svg>
+<!-- X Axis Labels -->
+<div class="absolute bottom-[-20px] left-0 right-0 flex justify-between px-2">
+<span class="text-[10px] font-medium text-white/40">Wk 1</span>
+<span class="text-[10px] font-medium text-white/40">Wk 2</span>
+<span class="text-[10px] font-medium text-white/40">Wk 3</span>
+<span class="text-[10px] font-medium text-white/40">Wk 4</span>
+</div>
+</div>
+</div>
+<!-- Coach Verdict Panel -->
+<div class="glass-card relative flex flex-col items-start gap-4 rounded-2xl p-0 overflow-hidden mt-2 border-primary/20">
+<!-- Header with darker tint -->
+<div class="w-full bg-black/40 p-5 pb-2">
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-green-600 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-black font-bold">psychology</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-white leading-tight">AI Coach Insight</h3>
+<p class="text-xs text-primary font-medium neon-text-glow">New analysis available</p>
+</div>
+</div>
+</div>
+<!-- Content Body -->
+<div class="p-5 pt-2">
+<p class="font-body text-[15px] leading-relaxed text-gray-200">
+                            Your consistency score is in the <span class="text-white font-bold">top 5%</span> of users. While your cardio output has increased, we need to focus on <span class="text-primary font-medium">progressive overload</span> in your leg days next month to hit your strength goals.
+                        </p>
+<!-- Mini Tags -->
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-wider text-white/70">Strength Focus</span>
+<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-wider text-white/70">Leg Day</span>
+</div>
+</div>
+</div>
+<!-- Monthly Badges Scroll -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-sm font-bold uppercase tracking-wide text-white/80">Monthly Badges</h3>
+<button class="text-xs text-primary hover:text-white transition-colors">View All</button>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar -mx-4 px-4">
+<div class="min-w-[120px] glass-card flex flex-col items-center justify-center gap-2 rounded-xl p-4 border border-primary/30 neon-box-glow">
+<div class="size-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-black font-bold text-lg">trophy</span>
+</div>
+<p class="text-xs font-bold text-center">Power User</p>
+<p class="text-[10px] text-white/50 text-center">Top 1%</p>
+</div>
+<div class="min-w-[120px] glass-card flex flex-col items-center justify-center gap-2 rounded-xl p-4 opacity-80">
+<div class="size-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center mb-1">
+<span class="material-symbols-outlined text-white font-bold text-lg">water_drop</span>
+</div>
+<p class="text-xs font-bold text-center">Hydrated</p>
+<p class="text-[10px] text-white/50 text-center">30 Days</p>
+</div>
+<div class="min-w-[120px] glass-card flex flex-col items-center justify-center gap-2 rounded-xl p-4 opacity-50 grayscale">
+<div class="size-10 rounded-full bg-white/10 flex items-center justify-center mb-1 border border-white/10">
+<span class="material-symbols-outlined text-white/50 font-bold text-lg">lock</span>
+</div>
+<p class="text-xs font-bold text-center text-white/50">Early Bird</p>
+<p class="text-[10px] text-white/30 text-center">Locked</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-black via-black/90 to-transparent pt-10">
+<div class="flex gap-3">
+<button class="glass-card flex-1 flex items-center justify-center gap-2 rounded-xl h-14 text-white font-bold text-sm tracking-wide hover:bg-white/10 transition-all border border-white/20">
+<span class="material-symbols-outlined" style="font-size: 20px;">ios_share</span>
+                        Share Recap
+                    </button>
+<button class="flex-[1.5] flex items-center justify-center gap-2 rounded-xl h-14 bg-primary text-background-dark font-bold text-sm tracking-wide neon-box-glow hover:brightness-110 transition-all">
+<span class="material-symbols-outlined" style="font-size: 20px;">redeem</span>
+                        Claim Rewards
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

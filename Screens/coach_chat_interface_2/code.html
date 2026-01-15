@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Glassmorphic AI Coach Chat</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#57f906",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#16230f",
+                        "surface-dark": "#1e2b18",
+                        "surface-light": "#25351e",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        "glow": "0 0 15px rgba(87, 249, 6, 0.15)",
+                        "glow-sm": "0 0 10px rgba(87, 249, 6, 0.1)",
+                        "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+                        "neon-border": "0 0 5px rgba(87, 249, 6, 0.5), inset 0 0 5px rgba(87, 249, 6, 0.1)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .mask-fade-sides {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .glass-panel {
+            background: rgba(12, 20, 12, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(87, 249, 6, 0.3);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+        .glass-header {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-input-area {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-bubble-user {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .glass-chip {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black font-display text-white h-screen overflow-hidden selection:bg-primary selection:text-background-dark">
+<div class="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA6924SQCCZVIMNxq4WXhcO9QkkVTn-0j15Q37rCfMrZWFYfz8wRvUUdBlWkQLg8cAIuZx9lR8OkJz0UFTvbUFYneocT6YGzuTd8iREIfDiBHf4KGFL-mr-DO-jL9ZP2UUCvxsBnSZGyxz7GfDouhfFBte60detrc20oa0NLToI2lmk0LBjqakP2pu4cvhbyhgHCJ5LVtEZG3qhGO_aW_rUG4LHtNvYtBJ24EXT_q9m3UVkNGAtkiA8mEv8BT_Es6u5KvTUKEJ5rh35');"></div>
+<div class="fixed inset-0 z-0 bg-black/70 backdrop-blur-[2px]"></div>
+<div class="relative z-10 flex flex-col h-full max-w-lg mx-auto w-full shadow-2xl border-x border-white/5 bg-black/20">
+<div class="shrink-0 flex items-center justify-between px-4 pt-12 pb-4 glass-header sticky top-0 z-20 transition-all duration-300">
+<div class="flex items-center gap-2">
+<button class="p-2 -ml-2 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-colors group backdrop-blur-sm">
+<span class="material-symbols-outlined group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+</button>
+<div class="flex items-center gap-3 pl-1">
+<div class="relative group cursor-pointer">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border border-white/20 ring-2 ring-transparent group-hover:ring-primary/30 transition-all shadow-lg" data-alt="Geometric avatar representing The Sage AI coach" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4diwVQU80osLLHQQOP3-MiEI55GVsWj2LyXlekZMfG5UO8FqDq-oc6hWEseHbtRuyNaGZM8GgV-J4oL7QbO47qxRMdjAuedahG4Wdl_So98Mgc15biFGWWsyM9J19P6_DgR9KuxjFVM2DNcarqMGqcLi_57VvxQI0huW4tP7vguyjLZwJzTzsFo1RZujpVerwPgks3NpE3QoMcDfS7apudicPiZWxQ4d2mMumibkAWRh-NktItShq0BNFD8gu38uudDhIoQINuVxm");'></div>
+<div class="absolute bottom-0 right-0 size-3 bg-primary rounded-full border-[2.5px] border-black shadow-[0_0_8px_rgba(87,249,6,0.8)] animate-pulse"></div>
+</div>
+<div class="flex flex-col">
+<h2 class="text-white text-[17px] font-bold leading-tight drop-shadow-md">The Sage</h2>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[10px] text-primary filled drop-shadow-[0_0_5px_rgba(87,249,6,0.8)]">bolt</span>
+<p class="text-primary text-[10px] font-bold tracking-[0.05em] uppercase opacity-90 drop-shadow-[0_0_5px_rgba(87,249,6,0.5)]">Online</p>
+</div>
+</div>
+</div>
+</div>
+<button class="size-10 flex items-center justify-center rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto px-4 py-2 space-y-6 scrollbar-hide pb-36">
+<div class="flex justify-center py-4">
+<span class="text-[10px] font-bold tracking-widest text-white/50 uppercase bg-black/30 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 shadow-lg">Today, 9:41 AM</span>
+</div>
+<div class="flex flex-col items-end gap-1.5 animate-fade-in-up">
+<div class="max-w-[85%] rounded-2xl rounded-tr-sm glass-bubble-user px-5 py-3.5 text-white shadow-md">
+<p class="text-[15px] font-normal leading-relaxed text-white">How do I improve my deadlift?</p>
+</div>
+<span class="text-[10px] text-white/40 font-medium mr-1 tracking-wide drop-shadow-sm">You • 9:41 AM</span>
+</div>
+<div class="flex flex-col items-start gap-1 w-full animate-fade-in-up" style="animation-delay: 100ms;">
+<div class="flex gap-3 max-w-[90%] w-full">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 shrink-0 mt-1 border border-primary/40 shadow-[0_0_10px_-4px_rgba(87,249,6,0.5)]" data-alt="Small avatar of The Sage AI" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtYr76CL-GYYMmtZHtVVTlFAg2QqoERaH1Xr-9vmcY8J1fBpsBk9YX4FcSn682pKSZHP3-LIhsTGSeMAL3SVck9lJB-TLcAZoRdrZP62Q0LdZVJl3k9arc9Q58MQb4SGjczXzF37eLBTjmrEYsPqQYoTMBmzh6WoVwo8q874aO3joGeHG7Jarx7oGQthb1NfY0VEcm--SRg2Yd_vaQ9qUOwxIweKJuk0JKtRSq4b_UJM_KSqUAHJXsZbo-ptTyWalZQ-EWnDhaxegn");'></div>
+<div class="flex flex-col gap-2 w-full">
+<div class="rounded-2xl rounded-tl-sm glass-panel px-5 py-4 text-white w-fit">
+<div class="flex items-center gap-1.5 mb-2 select-none opacity-90">
+<span class="material-symbols-outlined text-[14px] text-primary filled drop-shadow-[0_0_5px_rgba(87,249,6,0.8)]">auto_awesome</span>
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase drop-shadow-[0_0_5px_rgba(87,249,6,0.5)]">Coach Insight</span>
+</div>
+<p class="text-[15px] font-normal leading-relaxed text-white/95 text-shadow-sm">Focus on hip drive. I've analyzed your previous sets and detected some inconsistencies in your lockout.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-start gap-1 w-full animate-fade-in-up" style="animation-delay: 200ms;">
+<div class="flex gap-3 max-w-[90%] w-full">
+<div class="size-8 shrink-0"></div>
+<div class="flex flex-col gap-2 w-full">
+<div class="rounded-2xl rounded-tl-sm bg-black/70 backdrop-blur-xl p-4 text-white border border-white/10 w-full shadow-lg group hover:border-primary/40 transition-all relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/10 rounded-bl-full pointer-events-none blur-xl"></div>
+<p class="text-[13px] font-medium mb-3 px-1 text-white/70 uppercase tracking-wide">Action Item</p>
+<div class="flex items-center gap-3 bg-black/30 rounded-xl p-3 border border-white/5 hover:border-white/10 transition-colors mb-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg size-14 shrink-0 relative overflow-hidden shadow-inner border border-white/10" data-alt="Stylized wireframe of a person deadlifting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbV5-m7756HqoOfB1QuEAOOLxF4xChPSblo7VpWUAd-KLNDhKKVqP1CBaZYgji-v5vfDN4J46ldGxRawbs2kc7kr79k_rhfSUVX3I1v6NFZjHLMi89DXMmXPB7zakbdNuycRMSc4s4TgOQGeL7CjhQPsXhs3TyI4rGEN0tEdwlt2_VAHBjr3qUmu7L0x0TsAL2dHIOb-CcO0XFa8z5XmZim0uRKZudVQSTk_IEXzPWnNISbic9hI1lEF-7Rx7FaDM0zQMxG9gu0rUl");'>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[1px]">
+<div class="size-7 bg-primary rounded-full flex items-center justify-center shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-background-dark text-[18px] filled">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-white text-[15px] font-bold truncate tracking-wide">Deadlift Form Analysis</h4>
+<p class="text-primary text-xs truncate font-mono mt-0.5 drop-shadow-[0_0_3px_rgba(87,249,6,0.3)]">92% Match • Set 3</p>
+</div>
+</div>
+<button class="w-full h-9 flex items-center justify-center gap-2 rounded-lg bg-white/5 border border-white/10 hover:bg-primary/20 hover:border-primary/40 hover:text-primary text-xs font-bold text-white/90 transition-all uppercase tracking-wider backdrop-blur-sm">
+                                View Full Report
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-start gap-1 w-full animate-fade-in-up" style="animation-delay: 300ms;">
+<div class="flex gap-3 max-w-[90%] w-full">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 shrink-0 mt-1 border border-primary/40 shadow-[0_0_10px_-4px_rgba(87,249,6,0.5)]" data-alt="Small avatar of The Sage AI" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNPr47q0EzxQoDOs8MvZeMYjWycfuT0b5ehRYby5h7jfmOVKIpkyS-a0upI1_du-IKyjPvjc4ARjK0gp1VYfyF37KRdsu9ZyLNwfrPBkuMO-MfZ9CSiv65ZzmkQtgfXEmpW0w-CvCyxb7Zk-XJLgqKsFUhsdLYxgUhCToArOEAcrgwmn2UzEefBWaheRaY9qFIgCL7L5mTssQdSv6unZVcAWla4jThhrpJdMBTVaJ8cuFBN_ytMG5UY6dQAVtu4B-wGVV4Xhi41mQB");'></div>
+<div class="flex flex-col gap-2 w-full">
+<div class="rounded-2xl rounded-tl-sm glass-panel px-5 py-4 text-white w-fit">
+<div class="flex items-center gap-1.5 mb-2 select-none opacity-90">
+<span class="material-symbols-outlined text-[14px] text-primary filled drop-shadow-[0_0_5px_rgba(87,249,6,0.8)]">auto_awesome</span>
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase drop-shadow-[0_0_5px_rgba(87,249,6,0.5)]">Coach Insight</span>
+</div>
+<p class="text-[15px] font-normal leading-relaxed text-white/95 text-shadow-sm">I've scheduled a specific mobility drill to help open up your hips before the next session.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-start gap-1 w-full animate-fade-in-up" style="animation-delay: 400ms;">
+<div class="flex gap-3 max-w-[95%] sm:max-w-[85%] w-full">
+<div class="size-8 shrink-0"></div>
+<div class="flex flex-col gap-2 w-full">
+<div class="rounded-2xl rounded-tl-sm bg-gradient-to-br from-black/90 to-black/70 backdrop-blur-2xl p-5 text-white border border-primary/30 w-full shadow-[0_0_20px_rgba(87,249,6,0.1)] relative overflow-hidden group hover:border-primary/50 transition-all duration-300">
+<div class="absolute -top-10 -right-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none transition-all group-hover:bg-primary/15"></div>
+<div class="flex justify-between items-start mb-5 relative z-10">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] filled drop-shadow-[0_0_5px_rgba(87,249,6,0.8)]">fitness_center</span>
+<p class="text-primary text-[10px] font-bold tracking-[0.15em] uppercase drop-shadow-[0_0_5px_rgba(87,249,6,0.5)]">Recommended Drill</p>
+</div>
+<h3 class="text-xl font-bold text-white tracking-tight drop-shadow-md">Hip Opener Flow</h3>
+</div>
+<div class="flex items-center gap-1.5 bg-black/40 border border-white/10 rounded-lg px-2.5 py-1.5 backdrop-blur-md shadow-lg">
+<span class="material-symbols-outlined text-primary text-[16px]">timer</span>
+<span class="text-xs font-mono font-bold text-white">5:00</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<span class="px-2.5 py-1 rounded-md text-[10px] font-bold bg-primary/20 text-primary border border-primary/20 shadow-[0_0_8px_-2px_rgba(87,249,6,0.3)] backdrop-blur-sm">+50 XP</span>
+<span class="px-2.5 py-1 rounded-md text-[10px] font-medium bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm">Mobility</span>
+<span class="px-2.5 py-1 rounded-md text-[10px] font-medium bg-white/10 text-white/80 border border-white/10 backdrop-blur-sm">Lower Body</span>
+</div>
+<button class="w-full h-11 bg-primary text-[#131811] font-bold text-[14px] rounded-xl hover:bg-[#4ce005] hover:shadow-[0_0_20px_-5px_rgba(87,249,6,0.8)] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 tracking-wide uppercase shadow-[0_0_15px_-5px_rgba(87,249,6,0.5)]">
+<span class="material-symbols-outlined text-[20px] filled">play_arrow</span>
+                                Start Session
+                            </button>
+</div>
+<span class="text-[10px] text-primary/80 font-medium ml-1 mt-1 tracking-wide drop-shadow-sm">The Sage</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full z-30">
+<div class="w-full h-12 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+<div class="glass-input-area pb-8 pt-3 relative">
+<div class="flex overflow-x-auto gap-3 px-4 pb-4 scrollbar-hide mask-fade-sides">
+<button class="flex-shrink-0 h-8 px-4 rounded-full glass-chip text-white/90 text-xs font-semibold hover:bg-white/10 hover:border-white/30 active:scale-95 transition-all whitespace-nowrap">
+                        Update Goal
+                    </button>
+<button class="flex-shrink-0 h-8 px-4 rounded-full glass-chip text-white/90 text-xs font-semibold hover:bg-white/10 hover:border-white/30 active:scale-95 transition-all whitespace-nowrap">
+                        Explain XP
+                    </button>
+<button class="flex-shrink-0 h-8 px-4 rounded-full glass-chip text-white/90 text-xs font-semibold hover:bg-white/10 hover:border-white/30 active:scale-95 transition-all whitespace-nowrap">
+                        Feeling Tired
+                    </button>
+<button class="flex-shrink-0 h-8 px-4 rounded-full glass-chip text-white/90 text-xs font-semibold hover:bg-white/10 hover:border-white/30 active:scale-95 transition-all whitespace-nowrap">
+                        Show History
+                    </button>
+</div>
+<div class="px-4 flex items-end gap-3">
+<div class="flex-1 bg-black/40 border border-white/10 rounded-[24px] flex items-center p-1 pl-5 shadow-inner backdrop-blur-lg focus-within:border-primary/40 focus-within:bg-black/50 transition-all duration-300">
+<input class="bg-transparent border-none text-white placeholder-white/40 text-[15px] w-full focus:ring-0 p-0 py-3 h-auto leading-normal font-normal" placeholder="Ask The Sage..." type="text"/>
+<button class="p-2.5 mr-1 text-white/50 hover:text-primary hover:bg-primary/10 rounded-full transition-all active:scale-90">
+<span class="material-symbols-outlined text-[20px] filled">mic</span>
+</button>
+</div>
+<button class="size-[52px] shrink-0 bg-primary/90 rounded-full flex items-center justify-center text-[#131811] hover:bg-primary hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(87,249,6,0.4)] backdrop-blur-sm border border-white/20 group">
+<span class="material-symbols-outlined text-[24px] ml-0.5 group-hover:translate-x-0.5 transition-transform filled">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        .material-symbols-outlined.filled {
+          font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }.text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+</body></html>

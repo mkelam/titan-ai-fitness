@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FINAL: AI Form Check</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(16, 34, 22, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-chip {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .neon-glow {
+            filter: drop-shadow(0 0 4px rgba(19, 236, 91, 0.6));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-black">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0">
+<img alt="Male fitness model working out in dark gym background" class="h-full w-full object-cover opacity-40" data-alt="Dark moody gym background with male athlete" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX3h9QMLEJj8QAw5kN_ok_TRVcW8PEdSm2U2Vnc9W4KQYBX9UWckrP3m8VWxmCiQ0YmSa4k7blBCX1d_ZATYxP0XLodOTzOjtjJbSuoSS7K6FuNScv9LobVuKVPReBol_aPmYVUIeBv51cE2SQ8TAVsZh18y0hJCmoZyUrcv-HQZwZ_oO1NjKyZXWHqWW4UK_3cf98ca4UNVhSXuFCq6f3QkbzcAhIRp219GgJekS99Hiz4CM9q7kuUPeIdRMnSAFJik7DsfSEXxMS"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark/90 via-background-dark/80 to-background-dark"></div>
+</div>
+<!-- Main Content -->
+<div class="relative z-10 flex min-h-screen flex-col pb-28">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 pt-6">
+<button class="glass-chip flex size-10 shrink-0 items-center justify-center rounded-full text-white transition hover:bg-white/20">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<h2 class="text-white text-lg font-bold tracking-tight uppercase">Form Analysis</h2>
+<div class="size-10"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- Video Analysis Player -->
+<div class="px-4 py-2">
+<div class="relative w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl bg-black">
+<!-- Video/Image Placeholder -->
+<div class="relative aspect-[3/4] w-full bg-gray-900">
+<img class="h-full w-full object-cover opacity-80 mix-blend-overlay" data-alt="User performing a barbell squat exercise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7mYkwBkLzsu_TasohyPJB1YeJyThKO2LFRxwWqD3O2MwnxBziCEvQuytOJrlIRNrXRFNuE53H2yY3Yb7uaNfWYZZbXS7T6S82XLPDkyyVqM4iggYAajKa6uOZAaNzPUuQRParHhaRlPi9PNzEHfILy_GksIwLPMcB4Rg38CxK6QFtimCTvbs9j--AjV6zg_tIPcb9Jj7lgwI0emDzME5Y5-wMzLs1egN-zfrosmALi9e8AO04lxZWOgJw9dg30uhIc8QuKICFziDD"/>
+<!-- Simulated Video Content (Image Overlay for specific lifter if needed, or using the one above) -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<!-- AI Skeletal Overlay (SVG) -->
+<svg class="absolute inset-0 h-full w-full pointer-events-none neon-glow" preserveaspectratio="none" viewbox="0 0 100 133">
+<!-- Head -->
+<circle cx="50" cy="25" fill="transparent" r="3" stroke="#13ec5b" stroke-width="1.5"></circle>
+<!-- Spine -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="50" x2="50" y1="28" y2="55"></line>
+<!-- Shoulders -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="50" x2="35" y1="32" y2="35"></line>
+<line stroke="#13ec5b" stroke-width="1.5" x1="50" x2="65" y1="32" y2="35"></line>
+<!-- Arms -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="35" x2="30" y1="35" y2="50"></line> <!-- L Upper Arm -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="65" x2="70" y1="35" y2="50"></line> <!-- R Upper Arm -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="30" x2="38" y1="50" y2="45"></line> <!-- L Forearm holding bar -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="70" x2="62" y1="50" y2="45"></line> <!-- R Forearm holding bar -->
+<!-- Hips -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="50" x2="40" y1="55" y2="60"></line>
+<line stroke="#13ec5b" stroke-width="1.5" x1="50" x2="60" y1="55" y2="60"></line>
+<!-- Legs -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="40" x2="38" y1="60" y2="85"></line> <!-- L Thigh -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="60" x2="62" y1="60" y2="85"></line> <!-- R Thigh -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="38" x2="40" y1="85" y2="110"></line> <!-- L Shin -->
+<line stroke="#13ec5b" stroke-width="1.5" x1="62" x2="60" y1="85" y2="110"></line> <!-- R Shin -->
+<!-- Joints -->
+<circle cx="50" cy="32" fill="#13ec5b" r="1.5"></circle> <!-- Neck -->
+<circle cx="50" cy="55" fill="#13ec5b" r="1.5"></circle> <!-- Waist -->
+<circle cx="38" cy="85" fill="#13ec5b" r="2"></circle> <!-- L Knee -->
+<circle cx="62" cy="85" fill="#13ec5b" r="2"></circle> <!-- R Knee -->
+</svg>
+<!-- Floating Video Controls -->
+<div class="absolute bottom-4 left-0 right-0 flex justify-center">
+<button class="glass-chip flex items-center justify-center rounded-full size-12 text-primary hover:bg-white/20 transition-all active:scale-95">
+<span class="material-symbols-outlined filled" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Insight Chips -->
+<div class="flex gap-2 p-4 pt-2 flex-wrap justify-center">
+<div class="glass-chip flex h-9 items-center justify-center gap-x-2 rounded-full px-4 transition hover:bg-white/20">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<p class="text-white text-xs font-bold tracking-wide uppercase">Depth: <span class="text-primary">Optimal</span></p>
+</div>
+<div class="glass-chip flex h-9 items-center justify-center gap-x-2 rounded-full px-4 transition hover:bg-white/20">
+<span class="material-symbols-outlined text-white/70 text-[18px]">straighten</span>
+<p class="text-white/90 text-xs font-medium tracking-wide">Angle: 45°</p>
+</div>
+<div class="glass-chip flex h-9 items-center justify-center gap-x-2 rounded-full px-4 transition hover:bg-white/20">
+<span class="material-symbols-outlined text-white/70 text-[18px]">speed</span>
+<p class="text-white/90 text-xs font-medium tracking-wide">0.4 m/s</p>
+</div>
+</div>
+<!-- Coach Analysis Card -->
+<div class="px-4 flex-1">
+<div class="glass-panel relative flex flex-col gap-4 rounded-3xl p-6 shadow-lg">
+<div class="flex items-center gap-3 border-b border-white/10 pb-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div>
+<p class="text-white text-base font-bold leading-tight">AI Coach Notes</p>
+<p class="text-white/50 text-xs font-normal">Generated 2 mins ago</p>
+</div>
+</div>
+<div class="space-y-3">
+<p class="text-white/90 text-sm font-normal leading-relaxed">
+                        Great depth achieved on the descent. However, watch your <span class="text-primary font-bold">knee valgus</span> (inward collapse) on the ascent portion.
+                    </p>
+<div class="flex items-start gap-3 rounded-xl bg-white/5 p-3">
+<span class="material-symbols-outlined text-primary mt-0.5 text-sm">lightbulb</span>
+<p class="text-xs text-white/80 leading-relaxed">Cue: Visualize pushing the floor apart with your feet to keep knees tracking over toes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Fixed Action Footer -->
+<div class="fixed bottom-0 z-50 w-full glass-panel border-t-0 pb-6 pt-4 rounded-t-3xl shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<div class="flex gap-4 px-6">
+<!-- Retake Button (Ghost) -->
+<button class="flex-1 h-14 rounded-full border border-white/20 bg-transparent text-white text-base font-bold tracking-wide transition active:scale-95 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary/50">
+                Re-take
+            </button>
+<!-- Save Button (Primary) -->
+<button class="flex-1 h-14 rounded-full bg-primary text-background-dark text-base font-bold tracking-wide shadow-[0_0_20px_rgba(19,236,91,0.4)] transition active:scale-95 hover:bg-[#0fd650] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-black">
+                Save to Log
+            </button>
+</div>
+</div>
+</body></html>

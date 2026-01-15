@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Goals</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0df259",
+              "background-light": "#f5f8f6",
+              "background-dark": "#102216",
+              "glass": "rgba(255, 255, 255, 0.05)",
+              "glass-border": "rgba(255, 255, 255, 0.1)",
+              "glass-active": "rgba(13, 242, 89, 0.1)",
+              "glass-active-border": "rgba(13, 242, 89, 0.5)",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            backdropBlur: {
+              'xs': '2px',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom Styles for better glassmorphism and gradients */
+        .glass-panel {
+            background: linear-gradient(180deg, rgba(32, 32, 32, 0.6) 0%, rgba(16, 34, 22, 0.8) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Radio Input Styling */
+        .glass-radio:checked + div {
+            background: rgba(13, 242, 89, 0.15);
+            border-color: #0df259;
+            box-shadow: 0 0 20px rgba(13, 242, 89, 0.15);
+        }
+
+        .glass-radio:checked + div .radio-icon {
+            color: #0df259;
+            text-shadow: 0 0 10px rgba(13, 242, 89, 0.5);
+            font-variation-settings: 'FILL' 1;
+        }
+
+        .glass-radio:checked + div .radio-indicator {
+            background-color: #0df259;
+            border-color: #0df259;
+        }
+
+        .glass-radio:checked + div .radio-indicator::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: #111813;
+            border-radius: 50%;
+        }
+
+        /* Gradient Overlay for Background Image */
+        .bg-overlay {
+            background: linear-gradient(180deg, rgba(16, 34, 22, 0.3) 0%, rgba(16, 34, 22, 0.85) 60%, #102216 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased text-white selection:bg-primary selection:text-background-dark">
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden bg-background-dark">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 h-full w-full">
+<div class="absolute inset-0 z-10 bg-overlay"></div>
+<img alt="Fitness Background" class="h-full w-full object-cover object-center opacity-80" data-alt="Intense male fitness model in dark gym lighting focusing before workout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMyEXm8KIOJ_pgR2fXcC5MPm3jUXhO2vSIzNPemkCEpFWZKtVv45wzYkp8RTELCQc6X8nr39JmLee8PNKJAfkcoHHyuITGfEgwT7JkCfMOXagr0JlSS8l04AhCRU1gdrJLaJbbORSBuaMf3_qES4h-QQZb51qqRc-ojUg2sH7pfpiklYlpChQVQAG5fTkhQmB-9TLeO-kvBtEjUTH7EwuP8Rx_46BZn0Nyw7L-9DHAGhLVZoD7bq9A9EoO2JwEV2tz_D950Zgl9WiX"/>
+</div>
+<!-- Content Container -->
+<div class="relative z-20 flex h-full flex-1 flex-col justify-between px-6 pb-8 pt-12 safe-area-top">
+<!-- Top Section -->
+<div class="flex flex-col gap-6">
+<!-- Page Indicators -->
+<div class="flex w-full flex-row items-center justify-between gap-2">
+<div class="h-1.5 flex-1 rounded-full bg-primary shadow-[0_0_10px_rgba(13,242,89,0.5)]"></div>
+<div class="h-1.5 flex-1 rounded-full bg-white/20 backdrop-blur-sm"></div>
+<div class="h-1.5 flex-1 rounded-full bg-white/20 backdrop-blur-sm"></div>
+<div class="h-1.5 flex-1 rounded-full bg-white/20 backdrop-blur-sm"></div>
+</div>
+<!-- Headline -->
+<div class="mt-4 flex flex-col items-center gap-2 text-center">
+<span class="text-xs font-bold uppercase tracking-[0.2em] text-primary drop-shadow-[0_0_5px_rgba(13,242,89,0.5)]">Step 01 / 04</span>
+<h1 class="text-4xl font-bold leading-tight tracking-tight text-white drop-shadow-md">
+                        CHOOSE YOUR<br/>PATH
+                    </h1>
+</div>
+</div>
+<!-- Middle Section: Goal Selection -->
+<div class="my-8 flex flex-col gap-4">
+<!-- Option 1: Strength -->
+<label class="group relative cursor-pointer">
+<input checked="" class="glass-radio peer sr-only" name="goal" type="radio"/>
+<div class="glass-card flex items-center justify-between rounded-full p-1 pr-6 transition-all duration-300 hover:bg-white/5 active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/5 p-3 backdrop-blur-md">
+<span class="material-symbols-outlined radio-icon text-3xl text-white transition-all duration-300">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold tracking-wide text-white">Build Strength</span>
+<span class="text-xs font-medium text-gray-400">Hypertrophy &amp; Power</span>
+</div>
+</div>
+<div class="radio-indicator flex h-6 w-6 items-center justify-center rounded-full border-2 border-white/30 bg-transparent transition-all duration-300"></div>
+</div>
+</label>
+<!-- Option 2: Fat Loss -->
+<label class="group relative cursor-pointer">
+<input class="glass-radio peer sr-only" name="goal" type="radio"/>
+<div class="glass-card flex items-center justify-between rounded-full p-1 pr-6 transition-all duration-300 hover:bg-white/5 active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/5 p-3 backdrop-blur-md">
+<span class="material-symbols-outlined radio-icon text-3xl text-white transition-all duration-300">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold tracking-wide text-white">Fat Loss</span>
+<span class="text-xs font-medium text-gray-400">Shred &amp; Tone</span>
+</div>
+</div>
+<div class="radio-indicator flex h-6 w-6 items-center justify-center rounded-full border-2 border-white/30 bg-transparent transition-all duration-300"></div>
+</div>
+</label>
+<!-- Option 3: Performance -->
+<label class="group relative cursor-pointer">
+<input class="glass-radio peer sr-only" name="goal" type="radio"/>
+<div class="glass-card flex items-center justify-between rounded-full p-1 pr-6 transition-all duration-300 hover:bg-white/5 active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="flex h-16 w-16 items-center justify-center rounded-full bg-white/5 p-3 backdrop-blur-md">
+<span class="material-symbols-outlined radio-icon text-3xl text-white transition-all duration-300">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="text-lg font-bold tracking-wide text-white">Performance</span>
+<span class="text-xs font-medium text-gray-400">Speed &amp; Agility</span>
+</div>
+</div>
+<div class="radio-indicator flex h-6 w-6 items-center justify-center rounded-full border-2 border-white/30 bg-transparent transition-all duration-300"></div>
+</div>
+</label>
+</div>
+<!-- Bottom Section: AI Coach & Action -->
+<div class="flex flex-col gap-6">
+<!-- AI Coach Bubble -->
+<div class="glass-panel relative flex items-center gap-4 rounded-3xl p-4">
+<!-- AI Avatar -->
+<div class="relative shrink-0">
+<div class="absolute -inset-0.5 animate-pulse rounded-full bg-primary/50 blur opacity-75"></div>
+<div class="relative h-12 w-12 overflow-hidden rounded-full border border-primary bg-black/50" data-alt="Futuristic AI coach avatar with glowing green accents" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5vnFl1aNd9EI5QApc8ij8DvqXfhc0IiROE6VqiX6ygdNII9kpFnuL-I1rv6_HPn0vmlRWEheW8JcDIVWn8lrp73sOTLEIZALQnyiYbI_FMK_KjtvccA8sYvLt-D_GblZ37PJV1Ft7VaGC6wXrV4LdSD2xP7VlqmHJq0QcKPaIF2aptNyIB11mIkE-qdaFT41sQiUYacfJZ14DnnhBSQ1HwxoeZrVLm54fkzNPn1LASnJipO_Q9_rnbhQV1hVKNlekJBL2gcgsV_qe'); background-size: cover; background-position: center;">
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold uppercase tracking-wider text-primary">The Sage</span>
+<span class="rounded-full bg-white/10 px-1.5 py-0.5 text-[10px] font-medium leading-none text-white/70">AI COACH</span>
+</div>
+<p class="text-sm font-light leading-snug text-gray-200">
+                            "To guide you, I first need to know where we are headed."
+                        </p>
+</div>
+</div>
+<!-- Primary Action Button -->
+<button class="group relative flex h-14 w-full items-center justify-center overflow-hidden rounded-full bg-primary transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(13,242,89,0.4)] focus:outline-none active:scale-[0.98]">
+<span class="absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+<span class="relative text-base font-bold tracking-widest text-background-dark">CONFIRM GOAL</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

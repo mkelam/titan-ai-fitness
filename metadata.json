@@ -1,0 +1,9 @@
+{
+  "name": "Titan - AI Fitness RPG",
+  "description": "A gamified, AI-driven fitness odyssey combining elite coaching with RPG progression. Track workouts, analyze biometrics, and compete in squads in a cinematic dark-mode experience.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

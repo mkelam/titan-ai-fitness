@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Badge Gallery - Trophy Room</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "glass-dark": "rgba(16, 34, 22, 0.7)",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hexagon Shape Styling */
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        
+        .hexagon-inner {
+            clip-path: polygon(50% 2%, 98% 26%, 98% 74%, 50% 98%, 2% 74%, 2% 26%);
+        }
+
+        /* Custom Scrollbar for hidden aesthetics */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-black">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0 w-full h-full">
+<!-- Moody Fitness Model Background -->
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" data-alt="Moody dark fitness model lifting weights in a gym setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZVz-YnY4GguXFNoQZPqXCs-za3KxNAoc9GPk-1VQkyy-Gtip5YlZnMD3aAYzVH0_SnsQ-ajAL9JcoOkaIGbCQ0fWYTCAedy0pMrzLXXhpj9ALo5W3HXEdFcDGFWEyAcEuSCon-qDcG1EJpNVGu0xZLc-XwKjkB1o1aL8HCo7HYOAtE8cc81uiGgOqyY5t5oswYv1IwYPBZ2sKlkAS1WXqZOCV3XLDPDq4kqLJXOWjlyfLF3pPSrQRYWj7yBw4hVv6ZKWODxjuiqp4");'>
+</div>
+<!-- Heavy Overlay for Contrast -->
+<div class="absolute inset-0 bg-black/80 backdrop-blur-[2px]"></div>
+<!-- Ambient Green Glow -->
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px]"></div>
+</div>
+<!-- Main Content Layer -->
+<div class="relative z-10 flex flex-col h-full min-h-screen pb-24">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 pt-14 pb-4 bg-gradient-to-b from-black/80 to-transparent sticky top-0 z-50 backdrop-blur-md">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 backdrop-blur-md border border-white/10 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-white text-[20px]">arrow_back</span>
+</button>
+<div class="text-center">
+<h1 class="text-white text-xl font-bold tracking-widest uppercase glow-text">Trophy Room</h1>
+<p class="text-xs text-primary font-medium tracking-wide">LEVEL 14 • IRON LIFTER</p>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 backdrop-blur-md border border-white/10 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-white text-[20px]">share</span>
+</button>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 px-4 space-y-8 mt-2">
+<!-- Featured Pedestal -->
+<section class="relative group">
+<div class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl group-hover:bg-primary/30 transition-all duration-500"></div>
+<div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-0 shadow-2xl shadow-black/50">
+<!-- Glass Shine Effect -->
+<div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+<div class="flex flex-col sm:flex-row items-center gap-6 p-6">
+<!-- Featured Badge Visual -->
+<div class="relative shrink-0">
+<div class="w-24 h-24 bg-gradient-to-br from-primary via-emerald-600 to-black rounded-full p-[2px] shadow-[0_0_20px_rgba(19,236,91,0.4)] animate-pulse">
+<div class="w-full h-full bg-black/80 rounded-full flex items-center justify-center backdrop-blur-sm border border-primary/50">
+<span class="material-symbols-outlined text-primary text-5xl drop-shadow-[0_0_8px_rgba(19,236,91,0.8)]">trophy</span>
+</div>
+</div>
+<!-- Badge Shine -->
+<div class="absolute top-0 right-0 -mr-2 -mt-2">
+<span class="material-symbols-outlined text-yellow-400 text-xl animate-bounce">star</span>
+</div>
+</div>
+<!-- Featured Text -->
+<div class="flex flex-col text-center sm:text-left flex-1 min-w-0">
+<div class="inline-flex items-center justify-center sm:justify-start gap-1 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-primary text-xs font-bold tracking-wider uppercase">Featured Achievement</span>
+</div>
+<h2 class="text-2xl font-bold text-white mb-1 leading-tight">Marathon Runner</h2>
+<p class="text-gray-400 text-sm mb-3">Earned Oct 12, 2023</p>
+<div class="w-full bg-white/10 h-px mb-3"></div>
+<div class="flex items-center justify-center sm:justify-start gap-2">
+<span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 text-[10px] font-bold uppercase tracking-wider">Top 1%</span>
+<span class="text-gray-400 text-xs">Master Badge</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Overview (ProfileStats variant) -->
+<section class="grid grid-cols-2 gap-3">
+<div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-4 flex flex-col items-center justify-center text-center">
+<span class="text-3xl font-bold text-white mb-1">24</span>
+<span class="text-xs text-gray-400 uppercase tracking-wide">Badges Earned</span>
+</div>
+<div class="rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-4 flex flex-col items-center justify-center text-center">
+<span class="text-3xl font-bold text-white mb-1">8</span>
+<span class="text-xs text-gray-400 uppercase tracking-wide">To Unlock</span>
+</div>
+</section>
+<!-- Filters -->
+<div class="flex justify-center">
+<div class="inline-flex bg-black/40 backdrop-blur-md p-1 rounded-xl border border-white/5">
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="filter" type="radio"/>
+<span class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-400 peer-checked:text-black peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(19,236,91,0.5)] transition-all duration-300">All Badges</span>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="filter" type="radio"/>
+<span class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-400 peer-checked:text-black peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(19,236,91,0.5)] transition-all duration-300">Earned</span>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="filter" type="radio"/>
+<span class="block px-4 py-2 rounded-lg text-sm font-medium text-gray-400 peer-checked:text-black peer-checked:bg-primary peer-checked:shadow-[0_0_10px_rgba(19,236,91,0.5)] transition-all duration-300">Locked</span>
+</label>
+</div>
+</div>
+<!-- Honeycomb Grid -->
+<section class="pb-8">
+<div class="flex flex-wrap justify-center gap-4">
+<!-- Badge 1: Earned -->
+<div class="relative group cursor-pointer w-28 h-32 flex items-center justify-center transition-transform hover:-translate-y-1">
+<!-- Glow -->
+<div class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<!-- Hexagon Shape Container -->
+<div class="w-28 h-28 bg-primary/20 hexagon flex items-center justify-center p-[2px]">
+<!-- Inner Hexagon -->
+<div class="w-full h-full bg-black/60 backdrop-blur-md hexagon-inner flex flex-col items-center justify-center border border-primary/50 relative overflow-hidden">
+<!-- Neon Accent -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+<span class="material-symbols-outlined text-primary text-3xl mb-1 z-10 drop-shadow-[0_0_5px_rgba(19,236,91,0.8)]">schedule</span>
+<span class="text-[10px] font-bold text-white uppercase tracking-wider z-10">Early Riser</span>
+</div>
+</div>
+</div>
+<!-- Badge 2: Earned -->
+<div class="relative group cursor-pointer w-28 h-32 flex items-center justify-center transition-transform hover:-translate-y-1 mt-12 sm:mt-0"> <!-- Offset for honeycomb effect on mobile if desired, simplistic grid here -->
+<div class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-28 h-28 bg-primary/20 hexagon flex items-center justify-center p-[2px]">
+<div class="w-full h-full bg-black/60 backdrop-blur-md hexagon-inner flex flex-col items-center justify-center border border-primary/50 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+<span class="material-symbols-outlined text-primary text-3xl mb-1 z-10 drop-shadow-[0_0_5px_rgba(19,236,91,0.8)]">fitness_center</span>
+<span class="text-[10px] font-bold text-white uppercase tracking-wider z-10">Heavy Hitter</span>
+</div>
+</div>
+</div>
+<!-- Badge 3: Earned -->
+<div class="relative group cursor-pointer w-28 h-32 flex items-center justify-center transition-transform hover:-translate-y-1">
+<div class="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-28 h-28 bg-primary/20 hexagon flex items-center justify-center p-[2px]">
+<div class="w-full h-full bg-black/60 backdrop-blur-md hexagon-inner flex flex-col items-center justify-center border border-primary/50 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+<span class="material-symbols-outlined text-primary text-3xl mb-1 z-10 drop-shadow-[0_0_5px_rgba(19,236,91,0.8)]">local_fire_department</span>
+<span class="text-[10px] font-bold text-white uppercase tracking-wider z-10">Burn 5k</span>
+</div>
+</div>
+</div>
+<!-- Badge 4: Locked -->
+<div class="relative group cursor-pointer w-28 h-32 flex items-center justify-center transition-transform hover:-translate-y-1 mt-12 sm:mt-0 opacity-60 hover:opacity-100">
+<div class="w-28 h-28 bg-white/5 hexagon flex items-center justify-center p-[2px]">
+<div class="w-full h-full bg-black/40 backdrop-blur-sm hexagon-inner flex flex-col items-center justify-center border border-white/10 relative overflow-hidden">
+<span class="material-symbols-outlined text-gray-400 text-3xl mb-1 z-10">lock</span>
+<span class="text-[9px] font-medium text-gray-400 uppercase tracking-wider z-10 text-center px-2">Lift 100k lbs</span>
+</div>
+</div>
+</div>
+<!-- Badge 5: Locked -->
+<div class="relative group cursor-pointer w-28 h-32 flex items-center justify-center transition-transform hover:-translate-y-1">
+<div class="w-28 h-28 bg-white/5 hexagon flex items-center justify-center p-[2px]">
+<div class="w-full h-full bg-black/40 backdrop-blur-sm hexagon-inner flex flex-col items-center justify-center border border-white/10 relative overflow-hidden">
+<span class="material-symbols-outlined text-gray-400 text-3xl mb-1 z-10">lock</span>
+<span class="text-[9px] font-medium text-gray-400 uppercase tracking-wider z-10 text-center px-2">Run 50km</span>
+</div>
+</div>
+</div>
+<!-- Badge 6: Locked -->
+<div class="relative group cursor-pointer w-28 h-32 flex items-center justify-center transition-transform hover:-translate-y-1 mt-12 sm:mt-0 opacity-60 hover:opacity-100">
+<div class="w-28 h-28 bg-white/5 hexagon flex items-center justify-center p-[2px]">
+<div class="w-full h-full bg-black/40 backdrop-blur-sm hexagon-inner flex flex-col items-center justify-center border border-white/10 relative overflow-hidden">
+<span class="material-symbols-outlined text-gray-400 text-3xl mb-1 z-10">lock</span>
+<span class="text-[9px] font-medium text-gray-400 uppercase tracking-wider z-10 text-center px-2">Streak 30d</span>
+</div>
+</div>
+</div>
+<!-- Badge 7: Locked -->
+<div class="relative group cursor-pointer w-28 h-32 flex items-center justify-center transition-transform hover:-translate-y-1 opacity-60 hover:opacity-100">
+<div class="w-28 h-28 bg-white/5 hexagon flex items-center justify-center p-[2px]">
+<div class="w-full h-full bg-black/40 backdrop-blur-sm hexagon-inner flex flex-col items-center justify-center border border-white/10 relative overflow-hidden">
+<span class="material-symbols-outlined text-gray-400 text-3xl mb-1 z-10">lock</span>
+<span class="text-[9px] font-medium text-gray-400 uppercase tracking-wider z-10 text-center px-2">Yoga Master</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Glass Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 px-6 pb-6 pt-2">
+<div class="mx-auto max-w-md h-16 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center justify-around px-2">
+<a class="flex flex-col items-center justify-center w-12 h-12 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="text-[9px] mt-0.5 font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-12 h-12 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">fitness_center</span>
+<span class="text-[9px] mt-0.5 font-medium">Train</span>
+</a>
+<a class="flex flex-col items-center justify-center w-12 h-12 rounded-xl text-primary bg-primary/10 shadow-[0_0_10px_rgba(19,236,91,0.2)]" href="#">
+<span class="material-symbols-outlined text-[24px]">emoji_events</span>
+<span class="text-[9px] mt-0.5 font-bold">Badges</span>
+</a>
+<a class="flex flex-col items-center justify-center w-12 h-12 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[9px] mt-0.5 font-medium">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

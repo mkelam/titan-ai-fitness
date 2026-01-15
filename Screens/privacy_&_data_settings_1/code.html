@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy &amp; Data Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec5b",
+              "background-dark": "#102216",
+              "surface-dark": "#1a2c20",
+              "glass-border": "rgba(255, 255, 255, 0.1)",
+              "glass-bg": "rgba(0, 0, 0, 0.4)",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "body": ["Noto Sans", "sans-serif"],
+            },
+            boxShadow: {
+                'neon': '0 0 20px rgba(19, 236, 91, 0.5), 0 0 10px rgba(19, 236, 91, 0.3)',
+                'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+            },
+            backgroundImage: {
+                'fitness-model': "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop')",
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(13, 18, 15, 0.85);backdrop-filter: blur(32px);-webkit-backdrop-filter: blur(32px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+        .glass-panel-lighter {
+            background: rgba(35, 40, 38, 0.75);backdrop-filter: blur(24px);-webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .neon-circle {
+            background: rgba(19, 236, 91, 0.08);
+            box-shadow: 0 0 30px rgba(19, 236, 91, 0.25), inset 0 0 20px rgba(19, 236, 91, 0.1);
+            border: 1px solid rgba(19, 236, 91, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black text-white min-h-screen relative overflow-x-hidden font-body selection:bg-primary/30">
+<div class="fixed inset-0 z-0 bg-fitness-model bg-cover bg-center bg-no-repeat">
+<div class="absolute inset-0 bg-black/70 backdrop-blur-[4px]"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
+</div>
+<div class="relative z-10 pb-28">
+<div class="sticky top-0 z-50 glass-panel border-b-0 border-b-white/5 rounded-b-2xl mb-4">
+<div class="flex items-center p-4 pb-4 justify-between">
+<button class="text-white flex size-10 shrink-0 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/10 transition-colors backdrop-blur-xl">
+<span class="material-symbols-outlined" style="font-size: 20px;">arrow_back</span>
+</button>
+<h2 class="text-white text-lg font-bold leading-tight tracking-wider flex-1 text-center pr-10 font-display uppercase drop-shadow-md">Privacy Shield</h2>
+</div>
+</div>
+<div class="px-4 mt-2">
+<div class="relative overflow-hidden rounded-3xl glass-panel p-6">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-[60px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[50px] pointer-events-none"></div>
+<div class="flex items-center justify-between relative z-10">
+<div class="flex-1 pr-4">
+<p class="text-gray-300 text-xs font-semibold uppercase tracking-widest mb-2">Protection Level</p>
+<h3 class="text-white text-2xl font-bold font-display flex items-center gap-2 drop-shadow-sm">
+<span class="material-symbols-outlined text-primary drop-shadow-[0_0_8px_rgba(19,236,91,0.8)]">shield_lock</span>
+                            High Security
+                        </h3>
+<p class="text-gray-400 text-xs font-medium leading-relaxed mt-3 max-w-[200px]">
+                            End-to-end encryption enabled. Your biometric data is safe.
+                        </p>
+</div>
+<div class="shrink-0 relative flex items-center justify-center w-24 h-24 rounded-full neon-circle">
+<div class="text-center">
+<span class="block text-3xl font-bold font-display text-primary drop-shadow-[0_0_5px_rgba(19,236,91,0.8)]">95</span>
+<span class="block text-[10px] text-primary/80 uppercase font-bold tracking-widest">Score</span>
+</div>
+<svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none">
+<circle cx="48" cy="48" fill="none" r="46" stroke="rgba(255,255,255,0.1)" stroke-width="2"></circle>
+<circle class="drop-shadow-[0_0_4px_#13ec5b]" cx="48" cy="48" fill="none" r="46" stroke="#13ec5b" stroke-dasharray="289" stroke-dashoffset="14" stroke-linecap="round" stroke-width="2"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h3 class="text-gray-400 text-xs font-bold leading-tight tracking-widest uppercase px-6 pb-3">Photo Privacy</h3>
+<div class="mx-4 flex flex-col gap-3">
+<div class="flex gap-4 items-center glass-panel-lighter px-5 py-4 rounded-2xl hover:bg-white/5 transition-colors">
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-white text-base font-medium leading-normal font-display">Blur photos in gallery</p>
+<p class="text-gray-400 text-xs font-normal leading-normal mt-1">Hides progress photos from main gallery view.</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border border-white/10 bg-black/40 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary/20 has-[:checked]:border-primary transition-all duration-300">
+<div class="h-[22px] w-[22px] rounded-full bg-gray-400 has-[:checked]:bg-primary shadow-sm transition-colors"></div>
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex gap-4 items-center glass-panel-lighter px-5 py-4 rounded-2xl hover:bg-white/5 transition-colors">
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-white text-base font-medium leading-normal font-display">Auto-delete after 1 year</p>
+<p class="text-gray-400 text-xs font-normal leading-normal mt-1">Removes old body composition data automatically.</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border border-white/10 bg-black/40 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary/20 has-[:checked]:border-primary transition-all duration-300">
+<div class="h-[22px] w-[22px] rounded-full bg-gray-400 has-[:checked]:bg-primary shadow-sm transition-colors"></div>
+<input class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<div class="flex items-center px-6 pb-3 gap-2">
+<h3 class="text-gray-400 text-xs font-bold leading-tight tracking-widest uppercase">Data Sharing &amp; AI</h3>
+<span class="material-symbols-outlined text-primary text-sm animate-pulse drop-shadow-[0_0_5px_rgba(19,236,91,0.8)]">auto_awesome</span>
+</div>
+<div class="mx-4 flex flex-col gap-3">
+<div class="flex flex-col gap-0 glass-panel-lighter rounded-2xl overflow-hidden">
+<div class="flex gap-4 items-center px-5 py-4">
+<div class="flex flex-1 flex-col justify-center">
+<div class="flex items-center gap-2">
+<p class="text-white text-base font-medium leading-normal font-display">AI Coach Analysis</p>
+<span class="inline-flex items-center rounded-md bg-primary/20 px-2 py-0.5 text-[10px] font-bold text-primary ring-1 ring-inset ring-primary/40 font-display tracking-wide backdrop-blur-sm">BETA</span>
+</div>
+<p class="text-gray-400 text-xs font-normal leading-normal mt-1">Allow AI to scan photos for muscle definition.</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[28px] w-[48px] cursor-pointer items-center rounded-full border border-white/10 bg-black/40 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary/20 has-[:checked]:border-primary transition-all duration-300">
+<div class="h-[22px] w-[22px] rounded-full bg-gray-400 has-[:checked]:bg-primary shadow-sm transition-colors"></div>
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="bg-primary/10 px-5 py-3 border-t border-primary/20 backdrop-blur-sm flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">smart_toy</span>
+<p class="text-xs text-primary/80 leading-relaxed font-medium">
+                            The AI measures shoulder-to-waist ratio locally. No images are uploaded to the cloud without explicit consent.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 mb-6">
+<h3 class="text-gray-400 text-xs font-bold leading-tight tracking-widest uppercase px-6 pb-3">Your Data Rights</h3>
+<div class="mx-4 flex flex-col gap-4">
+<button class="group relative w-full flex items-center justify-between glass-panel-lighter hover:bg-white/5 text-white rounded-full px-2 py-2 pr-6 transition-all duration-300 active:scale-[0.98]">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 p-3 rounded-full text-primary group-hover:text-black group-hover:bg-primary transition-all duration-300 shadow-[0_0_15px_rgba(19,236,91,0.2)]">
+<span class="material-symbols-outlined">download</span>
+</div>
+<div class="text-left">
+<p class="font-bold text-sm font-display uppercase tracking-wide">Export All Data</p>
+<p class="text-[11px] text-gray-400">Download .csv or .json copy</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-center gap-2 mt-1 glass-panel-lighter text-red-400 hover:text-red-300 hover:bg-red-500/10 py-3 rounded-xl text-sm font-medium transition-all duration-300">
+<span class="material-symbols-outlined text-lg">delete_forever</span>
+                    Delete Account &amp; Wipe Data
+                </button>
+</div>
+</div>
+</div>
+<nav class="fixed bottom-6 left-4 right-4 z-50 rounded-2xl glass-panel shadow-2xl shadow-black/50">
+<div class="flex justify-around items-center h-16 px-2">
+<a class="flex flex-col items-center justify-center w-full h-full text-gray-400 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl mb-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">grid_view</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-gray-400 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl mb-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">fitness_center</span>
+</a>
+<div class="relative -top-6">
+<button class="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-black shadow-[0_0_20px_rgba(19,236,91,0.6)] border-4 border-black/50 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center w-full h-full text-gray-400 hover:text-white transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl mb-0.5 group-hover:-translate-y-0.5 transition-transform duration-300">insights</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-primary transition-colors relative" href="#">
+<span class="material-symbols-outlined text-2xl mb-0.5 drop-shadow-[0_0_8px_rgba(19,236,91,0.8)]">shield_lock</span>
+<span class="absolute -bottom-1 w-1 h-1 rounded-full bg-primary shadow-[0_0_5px_#13ec5b]"></span>
+</a>
+</div>
+</nav>
+</body></html>

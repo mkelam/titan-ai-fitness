@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Main Coach Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-dark": "#050a07", 
+                        "text-secondary": "#b4c7bb",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    boxShadow: {
+                        "neon": "0 0 15px rgba(19, 236, 91, 0.4), 0 0 30px rgba(19, 236, 91, 0.2)",
+                        "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-panel {
+            background: rgba(10, 15, 12, 0.75);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        }
+        .glass-card {
+            background: linear-gradient(135deg, rgba(20, 25, 22, 0.7), rgba(40, 45, 42, 0.45));
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+        .glass-nav {
+            background: rgba(5, 10, 7, 0.85);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black font-display min-h-screen flex flex-col items-center justify-center p-0 m-0 text-white selection:bg-primary selection:text-black">
+<div class="w-full max-w-md h-screen max-h-screen overflow-hidden flex flex-col relative shadow-2xl bg-black">
+<div class="absolute inset-0 z-0">
+<img alt="Male fitness model background" class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgxBqkmLKRPxqc3w0rlS89dXLIw_lU7Bs0oul6-gj5sf5M_rkg7i8k2WsoHL6vv-XbRe63R966w0aQrTjhz6jFrjGpZkT9OVQx9gPIYn3j4sQNUNU2AOtPU6kANK5FxdCcB2zcGljmRxTvc9G-zsOBYnlGlB-PdVSGP10BXAtcy_TTmASjGitkS2S9Y8mdb14m0iaod89_QYHWrK9rOF8spVhSpNaG0NkPCl96uXm9uAY4phj_kKAA1-0GehJ2WlfXRrjtgssJEDtq"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+<div class="absolute inset-0 bg-black/20 backdrop-blur-[2px]"></div>
+</div>
+<div class="flex-1 overflow-y-auto overflow-x-hidden z-10 no-scrollbar pb-28 relative">
+<div class="flex items-center justify-between p-6 pb-2 pt-14">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="size-12 rounded-full bg-cover bg-center border border-white/30 shadow-neon" data-alt="User profile avatar with futuristic lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDU7FMQyMlTVhFq2_NKhj9HQ5xGT9W28xtq3OqIWclTMXT9M5HW7c3IrrWl1pyBiKNPJBGD1QIB070CFuKqIPoBTFvdLvQEJXK6hexoYEAMNR7DrRXQgmEOp7BokqsQx0plpY_v_yu9zb0QHJrqYx7w7DBhdHc_Z57aWnmYaFLdWGih8VZjraO1Wlf1oD_f3ODtdHdD0P8GoBtbcZirdHOwcuNEB7LEACBr9zIXup6alRsM-Mee52QNlVp6_RVPKH9tBTgC71jYGeWP");'></div>
+<div class="absolute -bottom-1 -right-1 bg-black/50 backdrop-blur-md rounded-full p-1 border border-white/10">
+<div class="size-2.5 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(19,236,91,0.8)]"></div>
+</div>
+</div>
+<div>
+<h2 class="text-white text-xl font-bold leading-tight drop-shadow-md">Hi, Sarah</h2>
+<p class="text-primary text-xs font-semibold uppercase tracking-widest drop-shadow-sm">Ready to crush it?</p>
+</div>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full glass-card hover:bg-white/10 transition-colors text-white border-white/20">
+<span class="material-symbols-outlined" style="font-size: 20px;">settings</span>
+</button>
+</div>
+<div class="px-6 py-4 grid grid-cols-2 gap-4">
+<div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
+<span class="material-symbols-outlined text-primary" style="font-size: 56px;">local_fire_department</span>
+</div>
+<span class="text-4xl font-bold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">12</span>
+<div class="flex items-center gap-1.5 text-text-secondary text-[11px] font-bold uppercase tracking-wider mt-1">
+<span class="material-symbols-outlined text-orange-500 drop-shadow-neon" style="font-size: 16px;">local_fire_department</span>
+                        Day Streak
+                    </div>
+</div>
+<div class="glass-card rounded-2xl p-4 flex flex-col items-center justify-center relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
+<span class="material-symbols-outlined text-blue-400" style="font-size: 56px;">verified</span>
+</div>
+<span class="text-4xl font-bold text-white tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">5</span>
+<div class="flex items-center gap-1.5 text-text-secondary text-[11px] font-bold uppercase tracking-wider mt-1">
+<span class="material-symbols-outlined text-blue-400 drop-shadow-neon" style="font-size: 16px;">hexagon</span>
+                        Athlete Lvl
+                    </div>
+</div>
+</div>
+<div class="px-6 mb-8">
+<div class="flex justify-between items-end mb-2 px-1">
+<span class="text-[10px] font-bold uppercase tracking-widest text-text-secondary">XP Progress</span>
+<span class="text-[10px] font-bold text-white bg-white/10 px-2 py-0.5 rounded border border-white/10 backdrop-blur-sm">450 / 1000</span>
+</div>
+<div class="h-2.5 w-full bg-black/40 backdrop-blur-sm rounded-full overflow-hidden relative border border-white/5">
+<div class="h-full bg-primary shadow-[0_0_15px_rgba(19,236,91,0.6)] rounded-full transition-all duration-1000 ease-out relative overflow-hidden" style="width: 45%;">
+<div class="absolute inset-0 bg-white/30 w-full h-full animate-[shimmer_2s_infinite] skew-x-12 origin-top-left translate-x-[-100%]"></div>
+</div>
+</div>
+</div>
+<div class="px-6 mb-8 relative z-20">
+<div class="glass-panel rounded-3xl overflow-hidden shadow-glass relative group border border-white/20">
+<div class="absolute inset-0 z-0 opacity-20 mix-blend-overlay bg-cover bg-center" data-alt="Abstract digital waveform data visualization" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWy0Fak93WhPeeN69btbVjU0-EfNzOuGpmxafFioVjNfcRxHwJkbJXEPj8bo-2uRZY7f-mItV946wM8SB1POuHTTowCm-LIkm1L5XbcCipi3PniH3DlV7YekZnxpR51JFkkX0chpZ4eJTER6DkwUrQy4UnOomO7emvMHaT53kdIjFhlDlxd23VC6qcZRSXzbVPx_uPJz6cCKVRePIlZwoodSl5Ue2mab9TOKrAuWR0zruyYWD065M7ZpmTTgibRGxZpyDYUlqA5-LL");'></div>
+<div class="relative z-10 p-6 flex flex-col gap-5">
+<div class="flex justify-between items-start">
+<div class="size-12 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 flex items-center justify-center text-primary shadow-neon">
+<span class="material-symbols-outlined" style="font-size: 28px;">smart_toy</span>
+</div>
+<span class="bg-primary/10 backdrop-blur-md text-primary text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg border border-primary/20 shadow-[0_0_10px_rgba(19,236,91,0.1)]">AI Coach</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-white mb-2 drop-shadow-md">Recover &amp; Reset</h3>
+<p class="text-white/80 text-sm leading-relaxed font-medium">
+                                I noticed you missed yesterday. Ready for a <span class="text-primary font-bold">10-min reset</span> workout to get back on track?
+                            </p>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-2">
+<button class="flex items-center justify-center h-12 rounded-xl bg-primary text-black font-bold text-sm shadow-neon hover:bg-white hover:text-black transition-all active:scale-95 border border-primary">
+                                Let's do it
+                            </button>
+<button class="flex items-center justify-center h-12 rounded-xl bg-white/5 border border-white/20 text-white font-semibold text-sm hover:bg-white/10 backdrop-blur-md transition-colors active:scale-95">
+                                Later
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<div class="px-6 mb-8">
+<h4 class="text-xs font-bold text-white/90 mb-4 uppercase tracking-wider flex items-center gap-2 pl-1">
+<span class="w-1.5 h-1.5 bg-primary rounded-full shadow-neon"></span>
+                    Quick Actions
+                </h4>
+<div class="grid grid-cols-3 gap-4">
+<button class="glass-card flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-white/10 transition-all active:scale-95 group">
+<div class="size-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:text-primary group-hover:border-primary/50 transition-colors shadow-lg">
+<span class="material-symbols-outlined">fitness_center</span>
+</div>
+<span class="text-[11px] font-semibold text-white/80 group-hover:text-white transition-colors">Log Training</span>
+</button>
+<button class="glass-card flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-white/10 transition-all active:scale-95 group">
+<div class="size-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:text-primary group-hover:border-primary/50 transition-colors shadow-lg">
+<span class="material-symbols-outlined">monitor_weight</span>
+</div>
+<span class="text-[11px] font-semibold text-white/80 group-hover:text-white transition-colors">Weigh In</span>
+</button>
+<button class="glass-card flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-white/10 transition-all active:scale-95 group">
+<div class="size-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:text-primary group-hover:border-primary/50 transition-colors shadow-lg">
+<span class="material-symbols-outlined">add_a_photo</span>
+</div>
+<span class="text-[11px] font-semibold text-white/80 group-hover:text-white transition-colors">Add Photo</span>
+</button>
+</div>
+</div>
+<div class="px-6 pb-6">
+<div class="flex items-center justify-between mb-4 pl-1">
+<h4 class="text-xs font-bold text-white/90 uppercase tracking-wider flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full shadow-neon"></span>
+                        This Week
+                    </h4>
+<span class="text-[10px] font-medium text-white/60 bg-black/30 px-2 py-1 rounded-full border border-white/5">4/7 Goals Met</span>
+</div>
+<div class="glass-card rounded-3xl p-5 flex justify-between items-end h-36 relative">
+<div class="absolute top-1/2 left-5 right-5 h-px bg-white/10 -z-0 border-t border-dashed border-white/10"></div>
+<div class="flex flex-col items-center gap-3 z-10 group cursor-pointer w-full">
+<div class="w-2 h-16 rounded-full bg-primary shadow-neon opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="text-[10px] font-bold text-white">M</span>
+</div>
+<div class="flex flex-col items-center gap-3 z-10 group cursor-pointer w-full">
+<div class="w-2 h-10 rounded-full bg-white/10 border border-white/10"></div>
+<span class="text-[10px] font-medium text-white/40">T</span>
+</div>
+<div class="flex flex-col items-center gap-3 z-10 group cursor-pointer w-full">
+<div class="w-2 h-20 rounded-full bg-primary shadow-neon opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="text-[10px] font-bold text-white">W</span>
+</div>
+<div class="flex flex-col items-center gap-3 z-10 group cursor-pointer w-full">
+<div class="w-2 h-24 rounded-full bg-primary shadow-neon opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<span class="text-[10px] font-bold text-white">T</span>
+</div>
+<div class="flex flex-col items-center gap-3 z-10 group cursor-pointer w-full relative">
+<div class="absolute -top-3 w-1.5 h-1.5 bg-white rounded-full animate-bounce shadow-[0_0_10px_white]"></div>
+<div class="w-2 h-6 rounded-full bg-white/20 border border-white/20"></div>
+<span class="text-[10px] font-bold text-primary drop-shadow-[0_0_5px_rgba(19,236,91,0.8)]">F</span>
+</div>
+<div class="flex flex-col items-center gap-3 z-10 group cursor-pointer w-full">
+<div class="w-2 h-2 rounded-full bg-white/5 border border-white/5"></div>
+<span class="text-[10px] font-medium text-white/20">S</span>
+</div>
+<div class="flex flex-col items-center gap-3 z-10 group cursor-pointer w-full">
+<div class="w-2 h-2 rounded-full bg-white/5 border border-white/5"></div>
+<span class="text-[10px] font-medium text-white/20">S</span>
+</div>
+</div>
+</div>
+</div>
+<div class="h-24 glass-nav px-8 pb-4 pt-2 flex items-center justify-between z-30 absolute bottom-0 w-full shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center gap-1.5 text-primary relative" href="#">
+<div class="absolute -top-3 w-8 h-1 bg-primary rounded-full blur-[4px] opacity-60"></div>
+<span class="material-symbols-outlined drop-shadow-[0_0_5px_rgba(19,236,91,0.6)]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold tracking-wide">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1.5 text-white/40 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_month</span>
+<span class="text-[10px] font-medium tracking-wide">Logs</span>
+</a>
+<div class="relative -top-8 group">
+<div class="absolute inset-0 bg-primary blur-[20px] opacity-40 rounded-full group-hover:opacity-60 transition-opacity"></div>
+<button class="relative bg-primary text-black rounded-full size-16 flex items-center justify-center shadow-neon border-4 border-black/40 backdrop-blur-sm transform transition-transform active:scale-90 overflow-hidden">
+<div class="absolute inset-0 bg-white/20 translate-y-8 skew-y-12"></div>
+<span class="material-symbols-outlined relative z-10" style="font-size: 32px; font-weight: 600;">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1.5 text-white/40 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">groups</span>
+<span class="text-[10px] font-medium tracking-wide">Social</span>
+</a>
+<a class="flex flex-col items-center gap-1.5 text-white/40 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="text-[10px] font-medium tracking-wide">Profile</span>
+</a>
+</div>
+</div>
+
+</body></html>

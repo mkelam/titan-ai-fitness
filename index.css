@@ -1,0 +1,339 @@
+/* ============================================
+   TITAN AI - GLASSMORPHIC FITNESS THEME
+   ============================================ */
+
+/* Background with fitness model */
+body {
+  background-color: #000000;
+  background-image: url('/OB.jpg'); /* Local fitness background - no gradient overlay */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Ensure root takes full height */
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ============================================
+   GLASSMORPHISM EFFECTS
+   ============================================ */
+
+/* Enhanced glass panel with higher translucency */
+.glass-panel {
+  background: rgba(15, 15, 15, 0.4) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glass panel hover state */
+.glass-panel:hover {
+  background: rgba(20, 20, 20, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stronger glass for modals */
+.glass-modal {
+  background: rgba(10, 10, 10, 0.7) !important;
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 20px 60px 0 rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Lighter glass for input fields */
+.glass-input {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: #00ff9d;
+  box-shadow: 0 0 0 3px rgba(0, 255, 157, 0.1);
+  outline: none;
+}
+
+/* ============================================
+   NEON ACCENTS
+   ============================================ */
+
+.text-neon {
+  color: #00ff9d;
+  text-shadow:
+    0 0 10px rgba(0, 255, 157, 0.5),
+    0 0 20px rgba(0, 255, 157, 0.3),
+    0 0 30px rgba(0, 255, 157, 0.2);
+}
+
+.border-neon {
+  border-color: #00ff9d !important;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+}
+
+.bg-neon {
+  background-color: #00ff9d !important;
+  box-shadow:
+    0 0 20px rgba(0, 255, 157, 0.4),
+    0 0 40px rgba(0, 255, 157, 0.2);
+}
+
+.bg-neon:active {
+  box-shadow:
+    0 0 15px rgba(0, 255, 157, 0.5),
+    0 0 30px rgba(0, 255, 157, 0.3);
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  backdrop-filter: blur(8px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 157, 0.4);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================
+   GRADIENT OVERLAYS
+   ============================================ */
+
+/* Gradient behind dashboard hero */
+.bg-gradient-fitness {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 157, 0.15) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Dark gradient for content sections */
+.bg-gradient-dark {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 3s infinite;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+}
+
+@keyframes pulse-neon {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 30px rgba(0, 255, 157, 0.6);
+  }
+}
+
+.pulse-neon {
+  animation: pulse-neon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ============================================
+   BADGE & BUFF PILLS
+   ============================================ */
+
+.buff-pill {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.buff-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #00ff9d;
+  transform: scale(1.05);
+}
+
+/* ============================================
+   MODAL BACKDROP
+   ============================================ */
+
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ============================================
+   CARD VARIANTS
+   ============================================ */
+
+/* Primary card with neon border */
+.card-neon {
+  background: rgba(0, 255, 157, 0.05);
+  border-left: 4px solid #00ff9d;
+  backdrop-filter: blur(24px);
+}
+
+/* Warning/alert card */
+.card-warning {
+  background: rgba(251, 191, 36, 0.05);
+  border-left: 4px solid #fbbf24;
+  backdrop-filter: blur(24px);
+}
+
+/* Danger/error card */
+.card-danger {
+  background: rgba(239, 68, 68, 0.05);
+  border-left: 4px solid #ef4444;
+  backdrop-filter: blur(24px);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Frosted glass effect */
+.frosted {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Slight glass effect */
+.glass-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* No select */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ============================================
+   MOBILE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Better performance on mobile */
+  }
+
+  .glass-panel {
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+  }
+}
+
+/* ============================================
+   DARK MODE OVERRIDES
+   ============================================ */
+
+.dark .glass-panel {
+  background: rgba(15, 15, 15, 0.5) !important;
+}
+
+.dark input,
+.dark textarea {
+  color: white;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .glass-panel {
+    background: white !important;
+    border: 1px solid #ccc;
+  }
+}

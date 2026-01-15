@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding - Experience</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4d125",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    boxShadow: {
+                        "neon": "0 0 15px rgba(244, 209, 37, 0.4), inset 0 0 10px rgba(244, 209, 37, 0.1)",
+                        "glass": "0 4px 30px rgba(0, 0, 0, 0.1)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-panel-active {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #f4d125;
+            box-shadow: 0 0 20px rgba(244, 209, 37, 0.2);
+        }
+
+        /* Hide scrollbar for cleaner look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-white overflow-hidden selection:bg-primary selection:text-background-dark">
+<!-- Background Image Layer -->
+<div class="fixed inset-0 z-0">
+<img alt="Male fitness model lifting weights in dark gym environment" class="h-full w-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvfxYwymbyP6gKqxEd56hfea6ottRjrHwLcOPoUYq3xZcm-R6N3yPgPfBzqY-Fp2ukDGi5QhrkHdwGQISbjqiZJ3pdy9ctL8aNIwOrc0MRkqvDKEexzeWVls6piQxQqZ4POpF7TKm4kBZj24B8blkWNE5-eekgDxUOdS9jFvig__NtUgef14uz91Shitx1oJ4y_qf5U101E8erCL2l1vVhtVE9Zcug4YTRYfboZsntKPsEFJh3uLyAFuA4hMXCBnQDGJr741opdNN4"/>
+<!-- Heavy dark gradient overlay for text readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-[#181711]/90 via-[#181711]/80 to-[#181711]/95"></div>
+<!-- Subtle primary colored glow orb in background -->
+<div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+</div>
+<!-- Main Content Container -->
+<div class="relative z-10 flex h-full min-h-screen w-full flex-col px-6 pt-12 pb-8 justify-between max-w-md mx-auto">
+<!-- Top Section: Progress & Header -->
+<div class="flex flex-col gap-6">
+<!-- Progress Bar -->
+<div class="flex flex-col gap-3">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-white/80 text-sm font-medium tracking-wide uppercase">Step 2 of 4</p>
+<p class="text-primary text-sm font-bold tracking-wide">50%</p>
+</div>
+<div class="h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+<div class="h-full rounded-full bg-primary shadow-[0_0_10px_#f4d125]" style="width: 50%;"></div>
+</div>
+</div>
+<!-- Headline Area -->
+<div class="flex flex-col gap-2 mt-2">
+<h1 class="text-white text-4xl font-bold leading-tight tracking-tight">
+                    What is your <br/><span class="text-primary">experience level?</span>
+</h1>
+<p class="text-white/70 text-base font-normal leading-relaxed max-w-[90%]">
+                    Select your current lifting capability to tailor your AI plan.
+                </p>
+</div>
+</div>
+<!-- Middle Section: Selection Cards -->
+<div class="flex-grow flex flex-col justify-center py-6 gap-8">
+<!-- Experience Radio List -->
+<div class="flex flex-col gap-4">
+<!-- Novice Card -->
+<label class="group relative cursor-pointer">
+<input class="peer sr-only" name="experience" type="radio" value="novice"/>
+<div class="glass-panel p-5 rounded-2xl flex items-center justify-between transition-all duration-300 peer-checked:border-primary peer-checked:bg-white/10 peer-checked:shadow-neon hover:bg-white/10">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-bold">Novice</span>
+<span class="text-white/60 text-sm font-light">New to lifting. Focus on form.</span>
+</div>
+<div class="h-6 w-6 rounded-full border-2 border-white/30 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] text-background-dark opacity-0 peer-checked:opacity-100 font-bold">check</span>
+</div>
+</div>
+</label>
+<!-- Intermediate Card (Pre-selected for demo) -->
+<label class="group relative cursor-pointer">
+<input checked="" class="peer sr-only" name="experience" type="radio" value="intermediate"/>
+<div class="glass-panel p-5 rounded-2xl flex items-center justify-between transition-all duration-300 peer-checked:border-primary peer-checked:bg-white/10 peer-checked:shadow-neon hover:bg-white/10">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-bold">Intermediate</span>
+<span class="text-white/60 text-sm font-light">Consistent training. Ready to optimize.</span>
+</div>
+<div class="h-6 w-6 rounded-full border-2 border-white/30 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] text-background-dark opacity-0 peer-checked:opacity-100 font-bold">check</span>
+</div>
+</div>
+</label>
+<!-- Advanced Card -->
+<label class="group relative cursor-pointer">
+<input class="peer sr-only" name="experience" type="radio" value="advanced"/>
+<div class="glass-panel p-5 rounded-2xl flex items-center justify-between transition-all duration-300 peer-checked:border-primary peer-checked:bg-white/10 peer-checked:shadow-neon hover:bg-white/10">
+<div class="flex flex-col gap-1">
+<span class="text-white text-lg font-bold">Advanced</span>
+<span class="text-white/60 text-sm font-light">Elite performance. Breaking plateaus.</span>
+</div>
+<div class="h-6 w-6 rounded-full border-2 border-white/30 flex items-center justify-center peer-checked:border-primary peer-checked:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[16px] text-background-dark opacity-0 peer-checked:opacity-100 font-bold">check</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Coach Personality Toggle -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end px-1">
+<h2 class="text-white text-sm font-bold tracking-wide uppercase opacity-80">Preview Your AI Coach</h2>
+</div>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+<!-- Sage -->
+<label class="relative cursor-pointer min-w-[100px] flex-1">
+<input checked="" class="peer sr-only" name="coach" type="radio" value="sage"/>
+<div class="glass-panel flex flex-col items-center justify-center gap-2 p-3 rounded-2xl h-28 transition-all duration-300 peer-checked:border-primary/50 peer-checked:bg-primary/10 peer-checked:shadow-[0_0_10px_rgba(244,209,37,0.1)] opacity-70 peer-checked:opacity-100 hover:opacity-100">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-xl">self_improvement</span>
+</div>
+<span class="text-xs font-medium tracking-wide">Sage</span>
+</div>
+</label>
+<!-- Sergeant -->
+<label class="relative cursor-pointer min-w-[100px] flex-1">
+<input class="peer sr-only" name="coach" type="radio" value="sergeant"/>
+<div class="glass-panel flex flex-col items-center justify-center gap-2 p-3 rounded-2xl h-28 transition-all duration-300 peer-checked:border-primary/50 peer-checked:bg-primary/10 peer-checked:shadow-[0_0_10px_rgba(244,209,37,0.1)] opacity-70 peer-checked:opacity-100 hover:opacity-100">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-stone-500 to-stone-800 flex items-center justify-center shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-white text-xl">military_tech</span>
+</div>
+<span class="text-xs font-medium tracking-wide">Sergeant</span>
+</div>
+</label>
+<!-- Hype-Man -->
+<label class="relative cursor-pointer min-w-[100px] flex-1">
+<input class="peer sr-only" name="coach" type="radio" value="hype"/>
+<div class="glass-panel flex flex-col items-center justify-center gap-2 p-3 rounded-2xl h-28 transition-all duration-300 peer-checked:border-primary/50 peer-checked:bg-primary/10 peer-checked:shadow-[0_0_10px_rgba(244,209,37,0.1)] opacity-70 peer-checked:opacity-100 hover:opacity-100">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-xl">bolt</span>
+</div>
+<span class="text-xs font-medium tracking-wide">Hype-Man</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Footer Navigation -->
+<div class="flex items-center gap-4 mt-4">
+<button class="glass-panel hover:bg-white/10 active:scale-95 transition-all text-white font-medium py-4 px-8 rounded-full flex-shrink-0 w-1/3 text-center backdrop-blur-md">
+                Back
+            </button>
+<button class="bg-primary hover:bg-[#eec610] active:scale-95 transition-all text-background-dark font-bold py-4 px-8 rounded-full flex-grow text-center shadow-[0_0_20px_rgba(244,209,37,0.4)] flex items-center justify-center gap-2 group">
+                Next Step
+                <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

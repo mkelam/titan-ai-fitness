@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FINAL: Training Log</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                        "glass-surface": "rgba(20, 20, 20, 0.6)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for hidden feel */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(22, 22, 24, 0.55);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-input {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .glass-input:focus {
+            border-color: #13ec5b;
+            background: rgba(0, 0, 0, 0.6);
+            outline: none;
+        }
+        
+        .neon-text-shadow {
+            text-shadow: 0 0 10px rgba(19, 236, 91, 0.3);
+        }
+
+        .neon-box-shadow {
+            box-shadow: 0 0 20px rgba(19, 236, 91, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#050505] text-white font-display antialiased selection:bg-primary selection:text-black overflow-x-hidden">
+<!-- Fixed Background Image -->
+<div class="fixed inset-0 z-0">
+<img alt="Male athlete lifting weights in a gym environment with dramatic lighting" class="w-full h-full object-cover opacity-80" data-alt="Male fitness model background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA37p5s-1Alv4MxmXmaVL5_EZlitTzoEumEQIcChz3fz0lzkKVbgIz3soTWJYbazhqD-psNE3Wq7CGh082AAE8naCVLRVUnis5UKBDGK5l_-eE8YmKOLarpfqoqYnPRjcbJipDRYNr3EoClQaixcZp12KS1eIYKosMP6HRyFEJxl2tvjScPk8-V7qltnFcAkitUUyzQXGtKfywDArkCqGApBs9edc1o67-JC0XQAwn1odko8CV_alsIz3upUXHVLzWYVTxkXoJ5XKQW"/>
+<!-- Heavy Gradient Overlay for Contrast -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 backdrop-blur-xs"></div>
+</div>
+<!-- Main Content Container -->
+<div class="relative z-10 flex flex-col min-h-screen pb-[100px]">
+<!-- Top App Bar -->
+<header class="flex items-center justify-between px-6 pt-12 pb-4 sticky top-0 z-50 bg-gradient-to-b from-black/80 to-transparent">
+<button class="flex items-center justify-center w-10 h-10 rounded-full glass-panel active:scale-95 transition-transform text-white">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="text-center">
+<h2 class="text-sm font-medium text-gray-400 uppercase tracking-widest">Training Log</h2>
+<h1 class="text-lg font-bold text-white tracking-wide">Hypertrophy Phase</h1>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full glass-panel active:scale-95 transition-transform text-white">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 px-4 space-y-6">
+<!-- Date Header -->
+<div class="px-2">
+<h2 class="text-3xl font-bold tracking-tight text-white leading-none">Wednesday,<br/><span class="text-gray-400">Oct 24</span></h2>
+</div>
+<!-- Quest of the Day Banner -->
+<div class="glass-panel rounded-xl p-5 relative overflow-hidden group">
+<!-- Decorative Glow -->
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/20 blur-[50px] rounded-full"></div>
+<div class="flex items-start gap-4 relative z-10">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 neon-box-shadow">
+<span class="material-symbols-outlined text-primary text-2xl neon-text-shadow">auto_awesome</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-1">
+<h3 class="text-lg font-bold text-white">Quest of the Day</h3>
+<span class="text-[10px] font-bold bg-primary/20 text-primary px-2 py-1 rounded-full border border-primary/20 uppercase tracking-wider">AI Coach</span>
+</div>
+<p class="text-gray-300 text-sm leading-relaxed font-light">Complete <span class="text-primary font-bold">3 sets</span> of pull-ups to failure to boost back width activation.</p>
+</div>
+</div>
+</div>
+<!-- Exercise Card 1 -->
+<div class="glass-panel rounded-xl p-0 overflow-hidden">
+<div class="p-5 border-b border-white/10 flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white/70">fitness_center</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white leading-tight">Barbell Back Squat</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded-full border border-primary/10">Compound</span>
+<span class="text-xs text-gray-400">Last: 100kg x 8</span>
+</div>
+</div>
+</div>
+<button class="text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<div class="p-4 space-y-3">
+<!-- Column Headers -->
+<div class="flex gap-3 px-1 text-[10px] uppercase tracking-widest text-gray-500 font-bold text-center">
+<div class="w-8">Set</div>
+<div class="w-16">Prev</div>
+<div class="flex-1">kg</div>
+<div class="flex-1">Reps</div>
+<div class="w-10"></div>
+</div>
+<!-- Set 1 -->
+<div class="flex items-center gap-3">
+<div class="w-8 flex justify-center">
+<div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/70">1</div>
+</div>
+<div class="w-16 text-xs text-center text-gray-400 font-mono">100x8</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0" type="text" value="100"/>
+</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0" type="text" value="8"/>
+</div>
+<div class="w-10 flex justify-center">
+<button class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-[0_0_15px_rgba(19,236,91,0.4)] transition-transform active:scale-90">
+<span class="material-symbols-outlined text-black font-bold">check</span>
+</button>
+</div>
+</div>
+<!-- Set 2 -->
+<div class="flex items-center gap-3">
+<div class="w-8 flex justify-center">
+<div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/70">2</div>
+</div>
+<div class="w-16 text-xs text-center text-gray-400 font-mono">100x8</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0 placeholder-gray-600" placeholder="100" type="text"/>
+</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0 placeholder-gray-600" placeholder="-" type="text"/>
+</div>
+<div class="w-10 flex justify-center">
+<button class="w-10 h-10 rounded-full bg-white/10 border border-white/10 hover:bg-primary/20 hover:border-primary/50 flex items-center justify-center transition-all group/check">
+<span class="material-symbols-outlined text-transparent group-hover/check:text-primary transition-colors">check</span>
+</button>
+</div>
+</div>
+<!-- Set 3 -->
+<div class="flex items-center gap-3">
+<div class="w-8 flex justify-center">
+<div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/70">3</div>
+</div>
+<div class="w-16 text-xs text-center text-gray-400 font-mono">100x8</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0 placeholder-gray-600" placeholder="100" type="text"/>
+</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0 placeholder-gray-600" placeholder="-" type="text"/>
+</div>
+<div class="w-10 flex justify-center">
+<button class="w-10 h-10 rounded-full bg-white/10 border border-white/10 hover:bg-primary/20 hover:border-primary/50 flex items-center justify-center transition-all group/check">
+<span class="material-symbols-outlined text-transparent group-hover/check:text-primary transition-colors">check</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-black/20 p-3 flex justify-center border-t border-white/5">
+<button class="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-2 px-4 py-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span> Add Set
+                    </button>
+</div>
+</div>
+<!-- Exercise Card 2 -->
+<div class="glass-panel rounded-xl p-0 overflow-hidden">
+<div class="p-5 border-b border-white/10 flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white/70">straighten</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white leading-tight">Leg Press</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full border border-blue-400/10">Isolation</span>
+<span class="text-xs text-gray-400">Target: 3 x 12</span>
+</div>
+</div>
+</div>
+<button class="text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+<div class="p-4 space-y-3">
+<!-- Set 1 -->
+<div class="flex items-center gap-3">
+<div class="w-8 flex justify-center">
+<div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/70">1</div>
+</div>
+<div class="w-16 text-xs text-center text-gray-400 font-mono">240x12</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0 placeholder-gray-600" placeholder="240" type="text"/>
+</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0 placeholder-gray-600" placeholder="-" type="text"/>
+</div>
+<div class="w-10 flex justify-center">
+<button class="w-10 h-10 rounded-full bg-white/10 border border-white/10 hover:bg-primary/20 hover:border-primary/50 flex items-center justify-center transition-all group/check">
+<span class="material-symbols-outlined text-transparent group-hover/check:text-primary transition-colors">check</span>
+</button>
+</div>
+</div>
+<!-- Set 2 -->
+<div class="flex items-center gap-3">
+<div class="w-8 flex justify-center">
+<div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/70">2</div>
+</div>
+<div class="w-16 text-xs text-center text-gray-400 font-mono">240x12</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0 placeholder-gray-600" placeholder="240" type="text"/>
+</div>
+<div class="flex-1">
+<input class="w-full glass-input rounded-full py-2 text-center font-bold font-mono focus:ring-0 placeholder-gray-600" placeholder="-" type="text"/>
+</div>
+<div class="w-10 flex justify-center">
+<button class="w-10 h-10 rounded-full bg-white/10 border border-white/10 hover:bg-primary/20 hover:border-primary/50 flex items-center justify-center transition-all group/check">
+<span class="material-symbols-outlined text-transparent group-hover/check:text-primary transition-colors">check</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-black/20 p-3 flex justify-center border-t border-white/5">
+<button class="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-2 px-4 py-2 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span> Add Set
+                    </button>
+</div>
+</div>
+<!-- Spacer for scroll -->
+<div class="h-20"></div>
+</main>
+</div>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-5 z-40">
+<button class="w-16 h-16 rounded-full glass-panel flex items-center justify-center text-primary border border-primary/40 shadow-[0_0_20px_rgba(19,236,91,0.3)] hover:scale-105 active:scale-95 transition-all group relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/20 transition-colors"></div>
+<span class="material-symbols-outlined text-3xl font-bold relative z-10 neon-text-shadow">add</span>
+</button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 glass-panel border-t border-white/10 pb-6 pt-4 px-6">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary relative">
+<span class="material-symbols-outlined text-2xl neon-text-shadow">edit_document</span>
+<span class="text-[10px] font-medium">Log</span>
+<div class="absolute -bottom-2 w-1 h-1 bg-primary rounded-full neon-box-shadow"></div>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">insights</span>
+<span class="text-[10px] font-medium">Progress</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

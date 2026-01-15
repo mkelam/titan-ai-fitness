@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FINAL: Coach Selection</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for the carousel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Glassmorphism utility classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-track {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Neon glow animation for active card */
+        .active-card-glow {
+            box-shadow: 0 0 20px rgba(19, 236, 91, 0.25);
+            border-color: rgba(19, 236, 91, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased selection:bg-primary selection:text-background-dark">
+<div class="relative flex h-screen w-full flex-col overflow-hidden bg-background-dark text-white">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0">
+<!-- Main Background Image -->
+<div class="h-full w-full bg-cover bg-center bg-no-repeat" data-alt="Athletic male model in dark gym setting looking focused" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQ44CkLkwif0Tdze91IzijXt_YdI-wylkS2iYO0Rj4q2Ys1_coSGe9V3-2LhaIijlH6HDzdeClWW7wBG_Vau05v0KbcOs5BAxXkPpb9DOXJe5hn3FMsMMri6dLQm19ekv0cGBlwtDN9iHkDMxfMjQIRHspmxMs2UqDvOl11XfWSkXvDnlZ-cHi-gh68E6RdvAshwyUYsjhbCA9faWdss0QyX451p-d6LDU0Ixis8CKY60cX2d1ZTmbTNyCL6KmuHfnD5nK7D0e96DZ');"></div>
+<!-- Heavy Dark Overlay for Legibility -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#102216] via-[#102216]/80 to-[#102216]/60 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-black/40 mix-blend-multiply"></div>
+</div>
+<!-- Content Layer -->
+<div class="relative z-10 flex h-full flex-col justify-between pt-safe-top pb-safe-bottom">
+<!-- Header -->
+<header class="p-4 pt-6">
+<div class="glass-pill flex items-center justify-between rounded-full px-2 py-2 pr-6">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full text-white hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-base font-bold tracking-wide uppercase text-white/90">Select Your Coach</h1>
+<div class="size-10"></div> <!-- Spacer for centering -->
+</div>
+</header>
+<!-- Scrollable Content Area -->
+<div class="flex-1 flex flex-col justify-center gap-2 overflow-y-auto no-scrollbar">
+<!-- Coach Carousel -->
+<div class="w-full">
+<div class="flex snap-x snap-mandatory gap-6 overflow-x-auto px-8 pb-8 pt-4 no-scrollbar items-center">
+<!-- Card 1: Sage -->
+<div class="glass-panel group relative flex h-[420px] w-[280px] min-w-[280px] snap-center flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-10"></div>
+<div class="h-3/5 w-full bg-cover bg-top" data-alt="3D render of a calm intellectual looking man with glasses" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByChvqOnur8kh3l1KwOnKsOH6GctTmKK0HRKybxh0PH45mLy6fZAheXPYszddFHwyNWWSlnMnUp7z3LRyxxQtHAUQt3mHkdz2Pict6ZkfmzdX5wKbmUKlfc-fjpE5bCLXtA-wGsuEqJZnwgqmZL4V9d-tafm6fbvG8PeWBzqJglcTiG7mxxxh14_ba1twvcv2yWklhg_62eRYfrEWV4zbmed1iSY1Pj_eOnGh8FSNJksvuOz6Mp0mVWsR8L5tY-FmLac0cS-4m6aYT');"></div>
+<div class="relative z-20 flex flex-1 flex-col justify-end p-5">
+<h3 class="mb-1 text-2xl font-bold text-white">Sage</h3>
+<p class="text-sm font-medium leading-relaxed text-white/80">I analyze. You optimize. Let's build a smart foundation.</p>
+</div>
+</div>
+<!-- Card 2: Sergeant (Active/Selected) -->
+<div class="glass-panel active-card-glow relative flex h-[460px] w-[300px] min-w-[300px] snap-center flex-col overflow-hidden rounded-2xl ring-1 ring-primary/30 transition-all duration-300 z-20">
+<!-- Active Indicator -->
+<div class="absolute right-4 top-4 z-30 flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-xs font-bold text-background-dark uppercase tracking-wider shadow-[0_0_10px_rgba(19,236,91,0.6)]">
+<span class="material-symbols-outlined text-[14px]">check</span> Selected
+                            </div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90 z-10"></div>
+<!-- Image -->
+<div class="h-3/5 w-full bg-cover bg-center scale-110" data-alt="3D render of a stern muscular military style fitness coach" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs5_hEQOxHiOU_0LJFi4ANd0tIzL30FDPSzZPOaQZaVV3U2fFVECMUw-F8zpx8oASfM7nyVeOC3XTufsN53uoYD03aaOdjCxnP4_X_I2R-zPGzouCh0QdNvIuVodHCLQ9ej-Vdw9BjG8ID1kygxA03nOcJYAo5GOi0bNdipfDG_eVEp97n9FTywwffOzotlX_7U03dhJ_XDqVFwtT7ja0KBDR0iEDu333amjgwc5_liwQLdfn4VL9LHXXOIkNngIhHrS7U_QMZOzc9');"></div>
+<!-- Content -->
+<div class="relative z-20 flex flex-1 flex-col justify-end p-6">
+<h3 class="mb-1 text-3xl font-bold text-white drop-shadow-lg">Sergeant</h3>
+<div class="mb-2 h-0.5 w-12 rounded-full bg-primary shadow-[0_0_8px_#13ec5b]"></div>
+<p class="text-base font-medium leading-relaxed text-white drop-shadow-md">No excuses. Drop and give me twenty. We work until it hurts.</p>
+</div>
+</div>
+<!-- Card 3: Hype-Man -->
+<div class="glass-panel group relative flex h-[420px] w-[280px] min-w-[280px] snap-center flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:scale-[1.02]">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 z-10"></div>
+<div class="h-3/5 w-full bg-cover bg-center" data-alt="3D render of a dynamic energetic young man smiling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCHpTmbLseduu4-7v_gy6bfehFzGAlnuLupN3VXSPG95k2MNpABF7ETwz6hgYHcmxWIoJ6ImCiXiowcteSzOEvV2ZBQCdw2-Q0YqGHXeE3Xsp7MWkF7L-1WIfmKLQWnd6i9qWIhH2nwhMUqQmnwf44OCK86xgr0YH8S91qcMlgGhe6mulw6UbEWrBsAB-dhuGBLsRdX4VxHkFNw-_JcWtTdOm30T0Fql29-wbjkOOzYoYJHOA9_FHjNMfh56PCKykinJiOzUf2wHVM');"></div>
+<div class="relative z-20 flex flex-1 flex-col justify-end p-5">
+<h3 class="mb-1 text-2xl font-bold text-white">Hype-Man</h3>
+<p class="text-sm font-medium leading-relaxed text-white/80">You got this! Let's crush those goals! Energy up!</p>
+</div>
+</div>
+</div>
+<!-- Carousel Indicators -->
+<div class="flex justify-center gap-2 mt-2">
+<div class="h-1.5 w-1.5 rounded-full bg-white/20"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary shadow-[0_0_8px_#13ec5b]"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-white/20"></div>
+</div>
+</div>
+<!-- Slider Section -->
+<div class="@container w-full px-6 pt-4 pb-2">
+<div class="mb-3 flex items-end justify-between px-1">
+<h3 class="text-xl font-bold text-white tracking-tight">Coaching Intensity</h3>
+<span class="text-xs font-medium text-primary uppercase tracking-widest">Ruthless</span>
+</div>
+<div class="glass-track relative flex h-14 w-full flex-col justify-center rounded-xl px-4">
+<div class="flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-white/40 mb-1 px-1">
+<span>Gentle</span>
+<span>Balanced</span>
+<span>Extreme</span>
+</div>
+<div class="relative flex h-6 w-full items-center">
+<!-- Track Background -->
+<div class="absolute h-1.5 w-full rounded-full bg-white/10"></div>
+<!-- Filled Track -->
+<div class="absolute h-1.5 w-[75%] rounded-full bg-primary shadow-[0_0_10px_#13ec5b]"></div>
+<!-- Thumb -->
+<div class="absolute left-[75%] flex h-6 w-6 -translate-x-1/2 cursor-grab items-center justify-center rounded-full bg-white shadow-lg ring-2 ring-primary ring-offset-2 ring-offset-black/20">
+<div class="h-2 w-2 rounded-full bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / CTA -->
+<div class="mt-auto px-6 pb-8 pt-4 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent">
+<button class="relative w-full overflow-hidden rounded-xl bg-primary py-4 text-center shadow-[0_0_25px_rgba(19,236,91,0.3)] transition-transform active:scale-[0.98]">
+<div class="absolute inset-0 bg-white/20 opacity-0 hover:opacity-100 transition-opacity"></div>
+<span class="relative z-10 font-display text-lg font-bold uppercase tracking-wider text-[#052e12]">
+                        Start Training
+                    </span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

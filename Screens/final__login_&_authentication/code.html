@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FINAL: Login &amp; Authentication</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4d125",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221f10",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(145deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Utilities for Glassmorphism */
+        .glass-panel {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            background: linear-gradient(180deg, rgba(30, 30, 30, 0.4) 0%, rgba(10, 10, 10, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+        
+        .glass-input {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-input:focus-within {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #f4d125;
+            box-shadow: 0 0 0 1px #f4d125;
+        }
+
+        /* Subtle floating animation for AI coach */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display antialiased text-white bg-background-dark min-h-screen flex flex-col relative overflow-hidden">
+<!-- Background Image -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" data-alt="Moody image of a male athlete in low light focus" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAO-NebzhQ8uqRu973aIZA0i3UQFFWxOqS7fJFOkkK1WTe4HUsTP13sglj0KFiSKgzaHBPjzqw1CIN5f-oqzhcpby1f1KUwnOQ4_c5VFDyQsM0PRsgo5YbUq1xdOzJMpUWmvTd2eFCru1FXUSTm8LKKwM51Qp_z52G-1A3yRfmC9PaX_iyaYRkCy6q_4_zPqgkAIcV2EFA_eWJz4EQtGEBYqGVwNWN6JJRI4eITnGzmcAYw3KnHaY9LeFlO1Vr38akKwgbEAVi5Vt-P');">
+</div>
+<!-- Gradient Overlay for Readability -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90"></div>
+<!-- Noise Texture Overlay (Optional for grit) -->
+<div class="absolute inset-0 opacity-[0.03]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB4LKUiH5ZRCHjEpPnU9mqVtpVYUbRH2HIM8lIk8If8oHo8roJj-IhEv-lCTJxq6huMtmx5qyWanicUOn_6Fdzo2AQ9eazerqe6ZQzhzOya22Wk_z9kLCA8cvKkVQqSrpHGIam2kiStrnI3312kKjnKHCbq9Rm4njTExV8KJoDE1qEQyG92ji75gms07EQESW-nqmcmd6XX0Rf5nGmghljlqKF_ovSsWjO-fOBEiWU3LFzLfogtLrDibOIZq86J5MOfQxMqhK_XqCSs');"></div>
+</div>
+<!-- Main Content Container -->
+<div class="relative z-10 flex flex-col min-h-screen w-full max-w-[480px] mx-auto px-6 py-8">
+<!-- Top Section: AI Coach Greeting -->
+<div class="flex-none pt-8 pb-6 flex justify-center">
+<div class="animate-float flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-3 rounded-full border border-white/10 max-w-[90%] shadow-lg">
+<div class="flex items-center justify-center shrink-0 rounded-full bg-primary/20 size-8 border border-primary/30">
+<span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+</div>
+<p class="text-white/90 text-sm font-medium leading-tight truncate">
+                    Welcome back, Champion. Ready for today's mission?
+                </p>
+</div>
+</div>
+<!-- Middle Section: Login Form -->
+<div class="flex-1 flex flex-col justify-center">
+<div class="glass-panel w-full rounded-[2rem] p-8 flex flex-col gap-6">
+<!-- Header -->
+<div class="text-center mb-2">
+<h1 class="text-3xl font-bold tracking-tight text-white mb-1">FINAL</h1>
+<p class="text-white/40 text-sm tracking-widest uppercase">Elite Performance Access</p>
+</div>
+<!-- Input Fields -->
+<div class="space-y-4">
+<!-- Email Field -->
+<label class="block group">
+<div class="glass-input flex w-full items-center rounded-full h-14 px-5">
+<span class="material-symbols-outlined text-white/40 mr-3">mail</span>
+<input class="bg-transparent border-none w-full text-white placeholder:text-white/30 focus:ring-0 text-base font-normal p-0" placeholder="Email Address" type="email" value=""/>
+</div>
+</label>
+<!-- Password Field -->
+<label class="block group">
+<div class="glass-input flex w-full items-center rounded-full h-14 px-5">
+<span class="material-symbols-outlined text-white/40 mr-3">lock</span>
+<input class="bg-transparent border-none w-full text-white placeholder:text-white/30 focus:ring-0 text-base font-normal p-0" placeholder="Password" type="password" value=""/>
+<button class="text-white/40 hover:text-white transition-colors flex items-center justify-center ml-2" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</label>
+</div>
+<!-- Forgot Password -->
+<div class="flex justify-end -mt-2">
+<a class="text-white/50 text-xs hover:text-primary transition-colors underline decoration-white/20 hover:decoration-primary/50 underline-offset-4" href="#">Forgot Password?</a>
+</div>
+<!-- Main Action -->
+<button class="w-full bg-primary hover:bg-[#ffe045] active:bg-[#e0c01f] text-black font-bold h-14 rounded-full transition-all duration-300 transform active:scale-[0.98] shadow-[0_0_20px_rgba(244,209,37,0.3)] hover:shadow-[0_0_30px_rgba(244,209,37,0.5)] flex items-center justify-center gap-2 uppercase tracking-wider text-sm mt-2">
+<span>Login</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Divider -->
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-white/10"></div>
+<span class="flex-shrink-0 mx-4 text-white/30 text-xs">Or continue with</span>
+<div class="flex-grow border-t border-white/10"></div>
+</div>
+<!-- Social Auth -->
+<div class="flex justify-center gap-4">
+<!-- Apple -->
+<button class="size-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all group">
+<svg class="w-5 h-5 fill-white group-hover:scale-110 transition-transform" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.5 12.625c0-2.602 2.126-3.852 2.224-3.913-1.21-1.77-3.097-2.01-3.765-2.036-1.594-.165-3.116.945-3.924.945-.818 0-2.067-.92-3.403-.896-1.75.025-3.37.99-4.267 2.512-1.83 3.085-.468 7.64 1.282 10.136.862 1.226 1.886 2.604 3.235 2.556 1.294-.05 1.783-.836 3.344-.836 1.55 0 2.003.836 3.367.81 1.394-.024 2.274-1.225 3.125-2.455.983-1.417 1.387-2.8 1.408-2.872-.03-.013-2.705-1.034-2.705-4.102l.006.15zm-3.064-9.332c.712-.862 1.192-2.063 1.06-3.26-1.025.042-2.268.683-3.004 1.543-.657.76-1.233 1.986-1.08 3.153 1.144.088 2.313-.574 3.024-1.437z"></path></svg>
+</button>
+<!-- Google -->
+<button class="size-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all group">
+<svg class="w-5 h-5 group-hover:scale-110 transition-transform" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<div class="flex-none pt-8 pb-4 text-center">
+<p class="text-white/60 text-sm">
+                Don't have an account? 
+                <a class="text-white font-bold hover:text-primary transition-colors ml-1" href="#">Join the Elite</a>
+</p>
+</div>
+</div>
+</body></html>

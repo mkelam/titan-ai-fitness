@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparison Engine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#25aff4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(16, 28, 34, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel-light {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(37, 175, 244, 0.5);
+        }
+        .neon-bar-primary {
+            box-shadow: 0 0 12px rgba(37, 175, 244, 0.4);
+        }
+        .neon-bar-secondary {
+            box-shadow: 0 0 8px rgba(160, 160, 160, 0.2);
+        }
+        /* Hide scrollbar for cleaner UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Background Image with Overlay -->
+<div class="fixed inset-0 z-0 w-full h-full">
+<img alt="Male fitness model lifting weights in a dark gym environment" class="w-full h-full object-cover opacity-60" data-alt="Male fitness model lifting weights in a dark gym environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbAmtuhRWAoH2YTRvngYuKT48f3lvJGfVma4z5udUTwkYrvzqUbegnrURMRDMi93UK5w7WaZ2AjN4H5sFWEoYlEDsaxdzfXN2tiOxdCuttyAE8VTniXV3EaGy3Wv9o_J8034qYmonEqVwB-Wzu_Vk5pGFPPsnQJcdHzXFoDJnF-XIwANq-n2Gf25Dma3Qvv5Yu_fSBKlFKDF_6hVJrxwiHAysxUMRFNhrGAy8EzpixPxsi0_iayKXQuAN7JtdRzKNKDq2ktZWzpyJQ"/>
+<div class="absolute inset-0 bg-background-dark/80 bg-gradient-to-b from-background-dark/50 via-background-dark/70 to-background-dark"></div>
+</div>
+<!-- Main Content -->
+<div class="relative z-10 flex flex-col min-h-screen pb-24">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-5 sticky top-0 z-50 bg-background-dark/30 backdrop-blur-md">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-sm font-bold tracking-widest text-white/80 uppercase">Comparison Engine</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors text-white">
+<span class="material-symbols-outlined text-2xl">more_vert</span>
+</button>
+</header>
+<!-- Page Title -->
+<div class="px-6 pt-4 pb-6">
+<h2 class="text-3xl font-bold leading-tight tracking-tight text-white">
+                PERFORMANCE <span class="text-primary neon-text">VS.</span>
+</h2>
+<p class="text-white/60 text-sm mt-1">Comparing current metrics against previous cycle</p>
+</div>
+<!-- Comparison Section -->
+<div class="px-4 grid grid-cols-2 gap-4 mb-6">
+<!-- Last Week Card (Glass) -->
+<div class="glass-panel rounded-xl p-4 flex flex-col h-full transform transition-transform active:scale-95">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-white/40 text-lg">history</span>
+<span class="text-xs font-bold text-white/60 uppercase tracking-wider">Last Week</span>
+</div>
+<div class="mb-4">
+<p class="text-xs text-white/50 mb-1">Total Volume</p>
+<p class="text-xl font-bold text-white/80">12,400<span class="text-xs font-normal text-white/50 ml-1">kg</span></p>
+</div>
+<!-- Mini Bar Chart (Muted) -->
+<div class="flex items-end justify-between h-24 gap-1 mt-auto">
+<div class="w-full bg-white/10 rounded-t-sm h-[40%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[30%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[75%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[50%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[65%]"></div>
+<div class="w-full bg-white/10 rounded-t-sm h-[20%]"></div>
+</div>
+<div class="mt-4 pt-3 border-t border-white/10">
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-white/50">Avg HR</span>
+<span class="text-sm font-bold text-white/70">130<span class="text-[10px] font-normal">bpm</span></span>
+</div>
+</div>
+</div>
+<!-- This Week Card (Glass + Neon) -->
+<div class="glass-panel rounded-xl p-4 flex flex-col h-full ring-1 ring-primary/30 transform transition-transform active:scale-95">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary text-lg animate-pulse">bolt</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">This Week</span>
+</div>
+<div class="mb-4">
+<p class="text-xs text-white/50 mb-1">Total Volume</p>
+<p class="text-xl font-bold text-white">13,050<span class="text-xs font-normal text-white/50 ml-1">kg</span></p>
+<span class="inline-flex items-center text-[10px] text-green-400 bg-green-400/10 px-1.5 py-0.5 rounded mt-1">+5.2%</span>
+</div>
+<!-- Mini Bar Chart (Bright) -->
+<div class="flex items-end justify-between h-24 gap-1 mt-auto relative">
+<!-- Grid lines for effect -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="w-full h-[1px] bg-white/20"></div>
+<div class="w-full h-[1px] bg-white/20"></div>
+<div class="w-full h-[1px] bg-white/20"></div>
+</div>
+<div class="w-full bg-primary/40 neon-bar-primary rounded-t-sm h-[50%]"></div>
+<div class="w-full bg-primary/60 neon-bar-primary rounded-t-sm h-[70%]"></div>
+<div class="w-full bg-primary/30 neon-bar-primary rounded-t-sm h-[40%]"></div>
+<div class="w-full bg-primary rounded-t-sm neon-bar-primary h-[85%]"></div>
+<div class="w-full bg-primary/50 neon-bar-primary rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-primary/70 neon-bar-primary rounded-t-sm h-[75%]"></div>
+<div class="w-full bg-primary/20 neon-bar-primary rounded-t-sm h-[30%]"></div>
+</div>
+<div class="mt-4 pt-3 border-t border-white/10">
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-white/50">Avg HR</span>
+<span class="text-sm font-bold text-white">135<span class="text-[10px] font-normal">bpm</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chips / Pills Scroller -->
+<div class="w-full overflow-x-auto no-scrollbar px-4 mb-6">
+<div class="flex gap-3">
+<div class="glass-panel-light rounded-lg px-4 py-2 flex items-center gap-2 shrink-0 whitespace-nowrap">
+<span class="material-symbols-outlined text-primary text-sm">fitness_center</span>
+<span class="text-xs font-medium text-white">Max Bench: <span class="font-bold">100kg</span></span>
+</div>
+<div class="glass-panel-light rounded-lg px-4 py-2 flex items-center gap-2 shrink-0 whitespace-nowrap">
+<span class="material-symbols-outlined text-primary text-sm">arrow_upward</span>
+<span class="text-xs font-medium text-white">Squat: <span class="font-bold">140kg</span></span>
+</div>
+<div class="glass-panel-light rounded-lg px-4 py-2 flex items-center gap-2 shrink-0 whitespace-nowrap">
+<span class="material-symbols-outlined text-primary text-sm">monitor_heart</span>
+<span class="text-xs font-medium text-white">RHR: <span class="font-bold">58bpm</span></span>
+</div>
+<div class="glass-panel-light rounded-lg px-4 py-2 flex items-center gap-2 shrink-0 whitespace-nowrap">
+<span class="material-symbols-outlined text-primary text-sm">timer</span>
+<span class="text-xs font-medium text-white">Duration: <span class="font-bold">65m</span></span>
+</div>
+</div>
+</div>
+<!-- AI Coach Insight Card -->
+<div class="px-4 mb-8">
+<div class="glass-panel rounded-xl p-5 border-l-4 border-l-primary relative overflow-hidden group">
+<!-- Background glow effect -->
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/30 transition-all duration-500"></div>
+<div class="flex items-start gap-4 relative z-10">
+<div class="rounded-full bg-primary/20 p-2.5 shrink-0 flex items-center justify-center neon-bar-primary">
+<span class="material-symbols-outlined text-primary animate-pulse">psychology</span>
+</div>
+<div>
+<h3 class="text-sm font-bold text-white mb-1 tracking-wide flex items-center gap-2">
+                            AI COACH ANALYSIS
+                            <span class="bg-primary text-[9px] text-black font-bold px-1.5 py-0.5 rounded-sm">NEW</span>
+</h3>
+<p class="text-sm text-white/80 leading-relaxed font-light">
+                            Strength is up <span class="text-primary font-bold">5%</span> in compound lifts, but your recovery time between sets is <span class="text-orange-400 font-bold">10s lower</span>. Consider pacing yourself for better endurance.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="mt-auto px-4 pb-6 flex gap-3">
+<button class="flex-1 glass-panel-light hover:bg-white/10 text-white font-medium py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 border-white/20">
+<span class="material-symbols-outlined text-xl">query_stats</span>
+<span>Deep Dive</span>
+</button>
+<button class="flex-1 bg-primary hover:bg-primary/90 text-black font-bold py-4 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(37,175,244,0.4)]">
+<span class="material-symbols-outlined text-xl">ios_share</span>
+<span>Export PDF</span>
+</button>
+</div>
+</div>
+</body></html>

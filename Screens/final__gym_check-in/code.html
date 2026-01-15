@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gym Check-in</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                        "neon-green": "#39FF14",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(13, 89, 242, 0.6)',
+                        'glow-green': '0 0 10px rgba(57, 255, 20, 0.4)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for elements difficult to achieve with pure Tailwind utilities */
+        .glass-panel {
+            background: rgba(16, 22, 34, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .map-overlay-gradient {
+            background: linear-gradient(180deg, rgba(16, 22, 34, 0) 0%, rgba(16, 22, 34, 0.8) 100%);
+        }
+
+        .pulse-ring {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            animation: pulsate 2s ease-out;
+            animation-iteration-count: infinite; 
+            opacity: 0.0;
+            box-shadow: 0 0 1px 2px #0d59f2;
+            animation-delay: 1.1s;
+        }
+
+        @keyframes pulsate {
+            0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+            50% {opacity: 1.0;}
+            100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark text-white font-display antialiased selection:bg-primary selection:text-white overflow-hidden">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Background Image Layer -->
+<div class="absolute inset-0 z-0">
+<img alt="Background fitness model" class="h-full w-full object-cover object-top opacity-80" data-alt="Athletic male fitness model in gym lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGvL8x8meePO2FJpsbmDD2KH8sQBDZqbmjEpf7F7aRj56YMLFpguyzm3tkbvqmOo7W2w_CuByPOxvpf9oZFI8wS7N6Ns0SOXDAtwxpb7vQgc5T38fBq2SB2gIH4DbqTqjcdvYJvAeT3s90JsZ4Kic2rv--XTdAkkpaUfYAENCJuZxBLXWCItbTIVGG19DmNlvWHBpMt1kSZKQIfmYX3rb9jpCOdesKqiBNK5eyAmIY_GwoW2CCZTzL08I4_w7pOEqrLqkJqkO0Cux4"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background-dark"></div>
+</div>
+<!-- Main Content Wrapper -->
+<div class="relative z-10 flex h-full flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 pt-6">
+<button class="flex size-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md transition hover:bg-white/20">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">arrow_back</span>
+</button>
+<div class="rounded-full bg-black/30 px-4 py-1.5 backdrop-blur-sm border border-white/5">
+<span class="text-xs font-bold uppercase tracking-widest text-white/80">Gym Mode</span>
+</div>
+<button class="flex size-10 items-center justify-center rounded-full bg-white/10 backdrop-blur-md transition hover:bg-white/20">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">settings</span>
+</button>
+</header>
+<!-- Map Widget Section -->
+<div class="px-4 mt-2">
+<div class="relative w-full aspect-[2/1] overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-slate-900/50">
+<!-- Map Image -->
+<div class="absolute inset-0 bg-cover bg-center opacity-70 mix-blend-overlay" data-alt="Dark abstract map of city streets" data-location="New York City" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT-sCa6BH9puVXh0DyC_yUU_Mu5x3bKItoVHDwdHkp0vFuseDj8k9HhjVvrI5Vx4tAXhTvWjo9XtcNVvC7nBGz7Wx78ErUVOzXL2cNTIur1x9tR-9xXMIUykMykOR2xrSLRk5tB3WSiWdrRfm-ipKhqnOborjLgTKnnqAyTQ5rueGneEQsNPSjNaJZfaxAQnEgCisjWAx9iT8elQHg7dtmjsNtfK2MyDDgSLozGzxCUkyljAAk4MlICSvZwWXzu3rFkoLQNub6YnNb');">
+</div>
+<!-- Fallback if API key not present/needed for pure UI demo -->
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&amp;w=1474&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-40 grayscale mix-blend-luminosity" data-alt="Abstract dark map texture"></div>
+<!-- Verified Pin -->
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2">
+<div class="relative flex size-12 items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-primary/30 animate-ping"></div>
+<div class="relative z-10 flex size-8 items-center justify-center rounded-full bg-primary shadow-glow border-2 border-white">
+<span class="material-symbols-outlined text-white" style="font-size: 16px;">verified</span>
+</div>
+</div>
+<div class="rounded-lg bg-black/80 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md border border-primary/30 shadow-glow">
+                            Verified Gym
+                        </div>
+</div>
+<!-- HUD Elements -->
+<div class="absolute bottom-3 left-3 flex items-center gap-1 text-[10px] text-white/60 font-mono">
+<span class="material-symbols-outlined text-[12px]">my_location</span>
+<span>LAT 40.7128</span>
+</div>
+</div>
+</div>
+<!-- Spacer to push content down -->
+<div class="flex-1"></div>
+<!-- AI Coach Bubble -->
+<div class="flex items-end justify-start gap-3 px-6 pb-4">
+<div class="relative size-10 shrink-0 overflow-hidden rounded-full border border-white/20 shadow-lg">
+<img alt="AI Coach" class="h-full w-full object-cover" data-alt="AI Coach avatar face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNXoyrjUEI5D8RhxhhcUBliMWwkH03bQ55Qe2znjV96t953Z9S-jExU5tKdBKMn3zXZVn_tA9xnnQeW6FxD1fRq5zpNKrs3s1XgyBQUyQh8QjHd_O1BZVrz-7rQyGa_LPW-nWo2vdf06QW_GPCtz_3H1y1jyUnUclUyxOJuY2a_6eXNBYygmTBG6z7xW5kl099q7znDBdXj7nqxDB62VwcAQAiMVjz9n_J2bguRRqn4_8SapO868gZAqNt-DU3VwtLMvezvkn9wvV3"/>
+</div>
+<div class="relative rounded-2xl rounded-tl-sm bg-primary/90 px-4 py-3 text-sm text-white shadow-lg backdrop-blur-sm">
+<p class="font-medium leading-relaxed">Welcome back to your second home! 💪</p>
+</div>
+</div>
+<!-- Bottom Glass Card -->
+<div class="glass-panel w-full rounded-t-[2rem] p-6 pb-8 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<!-- Card Header -->
+<div class="mb-6 flex items-start justify-between">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-green-400 text-lg">check_circle</span>
+<span class="text-xs font-bold tracking-widest text-white/60 uppercase">Check-in Confirmed</span>
+</div>
+<h2 class="text-3xl font-bold leading-tight text-white">Iron Temple</h2>
+<p class="mt-1 text-sm font-medium text-neon-green shadow-glow-green drop-shadow-sm inline-block px-2 py-0.5 rounded bg-green-900/30 border border-green-500/30">
+                            +50 XP Location Bonus
+                        </p>
+</div>
+<div class="flex size-12 items-center justify-center rounded-xl bg-white/5 border border-white/10">
+<span class="material-symbols-outlined text-white/80" style="font-size: 28px;">fitness_center</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="mb-6 rounded-xl bg-black/40 p-4 border border-white/5">
+<div class="flex justify-between items-end mb-2">
+<span class="text-sm font-semibold text-white">Local Legend Status</span>
+<span class="text-xs font-mono text-primary">750/1000 XP</span>
+</div>
+<div class="relative h-2 w-full overflow-hidden rounded-full bg-gray-700">
+<div class="absolute left-0 top-0 h-full w-[75%] rounded-full bg-primary shadow-glow"></div>
+</div>
+<p class="mt-2 text-xs text-gray-400">250 XP to reach <span class="text-white font-bold">Titan Tier</span></p>
+</div>
+<!-- Controls & Action -->
+<div class="flex flex-col gap-4">
+<!-- Privacy Toggle -->
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-3">
+<div class="flex size-8 items-center justify-center rounded-full bg-white/5 text-white/60">
+<span class="material-symbols-outlined text-lg">visibility_off</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-white">Incognito Training</span>
+<span class="text-[10px] text-white/50">Hide activity from local feed</span>
+</div>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex cursor-pointer items-center">
+<input class="peer sr-only" type="checkbox" value=""/>
+<div class="peer h-6 w-11 rounded-full bg-gray-700 after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none"></div>
+</label>
+</div>
+<!-- Main CTA -->
+<button class="group relative mt-2 flex h-14 w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-primary text-white shadow-glow transition active:scale-[0.98]">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+<span class="material-symbols-outlined filled">play_arrow</span>
+<span class="text-lg font-bold tracking-wide">Start Workout</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

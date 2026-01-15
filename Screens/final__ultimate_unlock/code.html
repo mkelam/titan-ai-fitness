@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ultimate Unlock: Titan's Might</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f47b25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221710",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px rgba(244, 123, 37, 0.2)' },
+                            '100%': { boxShadow: '0 0 25px rgba(244, 123, 37, 0.6), 0 0 10px rgba(244, 123, 37, 0.4)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>/* Custom Utilities for Glassmorphism & Effects */
+.glass-panel {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3)
+    }
+.magma-text {
+    background: linear-gradient(to bottom, #fff 40%, #f47b25 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(244, 123, 37, 0.3)
+    }
+.cracked-glow {
+    box-shadow: 0 0 15px #f47b25, inset 0 0 20px rgba(244, 123, 37, 0.5)
+    }
+/* Checkbox customization */
+.custom-checkbox:checked {
+    background-color: #f47b25;
+    border-color: #f47b25;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuChn3kzNPRjI4rfC-M23Uv_6O7j6NS4OGfJsSlVd3Yqsf9sh9dReqq-bcmfMgUWU3zmsCq0NSIQxbsKS8O_iMiIgUKcyzDM99WjQnILwJHBxEQEmopzZFIImxfMu5USI1qo6aCDP5KFUBexMbMxdtejMN0keMtjHB16vTQUqTvqQs9wTBxDOHUDkbNW5dmgrt2qHLsOvRzw_3xsoqM7Skyw0NxR-EMYg65s-cG_KAYmlIZwtMypSv10eQDZ7Ywq_07G78lAFwGBLohO)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#181411] text-white font-display antialiased overflow-hidden selection:bg-primary/30">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0">
+<!-- Background Image -->
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" data-alt="Athletic male fitness model in gym lighting, intense atmosphere" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBX0Mx4kCIRNqFye37x5diMmRNzPXbbJhrKyJy-HacODwpO8m_KQXNSs5QwbidCNYCQT3Co9KZEmuibSPTSubxFceiHqc1eP5u55J8_i8ewrzIgH1g5JM-588Oq_T6eS4GZenYX3cvh0cqF8WlBra6Ozo7BYFVbMwpjSPyn8ust4kW-vu75dwj_TEGG1d-qGreLZ7tFMAvaLVhXhIlKCJq-P9HC-IQnvkW-C-rJdsoRW9MNrBrk-hvvRwj-63OxrcoCHqz0_osaFlAq');">
+</div>
+<!-- Dark Gradients & Overlays -->
+<div class="absolute inset-0 bg-[#120c08]/80 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#181411] via-[#181411]/50 to-transparent"></div>
+<!-- Magma Ambience -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none"></div>
+</div>
+<!-- Main Content Scroll Area -->
+<div class="relative z-10 flex flex-col h-full w-full max-w-md mx-auto overflow-y-auto hide-scrollbar">
+<!-- Header Section -->
+<div class="pt-10 pb-2 px-6 text-center space-y-1">
+<div class="flex items-center justify-center gap-2 mb-2">
+<div class="h-[1px] w-8 bg-gradient-to-r from-transparent to-primary/60"></div>
+<h3 class="text-primary tracking-[0.2em] text-xs font-bold uppercase shadow-primary/50 drop-shadow-sm">Ultimate Unlock</h3>
+<div class="h-[1px] w-8 bg-gradient-to-l from-transparent to-primary/60"></div>
+</div>
+<h1 class="magma-text text-4xl md:text-5xl font-bold leading-tight tracking-tight">TITAN'S MIGHT</h1>
+</div>
+<!-- Hero Icon -->
+<div class="flex-shrink-0 flex justify-center py-6 relative">
+<!-- Outer Rings -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-48 h-48 border border-primary/10 rounded-full animate-pulse-slow"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-36 h-36 border border-primary/20 rounded-full"></div>
+</div>
+<!-- Central Icon -->
+<div class="relative w-28 h-28 bg-black/40 rounded-full flex items-center justify-center border-2 border-primary/50 cracked-glow shadow-[0_0_40px_rgba(244,123,37,0.4)] z-10">
+<div class="absolute inset-0 rounded-full border border-white/20"></div>
+<!-- Combined Icons for Fist & Bolt -->
+<div class="relative">
+<span class="material-symbols-outlined text-[4rem] text-white/20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="font-variation-settings: 'FILL' 1;">sports_mma</span>
+<span class="material-symbols-outlined text-[3.5rem] text-primary drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] relative z-10" style="font-variation-settings: 'FILL' 1, 'wght' 700;">bolt</span>
+</div>
+</div>
+</div>
+<!-- Glass Requirements Panel -->
+<div class="mx-5 mb-4 glass-panel rounded-2xl p-0.5 overflow-hidden ring-1 ring-white/10">
+<div class="bg-black/20 p-5 rounded-[14px]">
+<div class="flex items-center justify-between mb-4 border-b border-white/5 pb-2">
+<span class="text-xs uppercase tracking-wider text-gray-400 font-medium">Requirements Met</span>
+<span class="text-xs text-primary font-bold">100%</span>
+</div>
+<!-- Checklist -->
+<div class="space-y-3">
+<label class="flex gap-x-3 items-center group cursor-default">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input checked="" class="peer h-5 w-5 rounded border-[#54453b] border-2 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 focus:outline-none custom-checkbox transition-all duration-300" readonly="" type="checkbox"/>
+<div class="absolute inset-0 rounded bg-primary/20 scale-0 peer-checked:scale-150 opacity-0 peer-checked:opacity-100 transition-all duration-500 blur-sm pointer-events-none"></div>
+</div>
+<p class="text-gray-200 text-sm font-medium group-hover:text-white transition-colors">Strength Level 50</p>
+</label>
+<label class="flex gap-x-3 items-center group cursor-default">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input checked="" class="peer h-5 w-5 rounded border-[#54453b] border-2 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 focus:outline-none custom-checkbox transition-all duration-300" readonly="" type="checkbox"/>
+<div class="absolute inset-0 rounded bg-primary/20 scale-0 peer-checked:scale-150 opacity-0 peer-checked:opacity-100 transition-all duration-500 blur-sm pointer-events-none"></div>
+</div>
+<p class="text-gray-200 text-sm font-medium group-hover:text-white transition-colors">5-Day Streak Active</p>
+</label>
+<label class="flex gap-x-3 items-center group cursor-default">
+<div class="relative flex items-center justify-center w-6 h-6">
+<input checked="" class="peer h-5 w-5 rounded border-[#54453b] border-2 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 focus:outline-none custom-checkbox transition-all duration-300" readonly="" type="checkbox"/>
+<div class="absolute inset-0 rounded bg-primary/20 scale-0 peer-checked:scale-150 opacity-0 peer-checked:opacity-100 transition-all duration-500 blur-sm pointer-events-none"></div>
+</div>
+<p class="text-gray-200 text-sm font-medium group-hover:text-white transition-colors">Challenge Complete</p>
+</label>
+</div>
+<!-- Perk Highlight Card -->
+<div class="mt-6 relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-orange-600/50 rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+<div class="relative flex items-start p-4 bg-gradient-to-br from-[#2a201a] to-[#1a120e] rounded-xl border border-primary/20 shadow-lg">
+<div class="flex-shrink-0 h-10 w-10 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30 mr-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-white font-bold text-base leading-none mb-1">Berserker State</h4>
+<span class="text-[10px] bg-primary/20 text-primary px-1.5 py-0.5 rounded border border-primary/30">PASSIVE</span>
+</div>
+<p class="text-gray-400 text-xs leading-relaxed">Damage resistance <span class="text-primary font-bold">+15%</span> during final sets. Adrenaline gain doubled.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Coach Section (Spacer to push to bottom) -->
+<div class="flex-grow"></div>
+<!-- AI Coach & Footer Area -->
+<div class="relative w-full mt-4 flex flex-col items-center">
+<!-- Coach Image Container -->
+<div class="relative z-20 w-48 h-56 -mb-6 flex items-end justify-center pointer-events-none">
+<img alt="Digital AI Coach avatar in futuristic sportswear celebrating victory" class="h-full w-full object-contain drop-shadow-[0_0_30px_rgba(244,123,37,0.3)] mask-image-gradient-b" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYZT8-wQzjuiECAxr-kL_gRRFAB3C0erf5hqz6hHBFj7JWj4F8Qcf9fz-DKVBV9kKP0EG6gero0BZ0q82UpKQVBxfYV99ul4PinIJ-4yQxK7faAywSjC2QleLi_ya65WyicnGJPkCUHxpAh8ZWrooZh8o57l0DPVhGIq4deL0KDSpFv5sNOHDZHpcUa0ezYfqomKr0creaE1VyRTuXr1PvcUNot1Gf02WPK9L-ZyaaLJUVRx7Z54UcvWEsJOCe8UmcFZCnXMNn8O-B" style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%);"/>
+<!-- Hologram glitch effect overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent mix-blend-overlay opacity-50"></div>
+</div>
+<!-- Bottom Glass Stage / Action Bar -->
+<div class="w-full relative z-30">
+<!-- Glass Stage Top Blur -->
+<div class="absolute -top-12 inset-x-0 h-24 bg-gradient-to-t from-[#181411] to-transparent pointer-events-none"></div>
+<div class="glass-panel border-t border-white/10 rounded-t-[2rem] p-6 pb-8 backdrop-blur-3xl bg-[#1a1410]/80">
+<!-- Decorative line -->
+<div class="w-12 h-1 bg-white/10 rounded-full mx-auto mb-6"></div>
+<button class="group relative w-full flex items-center justify-center gap-3 bg-gradient-to-r from-[#f47b25] to-[#d95d08] text-white font-bold text-lg py-4 px-6 rounded-xl shadow-[0_4px_20px_rgba(244,123,37,0.4)] transition-all hover:scale-[1.02] hover:shadow-[0_4px_30px_rgba(244,123,37,0.6)] active:scale-[0.98]">
+<span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'wght' 600;">auto_awesome</span>
+                            CLAIM POWER
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</body></html>
