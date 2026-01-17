@@ -1,0 +1,266 @@
+// Prisma Schema for Titan AI Fitness RPG
+// Database: PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// USER & AUTHENTICATION
+// ============================================
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  passwordHash  String?   @map("password_hash")
+  name          String?
+  avatarUrl     String?   @map("avatar_url")
+  googleId      String?   @unique @map("google_id")
+  appleId       String?   @unique @map("apple_id")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  stats           UserStats?
+  goals           UserGoals?
+  workouts        Workout[]
+  progressPhotos  ProgressPhoto[]
+  transformations Transformation[]
+  nutritionLogs   NutritionLog[]
+  questProgress   QuestProgress[]
+  badges          UserBadge[]
+  purchases       Purchase[]
+
+  @@map("users")
+}
+
+model UserStats {
+  userId        String   @id @map("user_id")
+  level         Int      @default(1)
+  xp            Int      @default(0)
+  xpToNextLevel Int      @default(100) @map("xp_to_next_level")
+  totalXp       Int      @default(0) @map("total_xp")
+  streak        Int      @default(0)
+  longestStreak Int      @default(0) @map("longest_streak")
+  currency      Int      @default(0)
+  lastActiveAt  DateTime @default(now()) @map("last_active_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_stats")
+}
+
+model UserGoals {
+  userId               String   @id @map("user_id")
+  primaryGoal          String?  @map("primary_goal") // strength, shredded, performance
+  experienceLevel      String?  @map("experience_level") // rookie, intermediate, veteran, elite
+  weeklyWorkoutFrequency Int?   @map("weekly_workout_frequency")
+  coachPersonality     String?  @map("coach_personality") // Sage, Sergeant, Hype-Man
+  nudgeIntensity       String?  @map("nudge_intensity") // light, moderate, aggressive
+  targetWeight         Decimal? @map("target_weight") @db.Decimal(5, 2)
+  targetBodyFat        Decimal? @map("target_body_fat") @db.Decimal(4, 1)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_goals")
+}
+
+// ============================================
+// WORKOUTS & EXERCISES
+// ============================================
+
+model Workout {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  date        DateTime @db.Date
+  phase       String?  // e.g., "Leg Day", "Push Day"
+  totalVolume Int      @default(0) @map("total_volume")
+  duration    Int?     // in minutes
+  xpEarned    Int      @default(0) @map("xp_earned")
+  notes       String?
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exercises WorkoutExercise[]
+
+  @@map("workouts")
+}
+
+model WorkoutExercise {
+  id          String  @id @default(uuid())
+  workoutId   String  @map("workout_id")
+  name        String
+  muscleGroup String? @map("muscle_group")
+  category    String? // compound, isolation, cardio, mobility
+  sets        Json    // Array of {setNumber, weight, reps, completed}
+
+  workout Workout @relation(fields: [workoutId], references: [id], onDelete: Cascade)
+
+  @@map("workout_exercises")
+}
+
+// ============================================
+// PROGRESS & BODY TRANSFORMATION
+// ============================================
+
+model ProgressPhoto {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  originalUrl  String   @map("original_url")
+  thumbnailUrl String?  @map("thumbnail_url")
+  weight       Decimal? @db.Decimal(5, 2)
+  bodyFat      Decimal? @map("body_fat") @db.Decimal(4, 1)
+  isEncrypted  Boolean  @default(true) @map("is_encrypted")
+  capturedAt   DateTime @default(now()) @map("captured_at")
+
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transformations Transformation[]
+
+  @@map("progress_photos")
+}
+
+model Transformation {
+  id             String   @id @default(uuid())
+  userId         String   @map("user_id")
+  sourcePhotoId  String   @map("source_photo_id")
+  currentWeight  Decimal  @map("current_weight") @db.Decimal(5, 2)
+  targetWeight   Decimal  @map("target_weight") @db.Decimal(5, 2)
+  generatedUrl   String?  @map("generated_url")
+  geminiAnalysis Json?    @map("gemini_analysis")
+  creditsUsed    Int      @default(1) @map("credits_used")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sourcePhoto ProgressPhoto @relation(fields: [sourcePhotoId], references: [id], onDelete: Cascade)
+
+  @@map("transformations")
+}
+
+// ============================================
+// NUTRITION
+// ============================================
+
+model NutritionLog {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  date      DateTime @db.Date
+  mealName  String?  @map("meal_name")
+  calories  Int      @default(0)
+  protein   Decimal  @default(0) @db.Decimal(6, 1)
+  carbs     Decimal  @default(0) @db.Decimal(6, 1)
+  fats      Decimal  @default(0) @db.Decimal(6, 1)
+  notes     String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("nutrition_logs")
+}
+
+// ============================================
+// GAMIFICATION
+// ============================================
+
+model Quest {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  type        String   // daily, weekly, bounty
+  xpReward    Int      @map("xp_reward")
+  coinReward  Int      @default(0) @map("coin_reward")
+  requirement Json     // {type: "workouts", count: 3} etc.
+  isActive    Boolean  @default(true) @map("is_active")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  progress QuestProgress[]
+
+  @@map("quests")
+}
+
+model QuestProgress {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  questId     String   @map("quest_id")
+  progress    Int      @default(0)
+  isCompleted Boolean  @default(false) @map("is_completed")
+  isClaimed   Boolean  @default(false) @map("is_claimed")
+  completedAt DateTime? @map("completed_at")
+  resetAt     DateTime? @map("reset_at") // For daily/weekly quests
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quest Quest @relation(fields: [questId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questId])
+  @@map("quest_progress")
+}
+
+model Badge {
+  id          String  @id @default(uuid())
+  name        String
+  description String
+  icon        String
+  rarity      String  // common, rare, epic, legendary
+  category    String  // streak, strength, consistency, nutrition, social, special
+  requirement Json    // Unlock condition
+
+  users UserBadge[]
+
+  @@map("badges")
+}
+
+model UserBadge {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  badgeId    String   @map("badge_id")
+  unlockedAt DateTime @default(now()) @map("unlocked_at")
+  isEquipped Boolean  @default(false) @map("is_equipped")
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge Badge @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeId])
+  @@map("user_badges")
+}
+
+model ShopItem {
+  id          String  @id @default(uuid())
+  name        String
+  description String
+  type        String  // utility, cosmetic
+  price       Int
+  icon        String
+  effect      Json?   // {type: "streak_freeze", duration: 1}
+  isActive    Boolean @default(true) @map("is_active")
+
+  purchases Purchase[]
+
+  @@map("shop_items")
+}
+
+model Purchase {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  itemId      String   @map("item_id")
+  quantity    Int      @default(1)
+  totalCost   Int      @map("total_cost")
+  purchasedAt DateTime @default(now()) @map("purchased_at")
+
+  user User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  item ShopItem @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@map("purchases")
+}
+
+// ============================================
+// INDEXES
+// ============================================
+
+// Add indexes for common queries
+// Workout queries by user and date
+// Progress queries by user
+// Quest progress queries
