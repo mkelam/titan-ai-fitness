@@ -78,7 +78,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
       name: 'Iron Initiate',
       description: 'Lift 1,000 kg total volume',
       icon: 'fitness_center',
-      color: 'text-gray-400',
+      color: 'text-white/70',
       rarity: 'common',
       unlocked: workouts.reduce((acc, w) => acc + w.totalVolume, 0) >= 1000,
       progress: workouts.reduce((acc, w) => acc + w.totalVolume, 0),
@@ -235,7 +235,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
 
   const getRarityLabel = (rarity: Badge['rarity']) => {
     switch (rarity) {
-      case 'common': return 'text-gray-400';
+      case 'common': return 'text-white/70';
       case 'rare': return 'text-blue-400';
       case 'epic': return 'text-purple-400';
       case 'legendary': return 'text-yellow-400';
@@ -261,7 +261,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
               <span className="material-symbols-rounded text-yellow-400 text-4xl">emoji_events</span>
             </div>
             <h2 className="text-2xl font-bold mb-1">Trophy Room</h2>
-            <p className="text-gray-400">
+            <p className="text-white/70">
               <span className="text-neon font-bold">{unlockedCount}</span> / {totalCount} Badges Unlocked
             </p>
             <div className="w-48 mx-auto bg-black/50 h-2 rounded-full mt-3 overflow-hidden">
@@ -275,7 +275,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
           {/* Featured Badge */}
           {badges.filter(b => b.unlocked).length > 0 && (
             <div className="px-6 mb-6">
-              <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Featured Achievement</h3>
+              <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Featured Achievement</h3>
               <GlassCard className="bg-gradient-to-br from-yellow-900/30 to-black border border-yellow-500/30">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-xl bg-yellow-500/20 flex items-center justify-center">
@@ -292,7 +292,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
                         Legendary
                       </span>
                     </div>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-white/70">
                       {badges.find(b => b.unlocked && b.rarity === 'legendary')?.description || 'Keep going!'}
                     </p>
                   </div>
@@ -311,7 +311,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
                   className={`flex items-center gap-1 px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
                     activeCategory === cat.id
                       ? 'bg-neon text-black'
-                      : 'glass-light text-gray-400'
+                      : 'glass-light text-white/70'
                   }`}
                 >
                   <span className="material-symbols-rounded text-sm">{cat.icon}</span>
@@ -338,12 +338,12 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
                     badge.unlocked ? 'bg-white/10' : 'bg-black/30'
                   }`}>
                     <span className={`material-symbols-rounded text-2xl ${
-                      badge.unlocked ? badge.color : 'text-gray-600'
+                      badge.unlocked ? badge.color : 'text-white/40'
                     }`}>
                       {badge.unlocked ? badge.icon : 'lock'}
                     </span>
                   </div>
-                  <p className={`text-xs font-medium ${badge.unlocked ? '' : 'text-gray-500'}`}>
+                  <p className={`text-xs font-medium ${badge.unlocked ? '' : 'text-white/50'}`}>
                     {badge.name}
                   </p>
                   {!badge.unlocked && badge.progress !== undefined && (
@@ -354,7 +354,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
                           style={{ width: `${(badge.progress / (badge.target || 1)) * 100}%` }}
                         />
                       </div>
-                      <p className="text-[9px] text-gray-500 mt-1">{badge.progress}/{badge.target}</p>
+                      <p className="text-[9px] text-white/50 mt-1">{badge.progress}/{badge.target}</p>
                     </div>
                   )}
                 </div>
@@ -375,7 +375,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
               selectedBadge.unlocked ? 'bg-white/10' : 'bg-black/30'
             }`}>
               <span className={`material-symbols-rounded text-4xl ${
-                selectedBadge.unlocked ? selectedBadge.color : 'text-gray-600'
+                selectedBadge.unlocked ? selectedBadge.color : 'text-white/40'
               }`}>
                 {selectedBadge.unlocked ? selectedBadge.icon : 'lock'}
               </span>
@@ -386,11 +386,11 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
             </span>
 
             <h3 className="text-xl font-bold mt-2 mb-1">{selectedBadge.name}</h3>
-            <p className="text-gray-400 text-sm mb-4">{selectedBadge.description}</p>
+            <p className="text-white/70 text-sm mb-4">{selectedBadge.description}</p>
 
             {selectedBadge.unlocked ? (
               <div className="glass-light rounded-xl p-3 mb-4">
-                <p className="text-xs text-gray-400">Unlocked on</p>
+                <p className="text-xs text-white/70">Unlocked on</p>
                 <p className="font-bold">{selectedBadge.unlockedDate || 'Recently'}</p>
               </div>
             ) : selectedBadge.progress !== undefined ? (
@@ -401,7 +401,7 @@ export const BadgeGalleryView: React.FC<{ setView: (v: View) => void }> = ({ set
                     style={{ width: `${(selectedBadge.progress / (selectedBadge.target || 1)) * 100}%` }}
                   />
                 </div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-white/70">
                   {selectedBadge.progress} / {selectedBadge.target}
                 </p>
               </div>

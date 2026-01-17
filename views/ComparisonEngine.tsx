@@ -80,7 +80,7 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
             <h2 className="text-2xl font-bold mb-1">
               PERFORMANCE <span className="text-cyan-400">VS.</span>
             </h2>
-            <p className="text-gray-400 text-sm">Comparing current metrics against previous cycle</p>
+            <p className="text-white/70 text-sm">Comparing current metrics against previous cycle</p>
           </div>
 
           {/* Week Comparison Cards */}
@@ -88,12 +88,12 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
             <div className="grid grid-cols-2 gap-4">
               {/* Last Week */}
               <GlassCard className="border border-white/10">
-                <p className="text-xs text-gray-400 uppercase mb-2">Last Week</p>
-                <p className="text-3xl font-bold">{lastWeekVolume.toLocaleString()}<span className="text-sm text-gray-400 ml-1">kg</span></p>
-                <p className="text-xs text-gray-500">Total Volume</p>
+                <p className="text-xs text-white/70 uppercase mb-2">Last Week</p>
+                <p className="text-3xl font-bold">{lastWeekVolume.toLocaleString()}<span className="text-sm text-white/70 ml-1">kg</span></p>
+                <p className="text-xs text-white/50">Total Volume</p>
                 <div className="mt-3 flex items-center gap-2">
-                  <span className="material-symbols-rounded text-gray-400 text-sm">favorite</span>
-                  <span className="text-sm text-gray-400">{lastWeekAvgHR}bpm</span>
+                  <span className="material-symbols-rounded text-white/70 text-sm">favorite</span>
+                  <span className="text-sm text-white/70">{lastWeekAvgHR}bpm</span>
                 </div>
               </GlassCard>
 
@@ -103,8 +103,8 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                   <p className="text-xs text-cyan-400 uppercase">This Week</p>
                   <span className="text-[10px] bg-cyan-500/20 text-cyan-400 px-2 py-0.5 rounded-full">LIVE</span>
                 </div>
-                <p className="text-3xl font-bold text-cyan-400">{thisWeekVolume.toLocaleString()}<span className="text-sm text-gray-400 ml-1">kg</span></p>
-                <p className="text-xs text-gray-500">Total Volume</p>
+                <p className="text-3xl font-bold text-cyan-400">{thisWeekVolume.toLocaleString()}<span className="text-sm text-white/70 ml-1">kg</span></p>
+                <p className="text-xs text-white/50">Total Volume</p>
                 <div className="mt-3 flex items-center gap-2">
                   <span className="material-symbols-rounded text-cyan-400 text-sm">favorite</span>
                   <span className="text-sm text-cyan-400">{thisWeekAvgHR}bpm</span>
@@ -121,7 +121,7 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                 <div className="flex items-center gap-4 text-xs">
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 rounded-full bg-gray-500" />
-                    <span className="text-gray-400">Last</span>
+                    <span className="text-white/70">Last</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 rounded-full bg-cyan-400" />
@@ -137,7 +137,7 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                     <div className="w-full flex gap-0.5 items-end h-24">
                       {/* Last week bar */}
                       <div
-                        className="flex-1 bg-gray-600 rounded-t transition-all"
+                        className="flex-1 bg-white/30 rounded-t transition-all"
                         style={{ height: `${(chartData.lastWeek[i] / maxChartValue) * 100}%` }}
                       />
                       {/* This week bar */}
@@ -146,7 +146,7 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                         style={{ height: `${(chartData.thisWeek[i] / maxChartValue) * 100}%` }}
                       />
                     </div>
-                    <span className="text-[10px] text-gray-500">{day}</span>
+                    <span className="text-[10px] text-white/50">{day}</span>
                   </div>
                 ))}
               </div>
@@ -165,7 +165,7 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                     <h4 className="font-bold text-sm">AI Coach Analysis</h4>
                     <span className="text-[10px] bg-neon/20 text-neon px-2 py-0.5 rounded-full">NEW</span>
                   </div>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-white/80">
                     Strength is up <span className="text-neon font-bold">8%</span> in compound lifts, but your recovery time between sets is <span className="text-orange-400 font-bold">10s longer</span>. Consider pacing yourself for better endurance.
                   </p>
                 </div>
@@ -181,7 +181,7 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                 <GlassCard key={i} className={`flex-1 text-center ${pb.isNew ? 'border border-yellow-500/30 bg-yellow-500/5' : ''}`}>
                   <span className="material-symbols-rounded text-2xl mb-1 text-yellow-400">emoji_events</span>
                   <p className="text-lg font-bold">{pb.value}</p>
-                  <p className="text-xs text-gray-400">{pb.exercise}</p>
+                  <p className="text-xs text-white/70">{pb.exercise}</p>
                   {pb.isNew && (
                     <span className="text-[10px] text-yellow-400 mt-1 inline-block">NEW PR!</span>
                   )}
@@ -204,10 +204,10 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                         className="w-full h-full object-cover rounded-xl"
                       />
                     ) : (
-                      <span className="material-symbols-rounded text-4xl text-gray-600">person</span>
+                      <span className="material-symbols-rounded text-4xl text-white/40">person</span>
                     )}
                   </div>
-                  <p className="text-xs text-gray-400">Start</p>
+                  <p className="text-xs text-white/70">Start</p>
                 </div>
                 <div className="text-center">
                   <div className="w-full h-32 rounded-xl bg-white/5 flex items-center justify-center mb-2">
@@ -218,10 +218,10 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                         className="w-full h-full object-cover rounded-xl"
                       />
                     ) : (
-                      <span className="material-symbols-rounded text-4xl text-gray-600">person</span>
+                      <span className="material-symbols-rounded text-4xl text-white/40">person</span>
                     )}
                   </div>
-                  <p className="text-xs text-gray-400">Latest</p>
+                  <p className="text-xs text-white/70">Latest</p>
                 </div>
               </div>
 
@@ -231,7 +231,7 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                   <span className="material-symbols-rounded text-neon text-sm">lightbulb</span>
                   <span className="text-xs text-neon font-bold">Coach Insight</span>
                 </div>
-                <p className="text-xs text-gray-300">
+                <p className="text-xs text-white/80">
                   You're exceeding your strength goals, but recovery is at <span className="text-yellow-400">68%</span> efficiency. Try a 3-day reset plan.
                 </p>
               </div>
@@ -249,10 +249,10 @@ export const ComparisonEngineView: React.FC<{ setView: (v: View) => void }> = ({
                 {[100, 150, 80, 200, 120, 90, 0].map((xp, i) => (
                   <div key={i} className="flex-1 text-center">
                     <div
-                      className={`w-full rounded-full transition-all ${xp > 0 ? 'bg-neon' : 'bg-gray-700'}`}
+                      className={`w-full rounded-full transition-all ${xp > 0 ? 'bg-neon' : 'bg-white/20'}`}
                       style={{ height: '6px' }}
                     />
-                    <span className="text-[9px] text-gray-500 mt-1 block">+{xp}</span>
+                    <span className="text-[9px] text-white/50 mt-1 block">+{xp}</span>
                   </div>
                 ))}
               </div>

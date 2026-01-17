@@ -36,7 +36,7 @@ export const DashboardView: React.FC<{ setView: (v: View) => void }> = ({ setVie
               <span className="text-xs font-bold text-neon tracking-widest uppercase">Level {userLevel}</span>
             </div>
             <h1 className="text-3xl font-bold">{userName}</h1>
-            <p className="text-gray-400 text-sm">Iron Lifter • {stats.totalXpEarned} total XP</p>
+            <p className="text-white/70 text-sm">Iron Lifter • {stats.totalXpEarned} total XP</p>
           </div>
           <div className="relative">
             <div className="w-16 h-16 rounded-full border-2 border-neon p-1">
@@ -86,7 +86,7 @@ export const DashboardView: React.FC<{ setView: (v: View) => void }> = ({ setVie
       {/* Quick Actions Grid */}
       <div className="px-6 mb-8">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wider">Quick Actions</h2>
+          <h2 className="text-sm font-bold text-white/50 uppercase tracking-wider">Quick Actions</h2>
           <button className="text-xs text-neon font-medium">Edit Grid</button>
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -133,17 +133,17 @@ export const DashboardView: React.FC<{ setView: (v: View) => void }> = ({ setVie
               <span className="material-symbols-rounded text-orange-500 text-3xl">local_fire_department</span>
               <div>
                 <h3 className="font-bold text-lg">{userStreak} Day Streak</h3>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-white/70">
                   {userStreak > 0 ? 'Keep the fire burning' : 'Start your streak today'}
                 </p>
               </div>
             </div>
-            <span className="material-symbols-rounded text-gray-500">chevron_right</span>
+            <span className="material-symbols-rounded text-white/50">chevron_right</span>
           </div>
           {/* Heatmap mini - last 7 days */}
           <div className="flex gap-1 mt-4 justify-between opacity-50">
             {[1,1,1,1,0,1,1].map((a, i) => (
-              <div key={i} className={`h-2 flex-1 rounded-full ${a ? 'bg-orange-500' : 'bg-gray-700'}`} />
+              <div key={i} className={`h-2 flex-1 rounded-full ${a ? 'bg-orange-500' : 'bg-white/20'}`} />
             ))}
           </div>
         </GlassCard>
@@ -179,7 +179,7 @@ export const DashboardView: React.FC<{ setView: (v: View) => void }> = ({ setVie
               <span className="material-symbols-rounded text-purple-400 text-2xl">self_improvement</span>
               <div>
                 <p className="font-bold text-sm">Recovery</p>
-                <p className="text-xs text-gray-400">Rest & recharge</p>
+                <p className="text-xs text-white/70">Rest & recharge</p>
               </div>
             </div>
           </GlassCard>
@@ -188,7 +188,7 @@ export const DashboardView: React.FC<{ setView: (v: View) => void }> = ({ setVie
               <span className="material-symbols-rounded text-orange-400 text-2xl">location_on</span>
               <div>
                 <p className="font-bold text-sm">Check In</p>
-                <p className="text-xs text-gray-400">+10 XP</p>
+                <p className="text-xs text-white/70">+10 XP</p>
               </div>
             </div>
           </GlassCard>

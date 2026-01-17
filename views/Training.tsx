@@ -167,11 +167,11 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
           <div className="flex justify-between items-end mb-6 px-2">
             <div>
               <h2 className="text-3xl font-bold">{dayName}</h2>
-              <p className="text-gray-400">{dateStr} • {getWorkoutPhase()}</p>
+              <p className="text-white/70">{dateStr} • {getWorkoutPhase()}</p>
             </div>
             <div className="text-right">
               <p className="text-2xl font-bold text-neon">{calculateVolume().toLocaleString()}</p>
-              <p className="text-xs text-gray-400">kg volume</p>
+              <p className="text-xs text-white/70">kg volume</p>
             </div>
           </div>
 
@@ -189,7 +189,7 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
                   style={{ width: `${questProgress}%` }}
                 />
               </div>
-              <p className="text-xs text-gray-400 mt-2">{completedSets} / {totalSets} sets completed</p>
+              <p className="text-xs text-white/70 mt-2">{completedSets} / {totalSets} sets completed</p>
             </GlassCard>
           </div>
 
@@ -200,11 +200,11 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
                 <div className="flex justify-between mb-4">
                   <div>
                     <h3 className="font-bold text-lg">{ex.name}</h3>
-                    <p className="text-xs text-gray-400">{ex.muscleGroup} • {ex.category}</p>
+                    <p className="text-xs text-white/70">{ex.muscleGroup} • {ex.category}</p>
                   </div>
                   <button
                     onClick={() => removeExercise(ex.id)}
-                    className="text-gray-400 hover:text-red-400 transition-colors"
+                    className="text-white/70 hover:text-red-400 transition-colors"
                   >
                     <span className="material-symbols-rounded">delete</span>
                   </button>
@@ -212,7 +212,7 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
 
                 {/* Sets */}
                 <div className="flex flex-col gap-2">
-                  <div className="grid grid-cols-4 gap-2 text-xs text-gray-500 uppercase font-bold text-center mb-1">
+                  <div className="grid grid-cols-4 gap-2 text-xs text-white/50 uppercase font-bold text-center mb-1">
                     <span>Set</span>
                     <span>Kg</span>
                     <span>Reps</span>
@@ -220,7 +220,7 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
                   </div>
                   {ex.sets.map(set => (
                     <div key={set.setNumber} className="grid grid-cols-4 gap-2 items-center">
-                      <div className="glass-light rounded p-2 text-center text-sm font-mono text-gray-400">
+                      <div className="glass-light rounded p-2 text-center text-sm font-mono text-white/70">
                         {set.setNumber}
                       </div>
                       <input
@@ -240,7 +240,7 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
                         className={`p-2 rounded flex items-center justify-center transition-all ${
                           set.completed
                             ? 'bg-neon text-black shadow-[0_0_10px_rgba(0,255,157,0.4)]'
-                            : 'glass-light text-gray-500 hover:text-white'
+                            : 'glass-light text-white/50 hover:text-white'
                         }`}
                       >
                         <span className="material-symbols-rounded text-lg">check</span>
@@ -252,7 +252,7 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
                 <div className="mt-4 flex justify-between items-center">
                   <button
                     onClick={() => addSet(ex.id)}
-                    className="text-xs flex items-center gap-1 text-gray-400 hover:text-white transition-all"
+                    className="text-xs flex items-center gap-1 text-white/70 hover:text-white transition-all"
                   >
                     <span className="material-symbols-rounded text-sm">add</span> Add Set
                   </button>
@@ -274,7 +274,7 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
 
         <div className="glass-panel border-t border-white/10 p-4">
           <div className="flex justify-between items-center mb-3">
-            <span className="text-gray-400">Estimated XP</span>
+            <span className="text-white/70">Estimated XP</span>
             <span className="text-neon font-bold">+{Math.round(calculateVolume() / 100) + (completedSets * 5) + 25} XP</span>
           </div>
           <Button fullWidth onClick={finishWorkout} variant={completedSets > 0 ? 'primary' : 'secondary'}>
@@ -304,7 +304,7 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
                   className="w-full text-left p-4 glass-light rounded-xl mb-2 hover:bg-white/10 transition-all"
                 >
                   <p className="font-bold">{exercise.name}</p>
-                  <p className="text-xs text-gray-400">{exercise.muscleGroup} • {exercise.category}</p>
+                  <p className="text-xs text-white/70">{exercise.muscleGroup} • {exercise.category}</p>
                 </button>
               ))}
               <button
@@ -316,7 +316,7 @@ export const TrainingLogView: React.FC<{ setView: (v: View) => void }> = ({ setV
               >
                 <span className="material-symbols-rounded text-neon text-2xl mb-1">menu_book</span>
                 <p className="text-sm text-neon font-medium">Browse Exercise Library</p>
-                <p className="text-xs text-gray-400">View all exercises with tutorials</p>
+                <p className="text-xs text-white/70">View all exercises with tutorials</p>
               </button>
             </div>
           </div>
@@ -335,8 +335,8 @@ export const FormCheckView: React.FC<{ setView: (v: View) => void }> = ({ setVie
 
       <div className="flex-1 relative">
         {/* Camera feed placeholder */}
-        <div className="w-full h-full bg-gray-900 flex items-center justify-center">
-          <span className="material-symbols-rounded text-6xl text-gray-700">videocam</span>
+        <div className="w-full h-full bg-black/80 flex items-center justify-center">
+          <span className="material-symbols-rounded text-6xl text-white/30">videocam</span>
         </div>
 
         {/* Overlay UI */}

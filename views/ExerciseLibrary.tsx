@@ -211,7 +211,7 @@ export const ExerciseLibraryView: React.FC<{ setView: (v: View) => void }> = ({ 
           {/* Search Bar */}
           <div className="px-6 pt-4 mb-4">
             <div className="relative">
-              <span className="material-symbols-rounded absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">search</span>
+              <span className="material-symbols-rounded absolute left-3 top-1/2 -translate-y-1/2 text-white/50">search</span>
               <input
                 type="text"
                 placeholder="Search exercises..."
@@ -236,7 +236,7 @@ export const ExerciseLibraryView: React.FC<{ setView: (v: View) => void }> = ({ 
                   key={filter.id}
                   onClick={() => setActiveFilter(filter.id)}
                   className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                    activeFilter === filter.id ? 'bg-neon text-black' : 'glass-light text-gray-400'
+                    activeFilter === filter.id ? 'bg-neon text-black' : 'glass-light text-white/70'
                   }`}
                 >
                   {filter.label}
@@ -251,7 +251,7 @@ export const ExerciseLibraryView: React.FC<{ setView: (v: View) => void }> = ({ 
               <button
                 onClick={() => setActiveMuscle(null)}
                 className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
-                  !activeMuscle ? 'bg-white/20 text-white' : 'text-gray-500'
+                  !activeMuscle ? 'bg-white/20 text-white' : 'text-white/50'
                 }`}
               >
                 All Muscles
@@ -261,7 +261,7 @@ export const ExerciseLibraryView: React.FC<{ setView: (v: View) => void }> = ({ 
                   key={muscle}
                   onClick={() => setActiveMuscle(muscle)}
                   className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
-                    activeMuscle === muscle ? 'bg-white/20 text-white' : 'text-gray-500'
+                    activeMuscle === muscle ? 'bg-white/20 text-white' : 'text-white/50'
                   }`}
                 >
                   {muscle}
@@ -272,7 +272,7 @@ export const ExerciseLibraryView: React.FC<{ setView: (v: View) => void }> = ({ 
 
           {/* Results Count */}
           <div className="px-6 mb-3">
-            <p className="text-sm text-gray-400">{filteredExercises.length} exercises found</p>
+            <p className="text-sm text-white/70">{filteredExercises.length} exercises found</p>
           </div>
 
           {/* Exercise List */}
@@ -285,18 +285,18 @@ export const ExerciseLibraryView: React.FC<{ setView: (v: View) => void }> = ({ 
               >
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                    <span className="material-symbols-rounded text-2xl text-gray-400">fitness_center</span>
+                    <span className="material-symbols-rounded text-2xl text-white/70">fitness_center</span>
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-bold truncate">{exercise.name}</h4>
                     <div className="flex items-center gap-2 text-xs">
-                      <span className="text-gray-400">{exercise.muscleGroup}</span>
-                      <span className="text-gray-600">•</span>
+                      <span className="text-white/70">{exercise.muscleGroup}</span>
+                      <span className="text-white/40">•</span>
                       <span className={getCategoryColor(exercise.category)}>{exercise.category}</span>
                     </div>
                     <div className="flex gap-1 mt-1">
                       {exercise.equipment.slice(0, 2).map((eq, i) => (
-                        <span key={i} className="text-[10px] bg-white/10 px-2 py-0.5 rounded-full text-gray-400">
+                        <span key={i} className="text-[10px] bg-white/10 px-2 py-0.5 rounded-full text-white/70">
                           {eq}
                         </span>
                       ))}
@@ -342,12 +342,12 @@ export const ExerciseLibraryView: React.FC<{ setView: (v: View) => void }> = ({ 
                   </span>
                 </div>
                 <h2 className="text-2xl font-bold">{selectedExercise.name}</h2>
-                <p className="text-gray-400">{selectedExercise.muscleGroup}</p>
+                <p className="text-white/70">{selectedExercise.muscleGroup}</p>
               </div>
 
               {/* Equipment */}
               <div className="mb-4">
-                <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-2">Equipment</h3>
+                <h3 className="text-sm text-white/70 uppercase tracking-wider mb-2">Equipment</h3>
                 <div className="flex gap-2 flex-wrap">
                   {selectedExercise.equipment.map((eq, i) => (
                     <span key={i} className="px-3 py-1 rounded-full glass-light text-sm">
@@ -359,18 +359,18 @@ export const ExerciseLibraryView: React.FC<{ setView: (v: View) => void }> = ({ 
 
               {/* Description */}
               <div className="mb-4">
-                <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-2">How to Perform</h3>
-                <p className="text-gray-300">{selectedExercise.description}</p>
+                <h3 className="text-sm text-white/70 uppercase tracking-wider mb-2">How to Perform</h3>
+                <p className="text-white/80">{selectedExercise.description}</p>
               </div>
 
               {/* Tips */}
               <div className="mb-6">
-                <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-2">Pro Tips</h3>
+                <h3 className="text-sm text-white/70 uppercase tracking-wider mb-2">Pro Tips</h3>
                 <ul className="space-y-2">
                   {selectedExercise.tips.map((tip, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="material-symbols-rounded text-neon text-sm mt-0.5">check_circle</span>
-                      <span className="text-gray-300 text-sm">{tip}</span>
+                      <span className="text-white/80 text-sm">{tip}</span>
                     </li>
                   ))}
                 </ul>

@@ -80,7 +80,7 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
         <div className="flex-1 overflow-y-auto p-4 pb-24">
           {/* Weight Entry */}
           <GlassCard className="mb-4">
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">Today's Weight</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">Today's Weight</h3>
             <div className="flex items-center gap-4">
               <input
                 type="number"
@@ -90,9 +90,9 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
                 className="glass-input flex-1 rounded-xl p-4 text-3xl text-center text-white font-bold"
               />
               <div className="text-center">
-                <span className="text-2xl font-bold text-gray-400">kg</span>
+                <span className="text-2xl font-bold text-white/70">kg</span>
                 {weightChange !== null && (
-                  <p className={`text-xs mt-1 ${weightChange > 0 ? 'text-red-400' : weightChange < 0 ? 'text-green-400' : 'text-gray-400'}`}>
+                  <p className={`text-xs mt-1 ${weightChange > 0 ? 'text-red-400' : weightChange < 0 ? 'text-green-400' : 'text-white/70'}`}>
                     {weightChange > 0 ? '+' : ''}{weightChange.toFixed(1)} from last
                   </p>
                 )}
@@ -102,7 +102,7 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
             {/* Mini weight chart */}
             {last7Weights.length > 1 && (
               <div className="mt-6">
-                <p className="text-xs text-gray-500 mb-2">Last 7 entries</p>
+                <p className="text-xs text-white/50 mb-2">Last 7 entries</p>
                 <div className="flex items-end gap-1 h-16">
                   {last7Weights.map((w, i) => {
                     const height = ((w.weight - minWeight) / range) * 100;
@@ -127,7 +127,7 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
 
           {/* Body Fat (Optional) */}
           <GlassCard className="mb-4">
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">Body Fat % (Optional)</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">Body Fat % (Optional)</h3>
             <div className="flex items-center gap-4">
               <input
                 type="number"
@@ -136,14 +136,14 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
                 onChange={(e) => setBodyFat(e.target.value)}
                 className="glass-input flex-1 rounded-xl p-4 text-2xl text-center text-white font-bold"
               />
-              <span className="text-xl font-bold text-gray-400">%</span>
+              <span className="text-xl font-bold text-white/70">%</span>
             </div>
           </GlassCard>
 
           {/* Photo Upload */}
           <GlassCard className="mb-4">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-sm text-gray-400 uppercase font-bold">Progress Photos</h3>
+              <h3 className="text-sm text-white/70 uppercase font-bold">Progress Photos</h3>
               <span className="text-xs text-neon">+15 XP bonus</span>
             </div>
 
@@ -152,9 +152,9 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
                 onClick={() => fileInputRef.current?.click()}
                 className="w-full h-48 border-2 border-dashed border-white/20 rounded-xl flex flex-col items-center justify-center hover:border-neon/50 transition-all"
               >
-                <span className="material-symbols-rounded text-4xl text-gray-500 mb-2">add_a_photo</span>
-                <p className="text-gray-400">Tap to add photos</p>
-                <p className="text-xs text-gray-500">Front, side, and back views recommended</p>
+                <span className="material-symbols-rounded text-4xl text-white/50 mb-2">add_a_photo</span>
+                <p className="text-white/70">Tap to add photos</p>
+                <p className="text-xs text-white/50">Front, side, and back views recommended</p>
               </button>
             ) : (
               <div>
@@ -191,7 +191,7 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
                       onClick={() => fileInputRef.current?.click()}
                       className="w-16 h-16 rounded-lg border-2 border-dashed border-white/20 flex items-center justify-center hover:border-neon/50 transition-all"
                     >
-                      <span className="material-symbols-rounded text-gray-500">add</span>
+                      <span className="material-symbols-rounded text-white/50">add</span>
                     </button>
                   )}
                 </div>
@@ -217,29 +217,29 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
                 </div>
                 <div>
                   <p className="font-bold">Weight Projection</p>
-                  <p className="text-xs text-gray-400">Set goals & track your timeline</p>
+                  <p className="text-xs text-white/70">Set goals & track your timeline</p>
                 </div>
               </div>
-              <span className="material-symbols-rounded text-gray-500">chevron_right</span>
+              <span className="material-symbols-rounded text-white/50">chevron_right</span>
             </div>
           </GlassCard>
 
           {/* Photo Comparison */}
           {weightHistory.length > 0 && weightHistory[0].photos && (
             <GlassCard>
-              <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">Compare Progress</h3>
+              <h3 className="text-sm text-white/70 uppercase font-bold mb-4">Compare Progress</h3>
               <div className="grid grid-cols-2 gap-3">
                 <div className="text-center">
                   <div className="w-full h-32 rounded-lg overflow-hidden bg-white/5 mb-2">
                     {weightHistory[0].photos?.[0] ? (
                       <img src={weightHistory[0].photos[0]} alt="Previous" className="w-full h-full object-cover" />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center text-gray-600">
+                      <div className="w-full h-full flex items-center justify-center text-white/40">
                         <span className="material-symbols-rounded text-3xl">person</span>
                       </div>
                     )}
                   </div>
-                  <p className="text-xs text-gray-400">Previous</p>
+                  <p className="text-xs text-white/70">Previous</p>
                   <p className="text-sm font-bold">{weightHistory[0].weight}kg</p>
                 </div>
                 <div className="text-center">
@@ -247,12 +247,12 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
                     {photos[0] ? (
                       <img src={photos[0]} alt="Current" className="w-full h-full object-cover" />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center text-gray-600">
+                      <div className="w-full h-full flex items-center justify-center text-white/40">
                         <span className="material-symbols-rounded text-3xl">person</span>
                       </div>
                     )}
                   </div>
-                  <p className="text-xs text-gray-400">Today</p>
+                  <p className="text-xs text-white/70">Today</p>
                   <p className="text-sm font-bold text-neon">{weight || '—'}kg</p>
                 </div>
               </div>
@@ -263,7 +263,7 @@ export const ProgressCheckinView: React.FC<{ setView: (v: View) => void }> = ({ 
         {/* Save Button */}
         <div className="glass-panel border-t border-white/10 p-4">
           <div className="flex justify-between items-center mb-3">
-            <span className="text-gray-400">XP Reward</span>
+            <span className="text-white/70">XP Reward</span>
             <span className="text-neon font-bold">
               +{10 + (photos.length > 0 ? 15 : 0) + (bodyFat ? 5 : 0)} XP
             </span>

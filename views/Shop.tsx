@@ -75,7 +75,7 @@ const SHOP_ITEMS: ShopItem[] = [
     price: 200,
     icon: 'military_tech',
     category: 'cosmetic',
-    color: 'text-gray-300'
+    color: 'text-white/80'
   },
   {
     id: 'double_coin_day',
@@ -135,12 +135,12 @@ export const XPShopView: React.FC<{ setView: (v: View) => void }> = ({ setView }
                     <span className="material-symbols-rounded text-amber-400 text-2xl">toll</span>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-400">Your Balance</p>
+                    <p className="text-xs text-white/70">Your Balance</p>
                     <p className="text-2xl font-bold text-amber-400">{stats.currency}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-gray-400">Titan Coins</p>
+                  <p className="text-xs text-white/70">Titan Coins</p>
                   <p className="text-xs text-amber-400">Earn from workouts!</p>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export const XPShopView: React.FC<{ setView: (v: View) => void }> = ({ setView }
                   className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
                     selectedCategory === cat.id
                       ? 'bg-neon text-black'
-                      : 'glass-light text-gray-300'
+                      : 'glass-light text-white/80'
                   }`}
                 >
                   {cat.label}
@@ -181,10 +181,10 @@ export const XPShopView: React.FC<{ setView: (v: View) => void }> = ({ setView }
                       <span className={`material-symbols-rounded text-2xl ${item.color}`}>{item.icon}</span>
                     </div>
                     <h4 className="font-bold text-sm mb-1">{item.name}</h4>
-                    <p className="text-[10px] text-gray-400 mb-3 h-8">{item.description}</p>
+                    <p className="text-[10px] text-white/70 mb-3 h-8">{item.description}</p>
                     <div className="flex items-center justify-center gap-1">
                       <span className="material-symbols-rounded text-amber-400 text-sm">toll</span>
-                      <span className={`font-bold ${canAfford ? 'text-amber-400' : 'text-gray-500'}`}>{item.price}</span>
+                      <span className={`font-bold ${canAfford ? 'text-amber-400' : 'text-white/50'}`}>{item.price}</span>
                     </div>
                   </div>
                 </GlassCard>
@@ -195,22 +195,22 @@ export const XPShopView: React.FC<{ setView: (v: View) => void }> = ({ setView }
           {/* How to earn coins */}
           <div className="px-4 mt-6">
             <GlassCard>
-              <h3 className="text-sm text-gray-400 uppercase font-bold mb-3">How to Earn Coins</h3>
+              <h3 className="text-sm text-white/70 uppercase font-bold mb-3">How to Earn Coins</h3>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-300">Complete a workout</span>
+                  <span className="text-white/80">Complete a workout</span>
                   <span className="text-amber-400">+10 coins</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-300">Log nutrition</span>
+                  <span className="text-white/80">Log nutrition</span>
                   <span className="text-amber-400">+5 coins</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-300">Weekly check-in</span>
+                  <span className="text-white/80">Weekly check-in</span>
                   <span className="text-amber-400">+25 coins</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-300">7-day streak bonus</span>
+                  <span className="text-white/80">7-day streak bonus</span>
                   <span className="text-amber-400">+50 coins</span>
                 </div>
               </div>
@@ -228,18 +228,18 @@ export const XPShopView: React.FC<{ setView: (v: View) => void }> = ({ setView }
               <span className={`material-symbols-rounded text-3xl ${purchaseConfirm.color}`}>{purchaseConfirm.icon}</span>
             </div>
             <h3 className="text-xl font-bold mb-2">{purchaseConfirm.name}</h3>
-            <p className="text-gray-400 text-sm mb-4">{purchaseConfirm.description}</p>
+            <p className="text-white/70 text-sm mb-4">{purchaseConfirm.description}</p>
 
             <div className="glass-light rounded-xl p-3 mb-6">
               <div className="flex justify-between items-center">
-                <span className="text-gray-400">Cost</span>
+                <span className="text-white/70">Cost</span>
                 <div className="flex items-center gap-1">
                   <span className="material-symbols-rounded text-amber-400">toll</span>
                   <span className="text-amber-400 font-bold">{purchaseConfirm.price}</span>
                 </div>
               </div>
               <div className="flex justify-between items-center mt-2">
-                <span className="text-gray-400">After purchase</span>
+                <span className="text-white/70">After purchase</span>
                 <span className="font-bold">{stats.currency - purchaseConfirm.price} coins</span>
               </div>
             </div>

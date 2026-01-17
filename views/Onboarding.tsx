@@ -29,7 +29,7 @@ export const LoginView: React.FC<{ setView: (v: View) => void }> = ({ setView })
       <div className="relative z-10 flex flex-col gap-6">
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold mb-2 tracking-tighter text-white drop-shadow-[0_0_20px_rgba(0,255,157,0.3)]">TITAN</h1>
-          <p className="text-gray-300 uppercase tracking-widest text-sm">Forge Your Legacy</p>
+          <p className="text-white/80 uppercase tracking-widest text-sm">Forge Your Legacy</p>
         </div>
 
         <GlassCard>
@@ -51,7 +51,7 @@ export const LoginView: React.FC<{ setView: (v: View) => void }> = ({ setView })
           <Button fullWidth onClick={handleLogin}>
             ENTER THE ARENA
           </Button>
-          <div className="mt-4 text-center text-sm text-gray-400">
+          <div className="mt-4 text-center text-sm text-white/70">
             <span className="block mb-2">Or sync via</span>
             <div className="flex justify-center gap-4">
               <button className="p-2 glass-light rounded-full hover:bg-white/20 transition-all">
@@ -95,12 +95,12 @@ export const GoalsView: React.FC<{ setView: (v: View) => void }> = ({ setView })
 
       <div className="relative z-10 flex flex-col h-full">
         <div className="mb-6">
-          <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+          <div className="flex items-center gap-2 text-white/70 text-sm mb-2">
             <span className="w-6 h-6 rounded-full bg-neon text-black flex items-center justify-center text-xs font-bold">1</span>
             <span>of 4</span>
           </div>
           <h2 className="text-3xl font-bold mb-2">Choose Your Path</h2>
-          <p className="text-gray-400">This defines your skill tree.</p>
+          <p className="text-white/70">This defines your skill tree.</p>
         </div>
 
         <div className="flex flex-col gap-4 flex-1">
@@ -124,7 +124,7 @@ export const GoalsView: React.FC<{ setView: (v: View) => void }> = ({ setView })
                 </div>
                 <div>
                   <h3 className="font-bold text-lg">{g.title}</h3>
-                  <p className="text-sm text-gray-400">{g.desc}</p>
+                  <p className="text-sm text-white/70">{g.desc}</p>
                 </div>
                 {selected === g.id && (
                   <span className="material-symbols-rounded text-neon ml-auto">check_circle</span>
@@ -180,26 +180,26 @@ export const ExperienceView: React.FC<{ setView: (v: View) => void }> = ({ setVi
 
       <div className="relative z-10 flex flex-col h-full">
         <div className="mb-6">
-          <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+          <div className="flex items-center gap-2 text-white/70 text-sm mb-2">
             <span className="w-6 h-6 rounded-full bg-neon text-black flex items-center justify-center text-xs font-bold">2</span>
             <span>of 4</span>
           </div>
           <h2 className="text-3xl font-bold mb-2">Calibration</h2>
-          <p className="text-gray-400">AI requires your baseline data.</p>
+          <p className="text-white/70">AI requires your baseline data.</p>
         </div>
 
         <div className="flex-1 flex flex-col gap-6">
           <GlassCard>
-            <label className="text-sm text-gray-400 uppercase font-bold block mb-4">Lifting Experience</label>
+            <label className="text-sm text-white/70 uppercase font-bold block mb-4">Lifting Experience</label>
             <input
               type="range"
               min="0"
               max="10"
               value={experience}
               onChange={(e) => setExperience(Number(e.target.value))}
-              className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-neon"
+              className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-neon"
             />
-            <div className="flex justify-between text-xs text-gray-500 mt-2">
+            <div className="flex justify-between text-xs text-white/50 mt-2">
               <span>Rookie</span>
               <span>Veteran</span>
               <span>Titan</span>
@@ -210,7 +210,7 @@ export const ExperienceView: React.FC<{ setView: (v: View) => void }> = ({ setVi
           </GlassCard>
 
           <GlassCard>
-            <label className="text-sm text-gray-400 uppercase font-bold block mb-4">AI Coach Personality</label>
+            <label className="text-sm text-white/70 uppercase font-bold block mb-4">AI Coach Personality</label>
             <div className="grid grid-cols-3 gap-2">
               {personalities.map(p => (
                 <button
@@ -226,7 +226,7 @@ export const ExperienceView: React.FC<{ setView: (v: View) => void }> = ({ setVi
                     {p.icon}
                   </span>
                   <p className="text-sm font-medium">{p.label}</p>
-                  <p className="text-[10px] text-gray-400">{p.desc}</p>
+                  <p className="text-[10px] text-white/70">{p.desc}</p>
                 </button>
               ))}
             </div>
@@ -271,17 +271,17 @@ export const CommitmentView: React.FC<{ setView: (v: View) => void }> = ({ setVi
 
       <div className="relative z-10 flex flex-col h-full">
         <div className="mb-6">
-          <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+          <div className="flex items-center gap-2 text-white/70 text-sm mb-2">
             <span className="w-6 h-6 rounded-full bg-neon text-black flex items-center justify-center text-xs font-bold">3</span>
             <span>of 4</span>
           </div>
           <h2 className="text-3xl font-bold mb-2">Your Commitment</h2>
-          <p className="text-gray-400">Set your training schedule.</p>
+          <p className="text-white/70">Set your training schedule.</p>
         </div>
 
         <div className="flex-1 flex flex-col gap-6">
           <GlassCard>
-            <label className="text-sm text-gray-400 uppercase font-bold block mb-4">
+            <label className="text-sm text-white/70 uppercase font-bold block mb-4">
               Weekly Training Days
             </label>
             <div className="flex justify-center items-center gap-4 mb-4">
@@ -293,7 +293,7 @@ export const CommitmentView: React.FC<{ setView: (v: View) => void }> = ({ setVi
               </button>
               <div className="text-center">
                 <span className="text-5xl font-bold text-neon">{frequency}</span>
-                <p className="text-sm text-gray-400">days / week</p>
+                <p className="text-sm text-white/70">days / week</p>
               </div>
               <button
                 onClick={() => setFrequency(Math.min(7, frequency + 1))}
@@ -309,7 +309,7 @@ export const CommitmentView: React.FC<{ setView: (v: View) => void }> = ({ setVi
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                     day <= frequency
                       ? 'bg-neon text-black'
-                      : 'bg-white/10 text-gray-500'
+                      : 'bg-white/10 text-white/50'
                   }`}
                 >
                   {day}
@@ -319,10 +319,10 @@ export const CommitmentView: React.FC<{ setView: (v: View) => void }> = ({ setVi
           </GlassCard>
 
           <GlassCard>
-            <label className="text-sm text-gray-400 uppercase font-bold block mb-4">
+            <label className="text-sm text-white/70 uppercase font-bold block mb-4">
               Nudge Intensity
             </label>
-            <p className="text-xs text-gray-500 mb-4">How often should the AI remind you?</p>
+            <p className="text-xs text-white/50 mb-4">How often should the AI remind you?</p>
             <div className="grid grid-cols-3 gap-2">
               {intensities.map(i => (
                 <button
@@ -338,7 +338,7 @@ export const CommitmentView: React.FC<{ setView: (v: View) => void }> = ({ setVi
                     {i.icon}
                   </span>
                   <p className="text-sm font-medium">{i.label}</p>
-                  <p className="text-[10px] text-gray-400">{i.desc}</p>
+                  <p className="text-[10px] text-white/70">{i.desc}</p>
                 </button>
               ))}
             </div>
@@ -403,17 +403,17 @@ export const FinalizeView: React.FC<{ setView: (v: View) => void }> = ({ setView
 
       <div className="relative z-10 flex flex-col h-full">
         <div className="mb-6">
-          <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+          <div className="flex items-center gap-2 text-white/70 text-sm mb-2">
             <span className="w-6 h-6 rounded-full bg-neon text-black flex items-center justify-center text-xs font-bold">4</span>
             <span>of 4</span>
           </div>
           <h2 className="text-3xl font-bold mb-2">Finalize Profile</h2>
-          <p className="text-gray-400">Complete your Titan identity.</p>
+          <p className="text-white/70">Complete your Titan identity.</p>
         </div>
 
         <div className="flex-1 flex flex-col gap-6">
           <GlassCard>
-            <label className="text-sm text-gray-400 uppercase font-bold block mb-4">
+            <label className="text-sm text-white/70 uppercase font-bold block mb-4">
               Titan Name
             </label>
             <input
@@ -427,7 +427,7 @@ export const FinalizeView: React.FC<{ setView: (v: View) => void }> = ({ setView
           </GlassCard>
 
           <GlassCard>
-            <label className="text-sm text-gray-400 uppercase font-bold block mb-4">
+            <label className="text-sm text-white/70 uppercase font-bold block mb-4">
               Target Weight (Optional)
             </label>
             <div className="flex items-center gap-3">
@@ -438,28 +438,28 @@ export const FinalizeView: React.FC<{ setView: (v: View) => void }> = ({ setView
                 onChange={(e) => setTargetWeight(e.target.value)}
                 className="glass-input flex-1 rounded-lg p-3 text-white placeholder-gray-500 text-lg text-center"
               />
-              <span className="text-gray-400 font-bold">kg</span>
+              <span className="text-white/70 font-bold">kg</span>
             </div>
           </GlassCard>
 
           {/* Summary Card */}
           <GlassCard className="border border-neon/30 bg-neon/5">
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">Your Protocol</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">Your Protocol</h3>
             <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-gray-400">Path</span>
+                <span className="text-white/70">Path</span>
                 <span className="text-neon font-bold">{getGoalLabel()}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">Coach</span>
+                <span className="text-white/70">Coach</span>
                 <span className="font-bold">{goals.coachPersonality}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">Training</span>
+                <span className="text-white/70">Training</span>
                 <span className="font-bold">{goals.weeklyWorkoutFrequency}x / week</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">Nudge Level</span>
+                <span className="text-white/70">Nudge Level</span>
                 <span className="font-bold capitalize">{goals.nudgeIntensity}</span>
               </div>
             </div>

@@ -100,7 +100,7 @@ export const StreakCalendarView: React.FC<{ setView: (v: View) => void }> = ({ s
                 {stats.streak} Days
               </span>
             </h1>
-            <p className="text-gray-400 uppercase tracking-widest text-sm">Current Streak</p>
+            <p className="text-white/70 uppercase tracking-widest text-sm">Current Streak</p>
           </div>
 
           {/* Tabs */}
@@ -109,7 +109,7 @@ export const StreakCalendarView: React.FC<{ setView: (v: View) => void }> = ({ s
               <button
                 onClick={() => setActiveTab('completion')}
                 className={`flex-1 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeTab === 'completion' ? 'bg-neon text-black' : 'text-gray-400'
+                  activeTab === 'completion' ? 'bg-neon text-black' : 'text-white/70'
                 }`}
               >
                 Completion
@@ -117,7 +117,7 @@ export const StreakCalendarView: React.FC<{ setView: (v: View) => void }> = ({ s
               <button
                 onClick={() => setActiveTab('heatmap')}
                 className={`flex-1 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeTab === 'heatmap' ? 'bg-neon text-black' : 'text-gray-400'
+                  activeTab === 'heatmap' ? 'bg-neon text-black' : 'text-white/70'
                 }`}
               >
                 Heatmap
@@ -142,7 +142,7 @@ export const StreakCalendarView: React.FC<{ setView: (v: View) => void }> = ({ s
               {/* Day Headers */}
               <div className="grid grid-cols-7 gap-1 mb-2">
                 {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, i) => (
-                  <div key={i} className="text-center text-xs text-gray-500 font-medium py-1">
+                  <div key={i} className="text-center text-xs text-white/50 font-medium py-1">
                     {day}
                   </div>
                 ))}
@@ -161,7 +161,7 @@ export const StreakCalendarView: React.FC<{ setView: (v: View) => void }> = ({ s
                               : 'bg-neon text-black shadow-[0_0_10px_rgba(0,255,157,0.5)]'
                             : dayData.isToday
                             ? 'border-2 border-neon text-neon'
-                            : 'text-gray-500'
+                            : 'text-white/50'
                         }`}
                       >
                         {dayData.day}
@@ -191,11 +191,11 @@ export const StreakCalendarView: React.FC<{ setView: (v: View) => void }> = ({ s
                 </div>
                 <div className="flex-1">
                   <h4 className="font-bold">{nextMilestone.name}</h4>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/70">
                     {nextMilestone.target - stats.streak} more days to unlock exclusive rewards
                   </p>
                 </div>
-                <span className="text-sm text-gray-400">{stats.streak}/{nextMilestone.target}</span>
+                <span className="text-sm text-white/70">{stats.streak}/{nextMilestone.target}</span>
               </div>
               <div className="w-full bg-black/50 h-2 rounded-full overflow-hidden">
                 <div
@@ -214,7 +214,7 @@ export const StreakCalendarView: React.FC<{ setView: (v: View) => void }> = ({ s
                   <span className="material-symbols-rounded text-red-400 text-2xl">warning</span>
                   <div className="flex-1">
                     <h4 className="font-bold text-red-400">Streak at Risk!</h4>
-                    <p className="text-sm text-gray-300 mb-3">
+                    <p className="text-sm text-white/80 mb-3">
                       You have <span className="text-neon font-bold">1 Freeze</span> left! Use it now or do a 5-min mobility flow to keep the fire burning.
                     </p>
                     <div className="flex gap-2">
@@ -237,15 +237,15 @@ export const StreakCalendarView: React.FC<{ setView: (v: View) => void }> = ({ s
             <div className="grid grid-cols-3 gap-3">
               <GlassCard className="text-center py-3">
                 <p className="text-2xl font-bold text-neon">{stats.streak}</p>
-                <p className="text-[10px] text-gray-400 uppercase">Current</p>
+                <p className="text-[10px] text-white/70 uppercase">Current</p>
               </GlassCard>
               <GlassCard className="text-center py-3">
                 <p className="text-2xl font-bold text-orange-400">{stats.longestStreak}</p>
-                <p className="text-[10px] text-gray-400 uppercase">Best</p>
+                <p className="text-[10px] text-white/70 uppercase">Best</p>
               </GlassCard>
               <GlassCard className="text-center py-3">
                 <p className="text-2xl font-bold text-blue-400">{workouts.length}</p>
-                <p className="text-[10px] text-gray-400 uppercase">Total</p>
+                <p className="text-[10px] text-white/70 uppercase">Total</p>
               </GlassCard>
             </div>
           </div>

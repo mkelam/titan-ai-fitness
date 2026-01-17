@@ -57,10 +57,10 @@ export const SettingsView: React.FC<{ setView: (v: View) => void }> = ({ setView
         <div className="flex-1 overflow-y-auto p-4 pb-24">
           {/* Profile Settings */}
           <GlassCard className="mb-4">
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">Profile</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">Profile</h3>
 
             <div className="mb-4">
-              <label className="text-xs text-gray-400 block mb-2">Display Name</label>
+              <label className="text-xs text-white/70 block mb-2">Display Name</label>
               <input
                 type="text"
                 value={name}
@@ -74,10 +74,10 @@ export const SettingsView: React.FC<{ setView: (v: View) => void }> = ({ setView
 
           {/* Training Settings */}
           <GlassCard className="mb-4">
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">Training</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">Training</h3>
 
             <div className="mb-6">
-              <label className="text-xs text-gray-400 block mb-3">Weekly Training Days</label>
+              <label className="text-xs text-white/70 block mb-3">Weekly Training Days</label>
               <div className="flex justify-between px-2">
                 {[1, 2, 3, 4, 5, 6, 7].map(day => (
                   <button
@@ -86,18 +86,18 @@ export const SettingsView: React.FC<{ setView: (v: View) => void }> = ({ setView
                     className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
                       day <= frequency
                         ? 'bg-neon text-black'
-                        : 'bg-white/10 text-gray-500'
+                        : 'bg-white/10 text-white/50'
                     }`}
                   >
                     {day}
                   </button>
                 ))}
               </div>
-              <p className="text-center text-gray-400 text-sm mt-3">{frequency} days per week</p>
+              <p className="text-center text-white/70 text-sm mt-3">{frequency} days per week</p>
             </div>
 
             <div>
-              <label className="text-xs text-gray-400 block mb-3">Coach Personality</label>
+              <label className="text-xs text-white/70 block mb-3">Coach Personality</label>
               <div className="grid grid-cols-3 gap-2">
                 {personalities.map(p => (
                   <button
@@ -121,10 +121,10 @@ export const SettingsView: React.FC<{ setView: (v: View) => void }> = ({ setView
 
           {/* Notification Settings */}
           <GlassCard className="mb-4">
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">Notifications</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">Notifications</h3>
 
             <div className="mb-4">
-              <label className="text-xs text-gray-400 block mb-3">Nudge Intensity</label>
+              <label className="text-xs text-white/70 block mb-3">Nudge Intensity</label>
               <div className="flex gap-2">
                 {intensities.map(i => (
                   <button
@@ -145,12 +145,12 @@ export const SettingsView: React.FC<{ setView: (v: View) => void }> = ({ setView
             <div className="flex justify-between items-center py-3 border-t border-white/10">
               <div>
                 <p className="font-medium">Push Notifications</p>
-                <p className="text-xs text-gray-400">Workout reminders & achievements</p>
+                <p className="text-xs text-white/70">Workout reminders & achievements</p>
               </div>
               <button
                 onClick={() => setNotifications(!notifications)}
                 className={`w-12 h-7 rounded-full transition-all ${
-                  notifications ? 'bg-neon' : 'bg-gray-600'
+                  notifications ? 'bg-neon' : 'bg-white/30'
                 }`}
               >
                 <div className={`w-5 h-5 rounded-full bg-white shadow-md transform transition-transform ${
@@ -162,17 +162,17 @@ export const SettingsView: React.FC<{ setView: (v: View) => void }> = ({ setView
 
           {/* App Settings */}
           <GlassCard className="mb-4">
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">App</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">App</h3>
 
             <div className="flex justify-between items-center py-3">
               <div>
                 <p className="font-medium">Dark Mode</p>
-                <p className="text-xs text-gray-400">Always on for that Titan aesthetic</p>
+                <p className="text-xs text-white/70">Always on for that Titan aesthetic</p>
               </div>
               <button
                 onClick={() => setDarkMode(!darkMode)}
                 className={`w-12 h-7 rounded-full transition-all ${
-                  darkMode ? 'bg-neon' : 'bg-gray-600'
+                  darkMode ? 'bg-neon' : 'bg-white/30'
                 }`}
               >
                 <div className={`w-5 h-5 rounded-full bg-white shadow-md transform transition-transform ${
@@ -184,12 +184,12 @@ export const SettingsView: React.FC<{ setView: (v: View) => void }> = ({ setView
             <div className="flex justify-between items-center py-3 border-t border-white/10">
               <div>
                 <p className="font-medium">Haptic Feedback</p>
-                <p className="text-xs text-gray-400">Vibration on actions</p>
+                <p className="text-xs text-white/70">Vibration on actions</p>
               </div>
               <button
                 onClick={() => setHaptics(!haptics)}
                 className={`w-12 h-7 rounded-full transition-all ${
-                  haptics ? 'bg-neon' : 'bg-gray-600'
+                  haptics ? 'bg-neon' : 'bg-white/30'
                 }`}
               >
                 <div className={`w-5 h-5 rounded-full bg-white shadow-md transform transition-transform ${
@@ -201,29 +201,29 @@ export const SettingsView: React.FC<{ setView: (v: View) => void }> = ({ setView
             <div className="flex justify-between items-center py-3 border-t border-white/10">
               <div>
                 <p className="font-medium">Units</p>
-                <p className="text-xs text-gray-400">Weight measurement</p>
+                <p className="text-xs text-white/70">Weight measurement</p>
               </div>
-              <span className="text-gray-400">Metric (kg)</span>
+              <span className="text-white/70">Metric (kg)</span>
             </div>
           </GlassCard>
 
           {/* About */}
           <GlassCard>
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">About</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">About</h3>
 
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-400">Version</span>
+                <span className="text-white/70">Version</span>
                 <span>1.0.0 MVP</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">Build</span>
+                <span className="text-white/70">Build</span>
                 <span>PWA</span>
               </div>
             </div>
 
             <div className="mt-4 pt-4 border-t border-white/10 text-center">
-              <p className="text-xs text-gray-500">Titan AI - Forge Your Legacy</p>
+              <p className="text-xs text-white/50">Titan AI - Forge Your Legacy</p>
             </div>
           </GlassCard>
         </div>

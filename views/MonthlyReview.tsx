@@ -122,7 +122,7 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
               </button>
               <div className="text-center">
                 <h2 className="text-2xl font-bold">{currentMonth}</h2>
-                <p className="text-gray-400 text-sm">{currentYear}</p>
+                <p className="text-white/70 text-sm">{currentYear}</p>
               </div>
               <button
                 onClick={() => setActiveMonth(prev => Math.min(11, prev + 1))}
@@ -142,7 +142,7 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-lg">{gradeInfo.label} Month</h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-white/70 text-sm">
                     {totalWorkouts} workouts completed this month
                   </p>
                   <div className="flex items-center gap-1 mt-1 text-xs text-neon">
@@ -156,7 +156,7 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
 
           {/* Stats Grid */}
           <div className="px-6 mb-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Month Overview</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Month Overview</h3>
             <div className="grid grid-cols-2 gap-3">
               {monthStats.map((stat, i) => (
                 <GlassCard key={i} className="text-center">
@@ -164,7 +164,7 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
                     {stat.icon}
                   </span>
                   <p className="text-xl font-bold">{stat.value}</p>
-                  <p className="text-xs text-gray-400">{stat.label}</p>
+                  <p className="text-xs text-white/70">{stat.label}</p>
                   {stat.change && (
                     <div className="flex items-center justify-center gap-1 mt-1 text-xs text-green-400">
                       <span className="material-symbols-rounded text-xs">arrow_upward</span>
@@ -178,7 +178,7 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
 
           {/* Best Lifts */}
           <div className="px-6 mb-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Personal Bests</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Personal Bests</h3>
             <GlassCard>
               {bestLifts.map((lift, i) => (
                 <div
@@ -193,12 +193,12 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
                     </div>
                     <div>
                       <p className="font-bold">{lift.exercise}</p>
-                      <p className="text-xs text-gray-400">{lift.date}</p>
+                      <p className="text-xs text-white/70">{lift.date}</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-bold text-neon">{lift.weight} kg</p>
-                    <p className="text-xs text-gray-400">x{lift.reps} reps</p>
+                    <p className="text-xs text-white/70">x{lift.reps} reps</p>
                   </div>
                 </div>
               ))}
@@ -207,7 +207,7 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
 
           {/* Achievements Unlocked */}
           <div className="px-6 mb-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Achievements</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Achievements</h3>
             <div className="flex gap-3 overflow-x-auto pb-2">
               {achievements.map((ach, i) => (
                 <div
@@ -222,7 +222,7 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
                     ach.unlocked ? 'bg-white/10' : 'bg-black/30'
                   }`}>
                     <span className={`material-symbols-rounded text-xl ${
-                      ach.unlocked ? 'text-yellow-400' : 'text-gray-600'
+                      ach.unlocked ? 'text-yellow-400' : 'text-white/40'
                     }`}>
                       {ach.unlocked ? ach.icon : 'lock'}
                     </span>
@@ -242,7 +242,7 @@ export const MonthlyReviewView: React.FC<{ setView: (v: View) => void }> = ({ se
                 </div>
                 <div>
                   <h4 className="font-bold text-sm text-neon mb-1">AI ANALYSIS</h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-white/80">
                     Great progress this month, {profile?.name || 'Champion'}! Your consistency has improved by 15%.
                     Focus on increasing your squat frequency next month to balance your leg development.
                     You're on track to hit your goals!

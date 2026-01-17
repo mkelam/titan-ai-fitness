@@ -86,7 +86,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 py-2 rounded-full text-sm font-medium transition-all ${
-                    activeTab === tab.id ? 'bg-neon text-black' : 'text-gray-400'
+                    activeTab === tab.id ? 'bg-neon text-black' : 'text-white/70'
                   }`}
                 >
                   {tab.label}
@@ -107,7 +107,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
                   key={tf.id}
                   onClick={() => setTimeframe(tf.id)}
                   className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
-                    timeframe === tf.id ? 'bg-white/20 text-white' : 'text-gray-500'
+                    timeframe === tf.id ? 'bg-white/20 text-white' : 'text-white/50'
                   }`}
                 >
                   {tf.label}
@@ -122,15 +122,15 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
               {/* 2nd Place */}
               <div className="flex-1 text-center">
                 <div className="w-16 h-16 mx-auto rounded-full border-2 border-gray-400 p-1 mb-2">
-                  <div className="w-full h-full rounded-full bg-gray-600 flex items-center justify-center">
+                  <div className="w-full h-full rounded-full bg-white/30 flex items-center justify-center">
                     <span className="text-xl font-bold">{topThree[1]?.name[0]}</span>
                   </div>
                 </div>
                 <span className="material-symbols-rounded text-gray-300 text-xl">emoji_events</span>
                 <p className="font-bold text-sm truncate">{topThree[1]?.name}</p>
-                <p className="text-xs text-gray-400">{topThree[1]?.xp.toLocaleString()} XP</p>
+                <p className="text-xs text-white/70">{topThree[1]?.xp.toLocaleString()} XP</p>
                 <div className="h-20 bg-gradient-to-t from-gray-500/20 to-transparent rounded-t-xl mt-2 flex items-end justify-center pb-2">
-                  <span className="text-2xl font-bold text-gray-400">2</span>
+                  <span className="text-2xl font-bold text-white/70">2</span>
                 </div>
               </div>
 
@@ -158,7 +158,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
                 </div>
                 <span className="material-symbols-rounded text-amber-600 text-xl">emoji_events</span>
                 <p className="font-bold text-sm truncate">{topThree[2]?.name}</p>
-                <p className="text-xs text-gray-400">{topThree[2]?.xp.toLocaleString()} XP</p>
+                <p className="text-xs text-white/70">{topThree[2]?.xp.toLocaleString()} XP</p>
                 <div className="h-16 bg-gradient-to-t from-amber-700/20 to-transparent rounded-t-xl mt-2 flex items-end justify-center pb-2">
                   <span className="text-2xl font-bold text-amber-600">3</span>
                 </div>
@@ -180,7 +180,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
                 </div>
                 <div className="flex-1">
                   <p className="font-bold">{profile?.name || 'You'}</p>
-                  <p className="text-xs text-gray-400">Level {stats.level}</p>
+                  <p className="text-xs text-white/70">Level {stats.level}</p>
                 </div>
                 <div className="text-right">
                   <p className="font-bold text-neon">{stats.totalXpEarned.toLocaleString()} XP</p>
@@ -195,7 +195,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
 
           {/* Rest of Leaderboard */}
           <div className="px-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Rankings</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Rankings</h3>
             {restOfList.map(user => (
               <div
                 key={user.rank}
@@ -203,7 +203,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
                   user.isCurrentUser ? 'bg-neon/10 border border-neon/30' : 'glass-light'
                 }`}
               >
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm font-bold text-gray-400">
+                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-sm font-bold text-white/70">
                   {user.rank}
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
@@ -211,7 +211,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
                 </div>
                 <div className="flex-1">
                   <p className={`font-medium ${user.isCurrentUser ? 'text-neon' : ''}`}>{user.name}</p>
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                  <div className="flex items-center gap-2 text-xs text-white/50">
                     <span>Lvl {user.level}</span>
                     <span>•</span>
                     <span className="flex items-center gap-0.5">
@@ -224,7 +224,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
                   <p className="font-bold text-sm">{user.xp.toLocaleString()}</p>
                   <div className={`flex items-center gap-0.5 text-xs ${
                     user.change === 'up' ? 'text-green-400' :
-                    user.change === 'down' ? 'text-red-400' : 'text-gray-500'
+                    user.change === 'down' ? 'text-red-400' : 'text-white/50'
                   }`}>
                     <span className="material-symbols-rounded text-sm">
                       {user.change === 'up' ? 'arrow_upward' :
@@ -241,7 +241,7 @@ export const LeaderboardView: React.FC<{ setView: (v: View) => void }> = ({ setV
             <GlassCard className="text-center">
               <span className="material-symbols-rounded text-purple-400 text-2xl mb-2">calendar_month</span>
               <h4 className="font-bold">Season 4: Berserker Phase</h4>
-              <p className="text-xs text-gray-400 mb-3">Ends in 14 days</p>
+              <p className="text-xs text-white/70 mb-3">Ends in 14 days</p>
               <div className="w-full bg-black/50 h-2 rounded-full overflow-hidden">
                 <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500 w-3/4" />
               </div>

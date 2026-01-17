@@ -36,25 +36,25 @@ export const SkillTreeView: React.FC<{ setView: (v: View) => void }> = ({ setVie
             </div>
             <div className="flex flex-col items-center opacity-50 grayscale">
               <GlassCard className="w-16 h-16 p-0 rounded-full border-2 border-gray-600 flex items-center justify-center">
-                <span className="material-symbols-rounded text-2xl text-gray-500">sprint</span>
+                <span className="material-symbols-rounded text-2xl text-white/50">sprint</span>
               </GlassCard>
-              <p className="mt-2 font-bold text-sm text-center text-gray-500">Agility II</p>
+              <p className="mt-2 font-bold text-sm text-center text-white/50">Agility II</p>
             </div>
           </div>
 
           {/* Connection Line */}
-          <div className="w-1 h-12 bg-gray-700 -my-4" />
+          <div className="w-1 h-12 bg-white/20 -my-4" />
 
           {/* Locked Node */}
           <div className="w-16 h-16 rounded-full glass-light border border-gray-700 flex items-center justify-center opacity-30">
-            <span className="material-symbols-rounded text-gray-600">question_mark</span>
+            <span className="material-symbols-rounded text-white/40">question_mark</span>
           </div>
         </div>
       </div>
 
       <div className="glass-panel border-t border-white/10 rounded-t-2xl p-4">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-sm font-bold uppercase text-gray-400">Skill Points</span>
+          <span className="text-sm font-bold uppercase text-white/70">Skill Points</span>
           <span className="text-xl font-bold text-neon">5 SP</span>
         </div>
         <Button fullWidth onClick={() => setView(View.XP_SHOP)}>VISIT XP SHOP</Button>
@@ -81,13 +81,13 @@ export const TeamHubView: React.FC<{ setView: (v: View) => void }> = ({ setView 
             </div>
             <div className="text-center">
               <span className="block text-2xl font-bold text-purple-400">65%</span>
-              <span className="text-[10px] uppercase text-gray-400">Complete</span>
+              <span className="text-[10px] uppercase text-white/70">Complete</span>
             </div>
           </div>
           <div className="w-full bg-black/50 h-2 rounded-full overflow-hidden">
             <div className="bg-purple-500 w-[65%] h-full shadow-[0_0_10px_rgba(168,85,247,0.5)] transition-all duration-500" />
           </div>
-          <p className="text-xs text-right mt-1 text-gray-400">2d 14h Remaining</p>
+          <p className="text-xs text-right mt-1 text-white/70">2d 14h Remaining</p>
         </GlassCard>
 
         {/* Leaderboard Header */}
@@ -109,7 +109,7 @@ export const TeamHubView: React.FC<{ setView: (v: View) => void }> = ({ setView 
               className={user.me ? 'border-purple-500 bg-purple-500/10 shadow-[0_0_15px_rgba(168,85,247,0.2)]' : 'hover:bg-white/5 transition-all'}
             >
               <div className="flex items-center gap-4">
-                <span className={`font-bold w-6 ${user.rank === 1 ? 'text-yellow-400' : 'text-gray-500'}`}>
+                <span className={`font-bold w-6 ${user.rank === 1 ? 'text-yellow-400' : 'text-white/50'}`}>
                   #{user.rank}
                 </span>
                 <div className="w-10 h-10 rounded-full glass-light flex items-center justify-center text-xl">
@@ -117,10 +117,10 @@ export const TeamHubView: React.FC<{ setView: (v: View) => void }> = ({ setView 
                 </div>
                 <div className="flex-1">
                   <h4 className="font-bold">{user.name}</h4>
-                  <p className="text-xs text-gray-400">{user.xp} XP Contributed</p>
+                  <p className="text-xs text-white/70">{user.xp} XP Contributed</p>
                 </div>
                 {!user.me && (
-                  <button className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-neon transition-all">
+                  <button className="p-2 rounded-full hover:bg-white/10 text-white/70 hover:text-neon transition-all">
                     <span className="material-symbols-rounded">thumb_up</span>
                   </button>
                 )}

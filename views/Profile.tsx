@@ -72,14 +72,14 @@ export const ProfileView: React.FC<{ setView: (v: View) => void }> = ({ setView 
               </div>
             </div>
             <h1 className="text-2xl font-bold">{profile?.name || 'Titan'}</h1>
-            <p className="text-gray-400 text-sm">{profile?.email || 'No email set'}</p>
+            <p className="text-white/70 text-sm">{profile?.email || 'No email set'}</p>
             <p className="text-neon text-xs mt-1">{getGoalLabel()} Path</p>
           </div>
 
           {/* XP Progress */}
           <GlassCard className="mb-4">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-sm text-gray-400">Experience Points</span>
+              <span className="text-sm text-white/70">Experience Points</span>
               <span className="text-neon font-bold">{stats.totalXpEarned} Total XP</span>
             </div>
             <div className="w-full bg-black/50 h-3 rounded-full overflow-hidden">
@@ -88,7 +88,7 @@ export const ProfileView: React.FC<{ setView: (v: View) => void }> = ({ setView 
                 style={{ width: `${(stats.xp / stats.xpToNextLevel) * 100}%` }}
               />
             </div>
-            <div className="flex justify-between text-xs text-gray-500 mt-2">
+            <div className="flex justify-between text-xs text-white/50 mt-2">
               <span>{stats.xp} XP</span>
               <span>{stats.xpToNextLevel - stats.xp} XP to Level {stats.level + 1}</span>
             </div>
@@ -99,27 +99,27 @@ export const ProfileView: React.FC<{ setView: (v: View) => void }> = ({ setView 
             <GlassCard className="text-center">
               <span className="material-symbols-rounded text-3xl text-orange-400 mb-2">local_fire_department</span>
               <p className="text-2xl font-bold">{stats.streak}</p>
-              <p className="text-xs text-gray-400">Day Streak</p>
-              <p className="text-xs text-gray-500 mt-1">Best: {stats.longestStreak}</p>
+              <p className="text-xs text-white/70">Day Streak</p>
+              <p className="text-xs text-white/50 mt-1">Best: {stats.longestStreak}</p>
             </GlassCard>
 
             <GlassCard className="text-center">
               <span className="material-symbols-rounded text-3xl text-blue-400 mb-2">fitness_center</span>
               <p className="text-2xl font-bold">{totalWorkouts}</p>
-              <p className="text-xs text-gray-400">Workouts</p>
-              <p className="text-xs text-gray-500 mt-1">Avg: {avgWorkoutDuration} min</p>
+              <p className="text-xs text-white/70">Workouts</p>
+              <p className="text-xs text-white/50 mt-1">Avg: {avgWorkoutDuration} min</p>
             </GlassCard>
 
             <GlassCard className="text-center">
               <span className="material-symbols-rounded text-3xl text-purple-400 mb-2">monitoring</span>
               <p className="text-2xl font-bold">{(totalVolume / 1000).toFixed(1)}k</p>
-              <p className="text-xs text-gray-400">Total Volume (kg)</p>
+              <p className="text-xs text-white/70">Total Volume (kg)</p>
             </GlassCard>
 
             <GlassCard className="text-center">
               <span className="material-symbols-rounded text-3xl text-green-400 mb-2">scale</span>
               <p className="text-2xl font-bold">{currentWeight || '—'}</p>
-              <p className="text-xs text-gray-400">Current Weight</p>
+              <p className="text-xs text-white/70">Current Weight</p>
               {weightChange !== 0 && (
                 <p className={`text-xs mt-1 ${weightChange < 0 ? 'text-green-400' : 'text-red-400'}`}>
                   {weightChange > 0 ? '+' : ''}{weightChange.toFixed(1)} kg
@@ -130,22 +130,22 @@ export const ProfileView: React.FC<{ setView: (v: View) => void }> = ({ setView 
 
           {/* Account Info */}
           <GlassCard className="mb-4">
-            <h3 className="text-sm text-gray-400 uppercase font-bold mb-4">Account</h3>
+            <h3 className="text-sm text-white/70 uppercase font-bold mb-4">Account</h3>
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-gray-300">Training Frequency</span>
+                <span className="text-white/80">Training Frequency</span>
                 <span className="font-bold">{goals.weeklyWorkoutFrequency}x / week</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-300">Coach Personality</span>
+                <span className="text-white/80">Coach Personality</span>
                 <span className="font-bold">{goals.coachPersonality}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-300">Nudge Intensity</span>
+                <span className="text-white/80">Nudge Intensity</span>
                 <span className="font-bold capitalize">{goals.nudgeIntensity}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-300">Member Since</span>
+                <span className="text-white/80">Member Since</span>
                 <span className="font-bold">
                   {profile?.createdAt
                     ? new Date(profile.createdAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
@@ -174,7 +174,7 @@ export const ProfileView: React.FC<{ setView: (v: View) => void }> = ({ setView 
                 <span className="material-symbols-rounded text-yellow-400 text-2xl">toll</span>
                 <div>
                   <p className="font-bold">{stats.currency} Titan Coins</p>
-                  <p className="text-xs text-gray-400">Spend in XP Shop</p>
+                  <p className="text-xs text-white/70">Spend in XP Shop</p>
                 </div>
               </div>
               <Button variant="secondary" onClick={() => setView(View.XP_SHOP)}>
@@ -218,7 +218,7 @@ export const ProfileView: React.FC<{ setView: (v: View) => void }> = ({ setView 
           <div className="relative glass-modal rounded-3xl w-full max-w-sm p-6 text-center">
             <span className="material-symbols-rounded text-5xl text-red-400 mb-4">warning</span>
             <h3 className="text-xl font-bold mb-2">Log Out?</h3>
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="text-white/70 text-sm mb-6">
               This will clear all your local data. Make sure you've exported a backup first!
             </p>
             <div className="flex gap-3">

@@ -179,7 +179,7 @@ export const AICoachChatView: React.FC<{ setView: (v: View) => void }> = ({ setV
                 }`}
               >
                 <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
-                <p className={`text-[10px] mt-1 ${msg.role === 'user' ? 'text-black/50' : 'text-gray-500'}`}>
+                <p className={`text-[10px] mt-1 ${msg.role === 'user' ? 'text-black/50' : 'text-white/50'}`}>
                   {msg.timestamp.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
                 </p>
               </div>
@@ -239,7 +239,7 @@ export const AICoachChatView: React.FC<{ setView: (v: View) => void }> = ({ setV
               className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${
                 input.trim() && !isTyping
                   ? 'bg-neon text-black shadow-[0_0_15px_rgba(0,255,157,0.4)]'
-                  : 'bg-white/10 text-gray-500'
+                  : 'bg-white/10 text-white/50'
               }`}
             >
               <span className="material-symbols-rounded">send</span>
@@ -296,7 +296,7 @@ export const CoachSelectionView: React.FC<{ setView: (v: View) => void }> = ({ s
         <Header title="Choose Your Coach" leftIcon="arrow_back" onLeftClick={() => setView(View.AI_COACH_CHAT)} />
 
         <div className="flex-1 overflow-y-auto p-4 pb-24">
-          <p className="text-gray-400 text-center mb-6">
+          <p className="text-white/70 text-center mb-6">
             Your AI coach adapts to your preferred communication style
           </p>
 
@@ -319,8 +319,8 @@ export const CoachSelectionView: React.FC<{ setView: (v: View) => void }> = ({ s
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-1">{coach.name}</h3>
-                    <p className="text-sm text-gray-400 mb-2">{coach.personality}</p>
-                    <p className="text-xs italic text-gray-500">{coach.quote}</p>
+                    <p className="text-sm text-white/70 mb-2">{coach.personality}</p>
+                    <p className="text-xs italic text-white/50">{coach.quote}</p>
                   </div>
                   {selected === coach.id && (
                     <span className="material-symbols-rounded text-neon">check_circle</span>

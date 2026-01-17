@@ -143,18 +143,18 @@ export const RecoveryPlanView: React.FC<{ setView: (v: View) => void }> = ({ set
                       {recoveryLevel}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-400">{getRecoveryMessage()}</p>
+                  <p className="text-sm text-white/70">{getRecoveryMessage()}</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 text-center">
                 <div className="bg-white/5 rounded-xl p-3">
                   <p className="text-2xl font-bold">{workoutsThisWeek}</p>
-                  <p className="text-xs text-gray-400">Workouts (7d)</p>
+                  <p className="text-xs text-white/70">Workouts (7d)</p>
                 </div>
                 <div className="bg-white/5 rounded-xl p-3">
                   <p className="text-2xl font-bold">{(totalVolumeThisWeek / 1000).toFixed(1)}k</p>
-                  <p className="text-xs text-gray-400">Volume (kg)</p>
+                  <p className="text-xs text-white/70">Volume (kg)</p>
                 </div>
               </div>
             </GlassCard>
@@ -163,7 +163,7 @@ export const RecoveryPlanView: React.FC<{ setView: (v: View) => void }> = ({ set
           {/* Progress */}
           <div className="px-6 mb-6">
             <div className="flex justify-between items-center mb-2">
-              <h3 className="text-sm text-gray-400 uppercase tracking-wider">Today's Recovery</h3>
+              <h3 className="text-sm text-white/70 uppercase tracking-wider">Today's Recovery</h3>
               <span className="text-neon font-bold">{completedCount}/{activities.length}</span>
             </div>
             <div className="w-full bg-black/50 h-2 rounded-full overflow-hidden">
@@ -176,7 +176,7 @@ export const RecoveryPlanView: React.FC<{ setView: (v: View) => void }> = ({ set
 
           {/* Recovery Activities */}
           <div className="px-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Recommended Activities</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Recommended Activities</h3>
             {activities.map(activity => (
               <GlassCard
                 key={activity.id}
@@ -199,7 +199,7 @@ export const RecoveryPlanView: React.FC<{ setView: (v: View) => void }> = ({ set
                     <h4 className={`font-bold ${activity.completed ? 'text-neon' : ''}`}>
                       {activity.name}
                     </h4>
-                    <p className="text-xs text-gray-400">{activity.duration}</p>
+                    <p className="text-xs text-white/70">{activity.duration}</p>
                   </div>
                   <button
                     onClick={(e) => {
@@ -209,7 +209,7 @@ export const RecoveryPlanView: React.FC<{ setView: (v: View) => void }> = ({ set
                     className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
                       activity.completed
                         ? 'bg-neon text-black'
-                        : 'bg-white/10 text-gray-400 hover:bg-white/20'
+                        : 'bg-white/10 text-white/70 hover:bg-white/20'
                     }`}
                   >
                     <span className="material-symbols-rounded text-sm">
@@ -230,7 +230,7 @@ export const RecoveryPlanView: React.FC<{ setView: (v: View) => void }> = ({ set
                 </div>
                 <div>
                   <h4 className="font-bold text-sm text-neon mb-1">RECOVERY TIP</h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-white/80">
                     {recoveryLevel === 'high'
                       ? 'Consider taking a full rest day. Your muscles grow during recovery, not during training!'
                       : recoveryLevel === 'moderate'
@@ -260,12 +260,12 @@ export const RecoveryPlanView: React.FC<{ setView: (v: View) => void }> = ({ set
             </div>
 
             <h3 className="text-xl font-bold text-center mb-1">{selectedActivity.name}</h3>
-            <p className="text-center text-gray-400 text-sm mb-4">{selectedActivity.duration}</p>
+            <p className="text-center text-white/70 text-sm mb-4">{selectedActivity.duration}</p>
 
-            <p className="text-gray-300 text-sm mb-4">{selectedActivity.description}</p>
+            <p className="text-white/80 text-sm mb-4">{selectedActivity.description}</p>
 
             <div className="mb-6">
-              <h4 className="text-xs text-gray-400 uppercase mb-2">Benefits</h4>
+              <h4 className="text-xs text-white/70 uppercase mb-2">Benefits</h4>
               <div className="flex flex-wrap gap-2">
                 {selectedActivity.benefits.map((benefit, i) => (
                   <span key={i} className="text-xs bg-white/10 px-3 py-1 rounded-full">

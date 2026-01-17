@@ -47,17 +47,17 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
         </div>
       )}
 
-      <span className={`material-symbols-rounded text-3xl ${value ? 'text-white' : 'text-gray-600'}`}>
+      <span className={`material-symbols-rounded text-3xl ${value ? 'text-white' : 'text-white/40'}`}>
         {icon}
       </span>
 
       <div className="flex flex-col gap-1">
-        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">{label}</span>
+        <span className="text-[10px] font-bold text-white/50 uppercase tracking-wider">{label}</span>
 
         {value !== undefined && (
           <div className="flex items-baseline gap-1">
             <span className="text-2xl font-bold">{value}</span>
-            {unit && <span className="text-sm text-gray-400">{unit}</span>}
+            {unit && <span className="text-sm text-white/70">{unit}</span>}
           </div>
         )}
 
@@ -66,7 +66,7 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
         )}
 
         {meta && (
-          <span className="text-xs text-gray-400">{meta}</span>
+          <span className="text-xs text-white/70">{meta}</span>
         )}
 
         {cta && (
@@ -125,14 +125,14 @@ export const WeightEntryModal: React.FC<{ onClose: () => void }> = ({ onClose })
 
         {latestWeight && (
           <div className="mb-4 p-3 bg-white/5 rounded-lg">
-            <span className="text-sm text-gray-400">Previous: </span>
+            <span className="text-sm text-white/70">Previous: </span>
             <span className="text-lg font-bold">{latestWeight} lbs</span>
           </div>
         )}
 
         <div className="flex flex-col gap-4 mb-6">
           <div>
-            <label className="text-sm text-gray-400 uppercase font-bold block mb-2">Weight (lbs)</label>
+            <label className="text-sm text-white/70 uppercase font-bold block mb-2">Weight (lbs)</label>
             <input
               type="number"
               step="0.1"
@@ -145,7 +145,7 @@ export const WeightEntryModal: React.FC<{ onClose: () => void }> = ({ onClose })
           </div>
 
           <div>
-            <label className="text-sm text-gray-400 uppercase font-bold block mb-2">Body Fat % (Optional)</label>
+            <label className="text-sm text-white/70 uppercase font-bold block mb-2">Body Fat % (Optional)</label>
             <input
               type="number"
               step="0.1"
@@ -222,8 +222,8 @@ export const PhotoUploadModal: React.FC<{ onClose: () => void }> = ({ onClose })
         {!photo ? (
           <div className="mb-6">
             <label className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-white/20 rounded-xl cursor-pointer hover:bg-white/5">
-              <span className="material-symbols-rounded text-6xl text-gray-600 mb-4">photo_camera</span>
-              <span className="text-sm text-gray-400">Tap to capture photo</span>
+              <span className="material-symbols-rounded text-6xl text-white/40 mb-4">photo_camera</span>
+              <span className="text-sm text-white/70">Tap to capture photo</span>
               <input
                 type="file"
                 accept="image/*"
@@ -238,7 +238,7 @@ export const PhotoUploadModal: React.FC<{ onClose: () => void }> = ({ onClose })
             <img src={photo} alt="Progress" className="w-full h-64 object-cover rounded-xl" />
             <button
               onClick={() => setPhoto(null)}
-              className="mt-4 text-sm text-gray-400 hover:text-white"
+              className="mt-4 text-sm text-white/70 hover:text-white"
             >
               Retake Photo
             </button>
@@ -252,7 +252,7 @@ export const PhotoUploadModal: React.FC<{ onClose: () => void }> = ({ onClose })
         <div className="mt-4 p-3 bg-white/5 rounded-lg">
           <div className="flex items-start gap-2">
             <span className="material-symbols-rounded text-yellow-400 text-sm">lock</span>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-white/70">
               Photos are stored locally on your device and encrypted. They will never be shared without your permission.
             </p>
           </div>
@@ -309,8 +309,8 @@ export const QuickCalorieModal: React.FC<{ onClose: () => void }> = ({ onClose }
         <div className="flex flex-col gap-6 mb-6">
           <div>
             <div className="flex justify-between items-end mb-2">
-              <label className="text-sm text-gray-400 uppercase font-bold">Calories</label>
-              <span className="text-xs text-gray-500">{targetCalories} target</span>
+              <label className="text-sm text-white/70 uppercase font-bold">Calories</label>
+              <span className="text-xs text-white/50">{targetCalories} target</span>
             </div>
             <input
               type="number"
@@ -330,8 +330,8 @@ export const QuickCalorieModal: React.FC<{ onClose: () => void }> = ({ onClose }
 
           <div>
             <div className="flex justify-between items-end mb-2">
-              <label className="text-sm text-gray-400 uppercase font-bold">Protein (g)</label>
-              <span className="text-xs text-gray-500">{targetProtein}g target</span>
+              <label className="text-sm text-white/70 uppercase font-bold">Protein (g)</label>
+              <span className="text-xs text-white/50">{targetProtein}g target</span>
             </div>
             <input
               type="number"

@@ -85,7 +85,7 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="text-2xl font-bold">{currentWeight}</p>
-                  <p className="text-xs text-gray-400">Current kg</p>
+                  <p className="text-xs text-white/70">Current kg</p>
                 </div>
                 <div className="flex items-center justify-center">
                   <span className="material-symbols-rounded text-cyan-400 text-3xl">
@@ -94,11 +94,11 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-neon">{targetWeight}</p>
-                  <p className="text-xs text-gray-400">Target kg</p>
+                  <p className="text-xs text-white/70">Target kg</p>
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-white/10 text-center">
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-white/70">
                   {Math.abs(weightToLose).toFixed(1)} kg to {isGaining ? 'gain' : 'lose'}
                 </p>
               </div>
@@ -107,11 +107,11 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
 
           {/* Projection Chart */}
           <div className="px-6 mb-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Projection Timeline</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Projection Timeline</h3>
             <GlassCard>
               <div className="relative h-40 mb-4">
                 {/* Y-axis labels */}
-                <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-500">
+                <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-white/50">
                   <span>{Math.max(currentWeight, targetWeight).toFixed(0)}</span>
                   <span>{((currentWeight + targetWeight) / 2).toFixed(0)}</span>
                   <span>{Math.min(currentWeight, targetWeight).toFixed(0)}</span>
@@ -151,7 +151,7 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
               </div>
 
               {/* X-axis labels */}
-              <div className="flex justify-between text-xs text-gray-500 mt-2 ml-8">
+              <div className="flex justify-between text-xs text-white/50 mt-2 ml-8">
                 <span>Now</span>
                 <span>{Math.round(weeksRemaining / 2)}w</span>
                 <span>{weeksRemaining}w</span>
@@ -173,7 +173,7 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
                       {recommendation.status}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-400">{recommendation.message}</p>
+                  <p className="text-sm text-white/70">{recommendation.message}</p>
                 </div>
               </div>
             </GlassCard>
@@ -181,7 +181,7 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
 
           {/* Milestones */}
           <div className="px-6 mb-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Milestones</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Milestones</h3>
             <GlassCard>
               {milestones.map((milestone, i) => (
                 <div
@@ -195,14 +195,14 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
                       milestone.achieved ? 'bg-green-500/20' : 'bg-white/5'
                     }`}>
                       <span className={`material-symbols-rounded text-sm ${
-                        milestone.achieved ? 'text-green-400' : 'text-gray-500'
+                        milestone.achieved ? 'text-green-400' : 'text-white/50'
                       }`}>
                         {milestone.achieved ? 'check' : 'radio_button_unchecked'}
                       </span>
                     </div>
                     <span className={milestone.achieved ? 'text-green-400' : ''}>{milestone.label}</span>
                   </div>
-                  <span className="text-sm text-gray-400">{milestone.target.toFixed(1)} kg</span>
+                  <span className="text-sm text-white/70">{milestone.target.toFixed(1)} kg</span>
                 </div>
               ))}
             </GlassCard>
@@ -210,10 +210,10 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
 
           {/* Adjust Goal */}
           <div className="px-6 mb-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Adjust Goal</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Adjust Goal</h3>
             <GlassCard>
               <div className="mb-4">
-                <label className="text-xs text-gray-400 block mb-2">Target Weight (kg)</label>
+                <label className="text-xs text-white/70 block mb-2">Target Weight (kg)</label>
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => setTargetWeight(prev => prev - 1)}
@@ -237,7 +237,7 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
               </div>
 
               <div>
-                <label className="text-xs text-gray-400 block mb-2">Target Date</label>
+                <label className="text-xs text-white/70 block mb-2">Target Date</label>
                 <input
                   type="date"
                   value={targetDate}
@@ -255,7 +255,7 @@ export const WeightProjectionView: React.FC<{ setView: (v: View) => void }> = ({
                 <span className="material-symbols-rounded text-neon text-2xl">lightbulb</span>
                 <div>
                   <h4 className="font-bold text-sm mb-1">Pro Tip</h4>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-white/70">
                     {isGaining
                       ? 'For muscle gain, aim for 0.25-0.5 kg per week with a 300-500 calorie surplus.'
                       : 'For fat loss, aim for 0.5-1 kg per week with a 500-750 calorie deficit.'}

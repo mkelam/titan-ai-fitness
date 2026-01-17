@@ -77,7 +77,7 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
                 isCheckedIn ? 'bg-neon/20' : 'bg-white/10'
               }`}>
                 <span className={`material-symbols-rounded text-4xl ${
-                  isCheckedIn ? 'text-neon' : 'text-gray-400'
+                  isCheckedIn ? 'text-neon' : 'text-white/70'
                 }`}>
                   {isCheckedIn ? 'check_circle' : 'location_on'}
                 </span>
@@ -86,7 +86,7 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
               {isCheckedIn ? (
                 <>
                   <h2 className="text-xl font-bold text-neon mb-1">Checked In!</h2>
-                  <p className="text-gray-400">{selectedGym?.name}</p>
+                  <p className="text-white/70">{selectedGym?.name}</p>
                   <div className="flex items-center justify-center gap-2 mt-3">
                     <span className="material-symbols-rounded text-yellow-400 text-sm">bolt</span>
                     <span className="text-yellow-400 text-sm font-bold">+10 XP earned</span>
@@ -95,7 +95,7 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
               ) : (
                 <>
                   <h2 className="text-xl font-bold mb-1">Ready to Train?</h2>
-                  <p className="text-gray-400 text-sm">Check in at your gym to earn XP</p>
+                  <p className="text-white/70 text-sm">Check in at your gym to earn XP</p>
                 </>
               )}
             </GlassCard>
@@ -107,17 +107,17 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
               <GlassCard className="text-center py-3">
                 <span className="material-symbols-rounded text-orange-400 text-xl mb-1">group</span>
                 <p className="text-lg font-bold">{todayCheckins.toLocaleString()}</p>
-                <p className="text-[10px] text-gray-400">Training Today</p>
+                <p className="text-[10px] text-white/70">Training Today</p>
               </GlassCard>
               <GlassCard className="text-center py-3">
                 <span className="material-symbols-rounded text-blue-400 text-xl mb-1">pin_drop</span>
                 <p className="text-lg font-bold">{gyms[0].checkins}</p>
-                <p className="text-[10px] text-gray-400">Your Check-ins</p>
+                <p className="text-[10px] text-white/70">Your Check-ins</p>
               </GlassCard>
               <GlassCard className="text-center py-3">
                 <span className="material-symbols-rounded text-green-400 text-xl mb-1">emoji_events</span>
                 <p className="text-lg font-bold">#42</p>
-                <p className="text-[10px] text-gray-400">Gym Rank</p>
+                <p className="text-[10px] text-white/70">Gym Rank</p>
               </GlassCard>
             </div>
           </div>
@@ -130,7 +130,7 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
                   <span className="material-symbols-rounded text-orange-400 text-2xl">local_fire_department</span>
                   <div className="flex-1">
                     <p className="font-bold text-sm">Streak Bonus Active!</p>
-                    <p className="text-xs text-gray-400">Check in now for +5 bonus XP</p>
+                    <p className="text-xs text-white/70">Check in now for +5 bonus XP</p>
                   </div>
                   <span className="text-orange-400 font-bold">+5 XP</span>
                 </div>
@@ -140,12 +140,12 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
 
           {/* Nearby Gyms */}
           <div className="px-6">
-            <h3 className="text-sm text-gray-400 uppercase tracking-wider mb-3">Nearby Gyms</h3>
+            <h3 className="text-sm text-white/70 uppercase tracking-wider mb-3">Nearby Gyms</h3>
             {gyms.map(gym => (
               <GlassCard key={gym.id} className="mb-3">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center">
-                    <span className="material-symbols-rounded text-2xl text-gray-400">fitness_center</span>
+                    <span className="material-symbols-rounded text-2xl text-white/70">fitness_center</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
@@ -154,8 +154,8 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
                         <span className="material-symbols-rounded text-yellow-400 text-sm">star</span>
                       )}
                     </div>
-                    <p className="text-xs text-gray-400">{gym.address}</p>
-                    <div className="flex items-center gap-3 mt-1 text-xs text-gray-500">
+                    <p className="text-xs text-white/70">{gym.address}</p>
+                    <div className="flex items-center gap-3 mt-1 text-xs text-white/50">
                       <span className="flex items-center gap-1">
                         <span className="material-symbols-rounded text-xs">near_me</span>
                         {gym.distance}
@@ -181,8 +181,8 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
           {/* Add New Gym */}
           <div className="px-6 mt-4">
             <button className="w-full p-4 border-2 border-dashed border-white/20 rounded-xl text-center hover:border-neon/50 transition-all">
-              <span className="material-symbols-rounded text-2xl text-gray-500 mb-1">add_location</span>
-              <p className="text-sm text-gray-400">Add New Gym</p>
+              <span className="material-symbols-rounded text-2xl text-white/50 mb-1">add_location</span>
+              <p className="text-sm text-white/70">Add New Gym</p>
             </button>
           </div>
 
@@ -204,13 +204,13 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
                   <div key={user.rank} className="flex items-center gap-3 text-sm">
                     <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
                       user.rank === 1 ? 'bg-yellow-500/20 text-yellow-400' :
-                      user.rank === 2 ? 'bg-gray-400/20 text-gray-400' :
+                      user.rank === 2 ? 'bg-gray-400/20 text-white/70' :
                       'bg-amber-600/20 text-amber-600'
                     }`}>
                       {user.rank}
                     </span>
                     <span className="flex-1">{user.name}</span>
-                    <span className="text-gray-400">{user.checkins} check-ins</span>
+                    <span className="text-white/70">{user.checkins} check-ins</span>
                   </div>
                 ))}
               </div>
@@ -225,7 +225,7 @@ export const GymCheckinView: React.FC<{ setView: (v: View) => void }> = ({ setVi
           <span className="material-symbols-rounded text-neon text-2xl">check_circle</span>
           <div className="flex-1">
             <p className="font-bold">Check-in Successful!</p>
-            <p className="text-xs text-gray-400">+{streakBonus ? 15 : 10} XP earned</p>
+            <p className="text-xs text-white/70">+{streakBonus ? 15 : 10} XP earned</p>
           </div>
         </div>
       )}

@@ -146,12 +146,12 @@ export const QuestLogView: React.FC<{ setView: (v: View) => void }> = ({ setView
             <GlassCard className="bg-gradient-to-br from-green-900/30 to-black/50">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider">Current Status</p>
+                  <p className="text-xs text-white/70 uppercase tracking-wider">Current Status</p>
                   <h2 className="text-2xl font-bold">Lvl {stats.level} Titan</h2>
                 </div>
                 <div className="text-right">
-                  <p className="text-xs text-gray-400">Daily XP</p>
-                  <p className="text-xl font-bold text-neon">{stats.xp}<span className="text-gray-400 text-sm">/{stats.xpToNextLevel}</span></p>
+                  <p className="text-xs text-white/70">Daily XP</p>
+                  <p className="text-xl font-bold text-neon">{stats.xp}<span className="text-white/70 text-sm">/{stats.xpToNextLevel}</span></p>
                 </div>
               </div>
 
@@ -164,7 +164,7 @@ export const QuestLogView: React.FC<{ setView: (v: View) => void }> = ({ setView
               </div>
 
               <div className="flex justify-between text-xs">
-                <span className="text-gray-400">{completedToday} quests completed today</span>
+                <span className="text-white/70">{completedToday} quests completed today</span>
                 <span className="text-neon">+{totalDailyXp} XP available</span>
               </div>
             </GlassCard>
@@ -190,7 +190,7 @@ export const QuestLogView: React.FC<{ setView: (v: View) => void }> = ({ setView
                         <span className="text-[10px] bg-neon/20 text-neon px-2 py-0.5 rounded-full">DONE</span>
                       )}
                     </div>
-                    <p className="text-xs text-gray-400">{quest.description}</p>
+                    <p className="text-xs text-white/70">{quest.description}</p>
                     {quest.status === 'active' && (
                       <div className="mt-2">
                         <div className="w-full bg-black/50 h-1.5 rounded-full overflow-hidden">
@@ -199,12 +199,12 @@ export const QuestLogView: React.FC<{ setView: (v: View) => void }> = ({ setView
                             style={{ width: `${(quest.progress / quest.target) * 100}%` }}
                           />
                         </div>
-                        <p className="text-[10px] text-gray-500 mt-1">{quest.progress}/{quest.target}</p>
+                        <p className="text-[10px] text-white/50 mt-1">{quest.progress}/{quest.target}</p>
                       </div>
                     )}
                   </div>
                   <div className="text-right">
-                    <p className={`font-bold ${quest.status === 'completed' ? 'text-neon' : 'text-gray-400'}`}>
+                    <p className={`font-bold ${quest.status === 'completed' ? 'text-neon' : 'text-white/70'}`}>
                       +{quest.xpReward} XP
                     </p>
                   </div>
@@ -236,7 +236,7 @@ export const QuestLogView: React.FC<{ setView: (v: View) => void }> = ({ setView
                         <span className="text-[10px] bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded-full">5 DAYS LEFT</span>
                       )}
                     </div>
-                    <p className="text-xs text-gray-400 mb-2">{quest.description}</p>
+                    <p className="text-xs text-white/70 mb-2">{quest.description}</p>
                     <div className="w-full bg-black/50 h-2 rounded-full overflow-hidden">
                       <div
                         className={`h-full transition-all ${quest.type === 'bounty' ? 'bg-gradient-to-r from-yellow-500 to-amber-400' : 'bg-neon'}`}
@@ -244,7 +244,7 @@ export const QuestLogView: React.FC<{ setView: (v: View) => void }> = ({ setView
                       />
                     </div>
                     <div className="flex justify-between mt-1">
-                      <p className="text-[10px] text-gray-500">{quest.progress.toLocaleString()}/{quest.target.toLocaleString()}</p>
+                      <p className="text-[10px] text-white/50">{quest.progress.toLocaleString()}/{quest.target.toLocaleString()}</p>
                       <p className={`text-[10px] font-bold ${quest.type === 'bounty' ? 'text-yellow-400' : 'text-neon'}`}>
                         +{quest.xpReward} XP
                       </p>
@@ -286,7 +286,7 @@ export const QuestLogView: React.FC<{ setView: (v: View) => void }> = ({ setView
                   className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
                     activeTab === tab.id
                       ? 'bg-neon text-black'
-                      : 'glass-light text-gray-400'
+                      : 'glass-light text-white/70'
                   }`}
                 >
                   {tab.label}
@@ -312,12 +312,12 @@ export const QuestLogView: React.FC<{ setView: (v: View) => void }> = ({ setView
                   </span>
                 </div>
                 <div className="flex-1">
-                  <p className={`font-medium text-sm ${quest.status === 'completed' ? 'line-through text-gray-500' : ''}`}>
+                  <p className={`font-medium text-sm ${quest.status === 'completed' ? 'line-through text-white/50' : ''}`}>
                     {quest.name}
                   </p>
-                  <p className="text-[10px] text-gray-500">{quest.description}</p>
+                  <p className="text-[10px] text-white/50">{quest.description}</p>
                 </div>
-                <p className={`text-sm font-bold ${quest.status === 'completed' ? 'text-neon' : 'text-gray-500'}`}>
+                <p className={`text-sm font-bold ${quest.status === 'completed' ? 'text-neon' : 'text-white/50'}`}>
                   +{quest.xpReward}
                 </p>
               </div>
@@ -355,8 +355,8 @@ export const QuestHistoryView: React.FC<{ setView: (v: View) => void }> = ({ set
         <div className="flex-1 overflow-y-auto pb-24">
           {/* Lifetime Stats */}
           <div className="p-6 text-center">
-            <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Lifetime XP Earned</p>
-            <h1 className="text-4xl font-bold text-neon mb-1">{stats.totalXpEarned.toLocaleString()}<span className="text-lg text-gray-400">XP</span></h1>
+            <p className="text-xs text-white/70 uppercase tracking-wider mb-2">Lifetime XP Earned</p>
+            <h1 className="text-4xl font-bold text-neon mb-1">{stats.totalXpEarned.toLocaleString()}<span className="text-lg text-white/70">XP</span></h1>
           </div>
 
           {/* Tabs */}
@@ -366,7 +366,7 @@ export const QuestHistoryView: React.FC<{ setView: (v: View) => void }> = ({ set
                 <button
                   key={tab}
                   className={`px-4 py-2 rounded-full text-sm ${
-                    tab === 'All' ? 'bg-neon text-black' : 'glass-light text-gray-400'
+                    tab === 'All' ? 'bg-neon text-black' : 'glass-light text-white/70'
                   }`}
                 >
                   {tab}
@@ -389,10 +389,10 @@ export const QuestHistoryView: React.FC<{ setView: (v: View) => void }> = ({ set
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold">{item.name}</h4>
-                    <p className="text-xs text-gray-400">{item.date}</p>
+                    <p className="text-xs text-white/70">{item.date}</p>
                   </div>
                   <div className="text-right">
-                    <p className={`font-bold ${item.status === 'completed' ? 'text-neon' : 'text-gray-500'}`}>
+                    <p className={`font-bold ${item.status === 'completed' ? 'text-neon' : 'text-white/50'}`}>
                       {item.status === 'completed' ? `+${item.xp} XP` : '0 XP'}
                     </p>
                     <p className={`text-[10px] ${item.status === 'completed' ? 'text-neon' : 'text-red-400'}`}>

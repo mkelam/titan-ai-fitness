@@ -13,7 +13,7 @@ export const Button: React.FC<{
   className?: string;
   fullWidth?: boolean;
 }> = ({ children, onClick, variant = 'primary', className = '', fullWidth = false }) => {
-  const baseStyle = "py-3 px-6 rounded-xl font-bold transition-all duration-200 active:scale-95 flex items-center justify-center gap-2";
+  const baseStyle = "py-3 px-6 rounded-xl font-bold transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-transparent";
   const variants = {
     primary: "bg-neon text-black shadow-[0_0_15px_rgba(0,255,157,0.4)] hover:shadow-[0_0_25px_rgba(0,255,157,0.6)]",
     secondary: "bg-white/10 text-white hover:bg-white/20 border border-white/10",
@@ -31,7 +31,7 @@ export const Button: React.FC<{
 };
 
 export const NavIcon: React.FC<{ icon: string; label: string; active?: boolean; onClick: () => void }> = ({ icon, label, active, onClick }) => (
-  <button onClick={onClick} className={`flex flex-col items-center gap-1 ${active ? 'text-neon' : 'text-gray-400 hover:text-white'}`}>
+  <button onClick={onClick} className={`flex flex-col items-center gap-1 transition-colors ${active ? 'text-neon' : 'text-white/70 hover:text-white'}`}>
     <span className={`material-symbols-rounded text-2xl ${active ? 'fill-1' : ''}`}>{icon}</span>
     <span className="text-[10px] font-medium tracking-wide">{label}</span>
   </button>
@@ -63,15 +63,15 @@ export const BottomNav: React.FC<{ currentView: string; setView: (v: any) => voi
 };
 
 export const Header: React.FC<{ title: string; leftIcon?: string; onLeftClick?: () => void; rightIcon?: string; onRightClick?: () => void }> = ({ title, leftIcon, onLeftClick, rightIcon, onRightClick }) => (
-  <div className="flex items-center justify-between p-4 sticky top-0 z-40 bg-black/50 backdrop-blur-md">
+  <div className="flex items-center justify-between p-4 sticky top-0 z-40 bg-black/40 backdrop-blur-xl border-b border-white/10">
     {leftIcon ? (
-      <button onClick={onLeftClick} className="p-2 rounded-full hover:bg-white/10">
+      <button onClick={onLeftClick} className="p-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
         <span className="material-symbols-rounded">{leftIcon}</span>
       </button>
     ) : <div className="w-10" />}
     <h1 className="text-lg font-bold tracking-wider uppercase text-white/90">{title}</h1>
     {rightIcon ? (
-      <button onClick={onRightClick} className="p-2 rounded-full hover:bg-white/10">
+      <button onClick={onRightClick} className="p-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
         <span className="material-symbols-rounded">{rightIcon}</span>
       </button>
     ) : <div className="w-10" />}

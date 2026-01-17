@@ -133,7 +133,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
           <GlassCard className="mb-6">
             <div className="text-center mb-4">
               <p className="text-4xl font-bold text-neon">{totals.calories}</p>
-              <p className="text-gray-400">/ {targets.calories} kcal</p>
+              <p className="text-white/70">/ {targets.calories} kcal</p>
               <div className="w-full bg-black/50 h-2 rounded-full mt-3 overflow-hidden">
                 <div
                   className="bg-neon h-full transition-all duration-500"
@@ -156,7 +156,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
                   </svg>
                   <span className="absolute inset-0 flex items-center justify-center text-xs font-bold">{totals.protein}g</span>
                 </div>
-                <p className="text-xs text-gray-400">Protein</p>
+                <p className="text-xs text-white/70">Protein</p>
                 <p className="text-xs text-red-400">{targets.protein}g goal</p>
               </div>
 
@@ -172,7 +172,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
                   </svg>
                   <span className="absolute inset-0 flex items-center justify-center text-xs font-bold">{totals.carbs}g</span>
                 </div>
-                <p className="text-xs text-gray-400">Carbs</p>
+                <p className="text-xs text-white/70">Carbs</p>
                 <p className="text-xs text-blue-400">{targets.carbs}g goal</p>
               </div>
 
@@ -188,7 +188,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
                   </svg>
                   <span className="absolute inset-0 flex items-center justify-center text-xs font-bold">{totals.fats}g</span>
                 </div>
-                <p className="text-xs text-gray-400">Fats</p>
+                <p className="text-xs text-white/70">Fats</p>
                 <p className="text-xs text-yellow-400">{targets.fats}g goal</p>
               </div>
             </div>
@@ -199,9 +199,9 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
             <h3 className="text-lg font-bold mb-3">Today's Meals</h3>
             {meals.length === 0 ? (
               <GlassCard className="text-center py-8">
-                <span className="material-symbols-rounded text-4xl text-gray-600 mb-2">restaurant</span>
-                <p className="text-gray-400">No meals logged yet</p>
-                <p className="text-xs text-gray-500">Tap + to add your first meal</p>
+                <span className="material-symbols-rounded text-4xl text-white/40 mb-2">restaurant</span>
+                <p className="text-white/70">No meals logged yet</p>
+                <p className="text-xs text-white/50">Tap + to add your first meal</p>
               </GlassCard>
             ) : (
               <div className="flex flex-col gap-2">
@@ -210,9 +210,9 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
                     <div className="flex-1">
                       <div className="flex items-center gap-2">
                         <h4 className="font-bold">{meal.name}</h4>
-                        <span className="text-xs text-gray-500">{meal.time}</span>
+                        <span className="text-xs text-white/50">{meal.time}</span>
                       </div>
-                      <div className="flex gap-3 text-xs text-gray-400 mt-1">
+                      <div className="flex gap-3 text-xs text-white/70 mt-1">
                         <span>{meal.calories} kcal</span>
                         <span className="text-red-400">{meal.protein}g P</span>
                         <span className="text-blue-400">{meal.carbs}g C</span>
@@ -221,7 +221,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
                     </div>
                     <button
                       onClick={() => removeMeal(meal.id)}
-                      className="p-2 text-gray-400 hover:text-red-400 transition-colors"
+                      className="p-2 text-white/70 hover:text-red-400 transition-colors"
                     >
                       <span className="material-symbols-rounded">delete</span>
                     </button>
@@ -275,7 +275,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
                   <div className="flex justify-between items-center">
                     <div>
                       <p className="font-bold">{food.name}</p>
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-white/70">
                         P: {food.protein}g • C: {food.carbs}g • F: {food.fats}g
                       </p>
                     </div>
@@ -297,7 +297,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
 
             <div className="space-y-4">
               <div>
-                <label className="text-xs text-gray-400 uppercase font-bold block mb-2">Food Name</label>
+                <label className="text-xs text-white/70 uppercase font-bold block mb-2">Food Name</label>
                 <input
                   type="text"
                   placeholder="e.g. Grilled Chicken Salad"
@@ -309,7 +309,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs text-gray-400 uppercase font-bold block mb-2">Calories</label>
+                  <label className="text-xs text-white/70 uppercase font-bold block mb-2">Calories</label>
                   <input
                     type="number"
                     placeholder="0"
@@ -319,7 +319,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-gray-400 uppercase font-bold block mb-2">Protein (g)</label>
+                  <label className="text-xs text-white/70 uppercase font-bold block mb-2">Protein (g)</label>
                   <input
                     type="number"
                     placeholder="0"
@@ -332,7 +332,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs text-gray-400 uppercase font-bold block mb-2">Carbs (g)</label>
+                  <label className="text-xs text-white/70 uppercase font-bold block mb-2">Carbs (g)</label>
                   <input
                     type="number"
                     placeholder="0"
@@ -342,7 +342,7 @@ export const NutritionLogView: React.FC<{ setView: (v: View) => void }> = ({ set
                   />
                 </div>
                 <div>
-                  <label className="text-xs text-gray-400 uppercase font-bold block mb-2">Fats (g)</label>
+                  <label className="text-xs text-white/70 uppercase font-bold block mb-2">Fats (g)</label>
                   <input
                     type="number"
                     placeholder="0"
