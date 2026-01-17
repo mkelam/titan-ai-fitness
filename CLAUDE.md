@@ -176,6 +176,27 @@ npm run build
 - Backend: Skeleton with stubs (needs implementation)
 - AI Integration: Architecture designed, implementation pending
 
+## Custom Skills
+
+The project includes custom skills (slash commands) in `.claude/skills/`:
+
+| Skill | Purpose |
+|-------|---------|
+| `/titan-test` | Run comprehensive tests (TypeScript, exports, styling, navigation) |
+| `/titan-screen` | Scaffold a new screen with proper structure and routing |
+| `/titan-endpoint` | Implement a backend endpoint with validation and error handling |
+| `/titan-review` | Code review against project standards (quality, security, performance) |
+
+### Usage Examples
+
+```
+/titan-test              # Full test suite
+/titan-test --quick      # TypeScript only
+/titan-screen Achievements    # Create new Achievements screen
+/titan-endpoint POST /api/workouts - Create workout
+/titan-review            # Review uncommitted changes
+```
+
 ## Next Steps
 
 1. Implement backend authentication service
