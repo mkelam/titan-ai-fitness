@@ -186,6 +186,7 @@ The project includes custom skills (slash commands) in `.claude/skills/`:
 | `/titan-screen` | Scaffold a new screen with proper structure and routing |
 | `/titan-endpoint` | Implement a backend endpoint with validation and error handling |
 | `/titan-review` | Code review against project standards (quality, security, performance) |
+| `/titan-ux` | Glassmorphic design audit, visual consistency, UX best practices |
 
 ### Usage Examples
 
@@ -195,6 +196,8 @@ The project includes custom skills (slash commands) in `.claude/skills/`:
 /titan-screen Achievements    # Create new Achievements screen
 /titan-endpoint POST /api/workouts - Create workout
 /titan-review            # Review uncommitted changes
+/titan-ux --screen Dashboard  # UX audit for Dashboard
+/titan-ux --fix          # Audit and auto-fix issues
 ```
 
 ## Next Steps
